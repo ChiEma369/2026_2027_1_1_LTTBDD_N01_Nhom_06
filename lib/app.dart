@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 
 import 'utils/app_theme.dart';
 
@@ -20,6 +21,9 @@ class TechTrailApp extends StatelessWidget {
           ),
         ),
       ),
+      onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }
