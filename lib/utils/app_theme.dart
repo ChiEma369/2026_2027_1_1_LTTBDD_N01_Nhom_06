@@ -45,3 +45,29 @@ class AppShadows {
     ),
   ];
 }
+
+class AppTheme {
+  static ThemeData get lightTheme {
+    return ThemeData(
+      useMaterial3: true,
+      scaffoldBackgroundColor: AppColors.bg,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: AppColors.teal500,
+        primary: AppColors.teal700,
+        surface: AppColors.white,
+        onSurface: AppColors.text,
+      ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: AppColors.teal700,
+        foregroundColor: AppColors.white,
+        centerTitle: true,
+        titleTextStyle: AppText.s(
+          18,
+          w: FontWeight.w600,
+          color: AppColors.white,
+        ),
+      ),
+      dividerColor: AppColors.divider,
+    );
+  }
+}
