@@ -5,5 +5,36 @@
   "tabActivities": "Experience Hub",
   "tabJournal": "Journal",
   "tabProfile": "IT Profile",
-  "tabAccount": "Account"
+  "tabAccount": "Account";
+
+  "careerMapGreeting": "Hello, {name} 👋",
+  "@careerMapGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "careerMapSubtitle": "Explore the IT career path that fits you",
+  "searchHint": "Search IT careers, skills...",
+  "filterAll": "All",
+  "viewDetail": "View details",
+  "skillsMore": "+{count} skills",
+  "@skillsMore": { "placeholders": { "count": { "type": "int" } } },
+  "noResults": "No matching careers found",
+  "matchBadge": "Matches you",
+  "ratingVeryFit": "Great fit",
+  "learnersFollowing": "{count}+ young people are following this path",
+  "@learnersFollowing": {
+    "placeholders": { "count": { "type": "int", "format": "decimalPattern" } }
+  },
+  "statSalary": "Salary",
+  "statDemand": "Demand",
+  "statWorkMode": "Work mode",
+  "dailyWorkTitle": "Daily work",
+  "realisticTag": "Real-world",
+  "roadmapTitle": "Course roadmap",
+  "roadmapStageCount": "{count} in-depth stages",
+  "@roadmapStageCount": { "placeholders": { "count": { "type": "int" } } },
+  "stageLabel": "STAGE",
+  "stageTagFoundation": "Foundation",
+  "stageTagCore": "Core",
+  "stageTagApplied": "Applied",
+  "stageTagAdvanced": "Advanced",
+  "stageDuration": "Duration: {value}",
+  "@stageDuration": { "placeholders": { "value": { "type": "String" } } }
 }

@@ -5,5 +5,36 @@
   "tabActivities": "Trạm trải nghiệm",
   "tabJournal": "Nhật ký",
   "tabProfile": "Hồ Sơ IT",
-  "tabAccount": "Cá nhân"
+  "tabAccount": "Cá nhân";
+
+  "careerMapGreeting": "Xin chào, {name} 👋",
+  "@careerMapGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "careerMapSubtitle": "Khám phá con đường nghề nghiệp IT phù hợp",
+  "searchHint": "Tìm kiếm nghề nghiệp IT, kỹ năng...",
+  "filterAll": "Tất cả",
+  "viewDetail": "Xem chi tiết",
+  "skillsMore": "+{count} kỹ năng",
+  "@skillsMore": { "placeholders": { "count": { "type": "int" } } },
+  "noResults": "Không tìm thấy ngành phù hợp",
+  "matchBadge": "Phù hợp với bạn",
+  "ratingVeryFit": "Rất phù hợp",
+  "learnersFollowing": "Hơn {count} bạn trẻ đang đi theo lộ trình này",
+  "@learnersFollowing": {
+    "placeholders": { "count": { "type": "int", "format": "decimalPattern" } }
+  },
+  "statSalary": "Mức lương",
+  "statDemand": "Nhu cầu",
+  "statWorkMode": "Hình thức",
+  "dailyWorkTitle": "Công việc hằng ngày",
+  "realisticTag": "Thực tế",
+  "roadmapTitle": "Roadmap môn học",
+  "roadmapStageCount": "{count} chặng chuyên sâu",
+  "@roadmapStageCount": { "placeholders": { "count": { "type": "int" } } },
+  "stageLabel": "CHẶNG",
+  "stageTagFoundation": "Nền tảng",
+  "stageTagCore": "Cốt lõi",
+  "stageTagApplied": "Ứng dụng",
+  "stageTagAdvanced": "Nâng cao",
+  "stageDuration": "Thời lượng: {value}",
+  "@stageDuration": { "placeholders": { "value": { "type": "String" } } }
 }
