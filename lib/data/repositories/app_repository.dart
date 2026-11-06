@@ -1,12 +1,15 @@
 import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
-import 'package:tech_trail/data/mock_activities.dart';
-import 'package:tech_trail/data/mock_niches.dart';
+import 'package:tech_trail/data/mock/mock_activities.dart';
+import 'package:tech_trail/data/mock/mock_niches.dart';
 import 'package:tech_trail/models/activity.dart';
 import 'package:tech_trail/models/feedback.dart';
 import 'package:tech_trail/models/niche.dart';
 import 'package:tech_trail/models/user_acc.dart';
+
+import 'package:tech_trail/data/mock/mock_niches.dart';
+import 'package:tech_trail/models/niche_detail.dart';
 
 enum AuthError { invalidCredentials, identifierExists }
 
@@ -41,7 +44,10 @@ class AppRepository {
 
   // ---------- Dữ liệu tĩnh ----------
   List<CareerField> get fields => mockFields;
-  List<Niche> get niches => mockNiches;
+  List<Niche> get niches => mockNiches
+      .where((n) => n.isPriority && mockNicheDetails.containsKey(n.id))
+      .toList();
+  NicheDetail? detailOf(String nicheId) => mockNicheDetails[nicheId];
   List<Activity> get activities => mockActivities;
 
   Niche? nicheById(String id) {

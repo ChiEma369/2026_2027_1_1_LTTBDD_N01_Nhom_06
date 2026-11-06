@@ -1,11 +1,31 @@
 import 'package:tech_trail/models/niche.dart';
 
 const List<CareerField> mockFields = [
-  CareerField(id: 'software', name: 'Phát triển phần mềm'),
-  CareerField(id: 'data-ai', name: 'Dữ liệu & Trí tuệ nhân tạo'),
-  CareerField(id: 'quality-security', name: 'Chất lượng & Bảo mật'),
-  CareerField(id: 'infra-ops', name: 'Hạ tầng & Vận hành'),
-  CareerField(id: 'management', name: 'Quản trị dự án & sản phẩm'),
+  CareerField(
+    id: 'software',
+    name: 'Phát triển phần mềm',
+    shortName: 'Software',
+  ),
+  CareerField(
+    id: 'data-ai',
+    name: 'Dữ liệu & Trí tuệ nhân tạo',
+    shortName: 'Data & AI',
+  ),
+  CareerField(
+    id: 'quality-security',
+    name: 'Chất lượng & Bảo mật',
+    shortName: 'Cybersecurity',
+  ),
+  CareerField(
+    id: 'infra-ops',
+    name: 'Hạ tầng & Vận hành',
+    shortName: 'Cloud & DevOps',
+  ),
+  CareerField(
+    id: 'management',
+    name: 'Quản trị dự án & sản phẩm',
+    shortName: 'Management',
+  ),
 ];
 
 const List<Niche> mockNiches = [
@@ -13,7 +33,7 @@ const List<Niche> mockNiches = [
   Niche(
     id: 'web',
     fieldId: 'software',
-    name: 'Lập trình viên Web (Front-end/Full-stack)',
+    name: 'Lập trình viên Web',
     shortDescription:
         'Xây dựng giao diện và tính năng cho website, ứng dụng web.',
     isPriority: true,
