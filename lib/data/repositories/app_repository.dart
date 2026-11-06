@@ -8,7 +8,7 @@ import 'package:tech_trail/models/feedback.dart';
 import 'package:tech_trail/models/niche.dart';
 import 'package:tech_trail/models/user_acc.dart';
 
-import 'package:tech_trail/data/mock/mock_niches.dart';
+import 'package:tech_trail/data/mock/mock_niche_details.dart';
 import 'package:tech_trail/models/niche_detail.dart';
 
 enum AuthError { invalidCredentials, identifierExists }
