@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tech_trail/viewmodels/local_view_md.dart';
+import 'package:tech_trail/viewmodels/local_view_model.dart';
 import 'package:tech_trail/app.dart';
 import 'package:tech_trail/data/repositories/app_repository.dart';
 
