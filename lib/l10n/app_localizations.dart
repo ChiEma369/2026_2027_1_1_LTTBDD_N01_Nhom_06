@@ -107,7 +107,7 @@ abstract class AppLocalizations {
   /// No description provided for @tabCareerMap.
   ///
   /// In vi, this message translates to:
-  /// **'Career Map'**
+  /// **'Bản đồ nghề nghiệp'**
   String get tabCareerMap;
 
   /// No description provided for @tabActivities.
@@ -125,7 +125,7 @@ abstract class AppLocalizations {
   /// No description provided for @tabProfile.
   ///
   /// In vi, this message translates to:
-  /// **'IT Profile'**
+  /// **'Hồ Sơ IT'**
   String get tabProfile;
 
   /// No description provided for @tabAccount.
@@ -133,6 +133,144 @@ abstract class AppLocalizations {
   /// In vi, this message translates to:
   /// **'Cá nhân'**
   String get tabAccount;
+
+  /// No description provided for @careerMapGreeting.
+  ///
+  /// In vi, this message translates to:
+  /// **'Xin chào, {name} 👋'**
+  String careerMapGreeting(String name);
+
+  /// No description provided for @careerMapSubtitle.
+  ///
+  /// In vi, this message translates to:
+  /// **'Khám phá con đường nghề nghiệp IT phù hợp'**
+  String get careerMapSubtitle;
+
+  /// No description provided for @searchHint.
+  ///
+  /// In vi, this message translates to:
+  /// **'Tìm kiếm nghề nghiệp IT, kỹ năng...'**
+  String get searchHint;
+
+  /// No description provided for @filterAll.
+  ///
+  /// In vi, this message translates to:
+  /// **'Tất cả'**
+  String get filterAll;
+
+  /// No description provided for @viewDetail.
+  ///
+  /// In vi, this message translates to:
+  /// **'Xem chi tiết'**
+  String get viewDetail;
+
+  /// No description provided for @skillsMore.
+  ///
+  /// In vi, this message translates to:
+  /// **'+{count} kỹ năng'**
+  String skillsMore(int count);
+
+  /// No description provided for @noResults.
+  ///
+  /// In vi, this message translates to:
+  /// **'Không tìm thấy ngành phù hợp'**
+  String get noResults;
+
+  /// No description provided for @matchBadge.
+  ///
+  /// In vi, this message translates to:
+  /// **'Phù hợp với bạn'**
+  String get matchBadge;
+
+  /// No description provided for @ratingVeryFit.
+  ///
+  /// In vi, this message translates to:
+  /// **'Rất phù hợp'**
+  String get ratingVeryFit;
+
+  /// No description provided for @learnersFollowing.
+  ///
+  /// In vi, this message translates to:
+  /// **'Hơn {count} bạn trẻ đang đi theo lộ trình này'**
+  String learnersFollowing(int count);
+
+  /// No description provided for @statSalary.
+  ///
+  /// In vi, this message translates to:
+  /// **'Mức lương'**
+  String get statSalary;
+
+  /// No description provided for @statDemand.
+  ///
+  /// In vi, this message translates to:
+  /// **'Nhu cầu'**
+  String get statDemand;
+
+  /// No description provided for @statWorkMode.
+  ///
+  /// In vi, this message translates to:
+  /// **'Hình thức'**
+  String get statWorkMode;
+
+  /// No description provided for @dailyWorkTitle.
+  ///
+  /// In vi, this message translates to:
+  /// **'Công việc hằng ngày'**
+  String get dailyWorkTitle;
+
+  /// No description provided for @realisticTag.
+  ///
+  /// In vi, this message translates to:
+  /// **'Thực tế'**
+  String get realisticTag;
+
+  /// No description provided for @roadmapTitle.
+  ///
+  /// In vi, this message translates to:
+  /// **'Roadmap môn học'**
+  String get roadmapTitle;
+
+  /// No description provided for @roadmapStageCount.
+  ///
+  /// In vi, this message translates to:
+  /// **'{count} chặng chuyên sâu'**
+  String roadmapStageCount(int count);
+
+  /// No description provided for @stageLabel.
+  ///
+  /// In vi, this message translates to:
+  /// **'CHẶNG'**
+  String get stageLabel;
+
+  /// No description provided for @stageTagFoundation.
+  ///
+  /// In vi, this message translates to:
+  /// **'Nền tảng'**
+  String get stageTagFoundation;
+
+  /// No description provided for @stageTagCore.
+  ///
+  /// In vi, this message translates to:
+  /// **'Cốt lõi'**
+  String get stageTagCore;
+
+  /// No description provided for @stageTagApplied.
+  ///
+  /// In vi, this message translates to:
+  /// **'Ứng dụng'**
+  String get stageTagApplied;
+
+  /// No description provided for @stageTagAdvanced.
+  ///
+  /// In vi, this message translates to:
+  /// **'Nâng cao'**
+  String get stageTagAdvanced;
+
+  /// No description provided for @stageDuration.
+  ///
+  /// In vi, this message translates to:
+  /// **'Thời lượng: {value}'**
+  String stageDuration(String value);
 }
 
 class _AppLocalizationsDelegate

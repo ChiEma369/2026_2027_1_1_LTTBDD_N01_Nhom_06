@@ -5,7 +5,7 @@
   "tabActivities": "Trạm trải nghiệm",
   "tabJournal": "Nhật ký",
   "tabProfile": "Hồ Sơ IT",
-  "tabAccount": "Cá nhân";
+  "tabAccount": "Cá nhân",
 
   "careerMapGreeting": "Xin chào, {name} 👋",
   "@careerMapGreeting": { "placeholders": { "name": { "type": "String" } } },

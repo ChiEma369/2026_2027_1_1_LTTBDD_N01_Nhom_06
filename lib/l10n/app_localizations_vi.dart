@@ -13,7 +13,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get appTitle => 'TechTrail';
 
   @override
-  String get tabCareerMap => 'Career Map';
+  String get tabCareerMap => 'Bản đồ nghề nghiệp';
 
   @override
   String get tabActivities => 'Trạm trải nghiệm';
@@ -22,8 +22,91 @@ class AppLocalizationsVi extends AppLocalizations {
   String get tabJournal => 'Nhật ký';
 
   @override
-  String get tabProfile => 'IT Profile';
+  String get tabProfile => 'Hồ Sơ IT';
 
   @override
   String get tabAccount => 'Cá nhân';
+
+  @override
+  String careerMapGreeting(String name) {
+    return 'Xin chào, $name 👋';
+  }
+
+  @override
+  String get careerMapSubtitle => 'Khám phá con đường nghề nghiệp IT phù hợp';
+
+  @override
+  String get searchHint => 'Tìm kiếm nghề nghiệp IT, kỹ năng...';
+
+  @override
+  String get filterAll => 'Tất cả';
+
+  @override
+  String get viewDetail => 'Xem chi tiết';
+
+  @override
+  String skillsMore(int count) {
+    return '+$count kỹ năng';
+  }
+
+  @override
+  String get noResults => 'Không tìm thấy ngành phù hợp';
+
+  @override
+  String get matchBadge => 'Phù hợp với bạn';
+
+  @override
+  String get ratingVeryFit => 'Rất phù hợp';
+
+  @override
+  String learnersFollowing(int count) {
+    final intl.NumberFormat countNumberFormat =
+        intl.NumberFormat.decimalPattern(localeName);
+    final String countString = countNumberFormat.format(count);
+
+    return 'Hơn $countString bạn trẻ đang đi theo lộ trình này';
+  }
+
+  @override
+  String get statSalary => 'Mức lương';
+
+  @override
+  String get statDemand => 'Nhu cầu';
+
+  @override
+  String get statWorkMode => 'Hình thức';
+
+  @override
+  String get dailyWorkTitle => 'Công việc hằng ngày';
+
+  @override
+  String get realisticTag => 'Thực tế';
+
+  @override
+  String get roadmapTitle => 'Roadmap môn học';
+
+  @override
+  String roadmapStageCount(int count) {
+    return '$count chặng chuyên sâu';
+  }
+
+  @override
+  String get stageLabel => 'CHẶNG';
+
+  @override
+  String get stageTagFoundation => 'Nền tảng';
+
+  @override
+  String get stageTagCore => 'Cốt lõi';
+
+  @override
+  String get stageTagApplied => 'Ứng dụng';
+
+  @override
+  String get stageTagAdvanced => 'Nâng cao';
+
+  @override
+  String stageDuration(String value) {
+    return 'Thời lượng: $value';
+  }
 }

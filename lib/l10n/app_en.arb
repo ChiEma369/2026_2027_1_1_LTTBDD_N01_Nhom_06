@@ -5,7 +5,7 @@
   "tabActivities": "Experience Hub",
   "tabJournal": "Journal",
   "tabProfile": "IT Profile",
-  "tabAccount": "Account";
+  "tabAccount": "Account",
 
   "careerMapGreeting": "Hello, {name} 👋",
   "@careerMapGreeting": { "placeholders": { "name": { "type": "String" } } },
