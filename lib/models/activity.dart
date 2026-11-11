@@ -4,7 +4,7 @@ class Activity {
   final String id;
   final String title;
   final ActivityType type;
-  final String? nicheId; // null = không gắn ngách cụ thể
+  final String? nicheId; 
   final String description;
 
   const Activity({

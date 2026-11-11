@@ -2,7 +2,12 @@
 class CareerField {
   final String id;
   final String name;
-  const CareerField({required this.id, required this.name});
+  final String shortName;
+  const CareerField({
+    required this.id,
+    required this.name,
+    this.shortName = '',
+  });
 }
 
 /// Ngách nghề thuộc một khối ngành
