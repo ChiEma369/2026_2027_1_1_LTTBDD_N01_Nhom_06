@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/viewmodels/local_view_model.dart';
 import 'package:tech_trail/views/career_map/career_map_screen.dart';
+import 'package:tech_trail/views/navigation/main_navigation_view.dart';
 
 import 'utils/app_theme.dart';
 
@@ -15,7 +16,7 @@ class TechTrailApp extends StatelessWidget {
       title: 'TechTrail',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: const CareerMapScreen(),
+      home: const MainNavigationView(),
       onGenerateTitle: (context) =>
           AppLocalizations.of(context).appTitle,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
