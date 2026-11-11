@@ -67,29 +67,39 @@ class NicheDetailScreen extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: FilledButton(
-                  style: FilledButton.styleFrom(
-                    backgroundColor: AppColors.arcticOceanBlue,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: AppColors.mainGradient,
+                    borderRadius: BorderRadius.circular(16),
                   ),
-                  onPressed: () =>
-                      Navigator.of(context)
-                          .popUntil((r) => r.isFirst),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        l10n.tabActivities,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                        ),
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 16,
                       ),
-                      const SizedBox(width: 8),
-                      const Icon(Icons.arrow_forward, size: 18),
-                    ],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    onPressed: () =>
+                        Navigator.of(context)
+                            .popUntil((r) => r.isFirst),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          l10n.tabActivities,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        const Icon(Icons.arrow_forward, size: 18),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -121,6 +131,7 @@ class _HeroCard extends StatelessWidget {
             height: 64,
             decoration: BoxDecoration(
               color: AppColors.primaryDark,
+              boxShadow: AppShadows.card,
               borderRadius: BorderRadius.circular(16),
             ),
             child: Icon(
@@ -350,6 +361,7 @@ class _DailyTasksCard extends StatelessWidget {
     padding: const EdgeInsets.all(14),
     decoration: BoxDecoration(
       color: Colors.white,
+      boxShadow: AppShadows.card,
       borderRadius: BorderRadius.circular(16),
     ),
     child: Column(
@@ -409,9 +421,9 @@ class _StageTile extends StatelessWidget {
 
   Color get _tagColor => switch (stage.tag) {
     StageTag.foundation => AppColors.success,
-    StageTag.core => AppColors.deepSeaTeal,
-    StageTag.applied => AppColors.ceruleanRipple,
-    StageTag.advanced => AppColors.star,
+    StageTag.core => AppColors.primary,
+    StageTag.applied => AppColors.stagePurple,
+    StageTag.advanced => AppColors.stageOrange,
   };
 
   @override
@@ -429,7 +441,7 @@ class _StageTile extends StatelessWidget {
                   width: 44,
                   padding: const EdgeInsets.symmetric(vertical: 4),
                   decoration: BoxDecoration(
-                    color: AppColors.primary,
+                    gradient: AppColors.mainGradient,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Column(
@@ -494,7 +506,7 @@ class _StageTile extends StatelessWidget {
                             vertical: 2,
                           ),
                           decoration: BoxDecoration(
-                            color: _tagColor.withOpacity(0.12),
+                            color: _tagColor.withValues(alpha: 0.12),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(

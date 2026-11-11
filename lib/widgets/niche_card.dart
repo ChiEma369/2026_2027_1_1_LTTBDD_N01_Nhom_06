@@ -4,10 +4,25 @@ import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/models/niche_detail.dart';
 
 IconData nicheIcon(String nicheId) => switch (nicheId) {
+  // Phát triển phần mềm
   'web' => Icons.laptop_mac,
+  'mobile' => Icons.smartphone_outlined,
+  'backend' => Icons.dns_outlined,
+  'desktop-game' => Icons.sports_esports_outlined,
+  // Dữ liệu & AI
   'ai-ml' => Icons.psychology_outlined,
+  'data-analyst' => Icons.bar_chart_outlined,
+  'data-engineer' => Icons.storage_outlined,
+  // Chất lượng & Bảo mật
   'security' => Icons.shield_outlined,
+  'qa-tester' => Icons.bug_report_outlined,
+  // Hạ tầng & Vận hành
   'cloud-devops' => Icons.cloud_outlined,
+  'sys-net-admin' => Icons.router_outlined,
+  // Quản trị dự án & sản phẩm
+  'ba' => Icons.analytics_outlined,
+  'pm' => Icons.assignment_outlined,
+  'po' => Icons.lightbulb_outlined,
   _ => Icons.work_outline,
 };
 
@@ -48,12 +63,13 @@ class NicheCard extends StatelessWidget {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: AppColors.arcticOceanBlue,
+                      color: AppColors.iconBoxBg,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Icon(
                       nicheIcon(detail.nicheId),
-                      color: AppColors.primary,
+                      color: AppColors.primaryDark,
+                      size: 22,
                     ),
                   ),
                   const SizedBox(width: 12),
@@ -139,14 +155,14 @@ class _Tag extends StatelessWidget {
   Widget build(BuildContext context) => Container(
     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
     decoration: BoxDecoration(
-      color: AppColors.primaryDark,
+      color: AppColors.tagBg,
       borderRadius: BorderRadius.circular(6),
     ),
     child: Text(
       text,
       style: const TextStyle(
         fontSize: 10,
-        color: AppColors.primaryDark,
+        color: AppColors.textPrimary,
       ),
     ),
   );

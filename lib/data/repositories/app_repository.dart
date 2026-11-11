@@ -44,9 +44,9 @@ class AppRepository {
 
   // ---------- Dữ liệu tĩnh ----------
   List<CareerField> get fields => mockFields;
-  List<Niche> get featuredNiches => mockNiches
-      .where((n) => n.isPriority && mockNicheDetails.containsKey(n.id))
-      .toList();
+  /// Trả về tất cả 14 ngách (có NicheDetail).
+  List<Niche> get featuredNiches =>
+      mockNiches.where((n) => mockNicheDetails.containsKey(n.id)).toList();
   NicheDetail? detailOf(String nicheId) => mockNicheDetails[nicheId];
   List<Activity> get activities => mockActivities;
 

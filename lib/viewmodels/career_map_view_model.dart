@@ -16,8 +16,9 @@ class CareerMapViewModel extends ChangeNotifier {
   List<Niche> get niches {
     final q = _query.trim().toLowerCase();
     return _repo.featuredNiches.where((n) {
-      if (_selectedFieldId != null && n.fieldId != _selectedFieldId)
+      if (_selectedFieldId != null && n.fieldId != _selectedFieldId) {
         return false;
+      }
       if (q.isEmpty) return true;
       final d = _repo.detailOf(n.id);
       final haystack = [

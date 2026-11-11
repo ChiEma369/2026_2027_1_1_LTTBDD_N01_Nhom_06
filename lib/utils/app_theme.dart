@@ -2,27 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
-  static const deepSeaTeal = Color(0xFF0C3846);
-  static const arcticOceanBlue = Color(0xFF2A7387);
-  static const ceruleanRipple = Color(0xFF5EB0C8);
-  static const icyGlaze = Color(0xFF9FD3E3);
-  static const frostWhite = Color(0xFFE4F4F8);
+  // Bảng màu Deep Sea Teal
+  static const Color primaryDark = Color(0xFF0C3846); // Deep Sea Teal
+  static const Color primary = Color(0xFF2A7387); // Arctic Ocean Blue
+  static const Color secondary = Color(0xFF5EB0C8); // Cerulean Ripple
+  static const Color accent = Color(0xFF9FD3E3); // Icy Glaze
+  static const Color background = Color(0xFFE4F4F8);
 
-  static const primary = arcticOceanBlue;
-  static const primaryDark = deepSeaTeal;
-  static const background = frostWhite;
-  static const card = Colors.white;
+  // đồng bộ tên cũ và mới
+  static const Color deepSeaTeal = primaryDark;
+  static const Color arcticOceanBlue = primary;
+  static const Color ceruleanRipple = secondary;
+  static const Color frostWhite = background;
 
-  static const headerBg = icyGlaze;
-  static const chipBg = icyGlaze;
-  static const tagBg = frostWhite;
+  // Màu thành phần giao diện
+  static const Color headerBg = Color(0xFF0C3846);
+  static const Color card = Colors.white; // Nền Card trắng
+  static const Color tagBg = Color(0xFFE8F4F7); // Nền Tag nhạt
+  static const Color chipBg = Color(0xFF194A58);
+  static const Color iconBoxBg = Color(0xFFDCEFF5);
+  static const Color divider = Color(0xFFD3E6EC);
+  // Nền Chip mờ trong Header
 
-  static const textPrimary = deepSeaTeal;
-  static const textMuted = Color(0xFF5A7882);
-  static const divider = Color(0xFFD0E6ED);
+  // Màu chữ & Icon
+  static const Color textPrimary = Color(0xFF0C3846);
+  static const Color textMuted = Color(0xFF6B8B95); // Chữ phụ
+  static const Color star = Color(0xFFFFB800);
+  static const Color success = Color(0xFF2E7D32);
+  static const Color stagePurple = Color(0xFF7C5CD6);
+  static const Color stageOrange = Color(0xFFF08A24);
 
-  static const star = Color(0xFFF2A516);
-  static const success = Color(0xFF2E9E6B);
+  static const LinearGradient mainGradient = LinearGradient(
+    colors: [primaryDark, primary],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
 }
 
 class AppText {
@@ -60,12 +74,12 @@ class AppTheme {
         seedColor: AppColors.primary,
         primary: AppColors.primary,
         onPrimary: Colors.white,
-        secondary: AppColors.ceruleanRipple,
+        secondary: AppColors.secondary,
         surface: AppColors.card,
         onSurface: AppColors.textPrimary,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.deepSeaTeal,
+        backgroundColor: Colors.transparent,
         foregroundColor: Colors.white,
         centerTitle: true,
         elevation: 0,
@@ -92,7 +106,9 @@ class AppTheme {
         backgroundColor: AppColors.chipBg,
         selectedColor: AppColors.primary,
         side: BorderSide.none,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
         labelStyle: GoogleFonts.beVietnamPro(
           fontSize: 13,
           color: AppColors.textPrimary,

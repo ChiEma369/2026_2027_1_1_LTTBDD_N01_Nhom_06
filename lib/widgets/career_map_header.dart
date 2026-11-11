@@ -55,7 +55,7 @@ class CareerMapHeader extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
-                color: AppColors.frostWhite,
+                color: Colors.white70,
               ),
             ),
             const SizedBox(height: 12),
@@ -144,20 +144,20 @@ class _FieldChip extends StatelessWidget {
     child: GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 14),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: selected
-              ? AppColors.primary
-              : AppColors.arcticOceanBlue.withValues(alpha: 0.5),
+              ? AppColors.accent
+              : Colors.white.withValues(alpha: 0.12),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Text(
           label,
           style: TextStyle(
             fontSize: 12,
-            fontWeight: FontWeight.w600,
-            color: selected ? Colors.white : AppColors.primaryDark,
+            fontWeight: FontWeight.w700,
+            color: selected ? AppColors.primaryDark : Colors.white,
           ),
         ),
       ),

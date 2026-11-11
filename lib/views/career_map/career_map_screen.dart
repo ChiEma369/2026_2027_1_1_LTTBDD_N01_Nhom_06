@@ -39,10 +39,11 @@ class _CareerMapView extends StatelessWidget {
                 : ListView.separated(
                     padding: const EdgeInsets.all(16),
                     itemCount: niches.length,
-                    separatorBuilder: (_, __) =>
+                    separatorBuilder: (_, _) =>
                         const SizedBox(height: 12),
                     itemBuilder: (context, i) {
-                      final detail = repo.detailOf(niches[i].id)!;
+                      final detail = repo.detailOf(niches[i].id);
+                      if (detail == null) return const SizedBox.shrink();
                       return NicheCard(
                         detail: detail,
                         onTap: () => Navigator.of(context).push(

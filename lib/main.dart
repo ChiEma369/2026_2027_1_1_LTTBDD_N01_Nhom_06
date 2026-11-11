@@ -4,8 +4,6 @@ import 'package:tech_trail/viewmodels/local_view_model.dart';
 import 'package:tech_trail/app.dart';
 import 'package:tech_trail/data/repositories/app_repository.dart';
 
-import 'app.dart';
-
 void main() {
   runApp(
     MultiProvider(
