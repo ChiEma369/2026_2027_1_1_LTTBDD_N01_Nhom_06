@@ -57,4 +57,13 @@ const List<Activity> mockActivities = [
     nicheId: null,
     description: 'Thực hành thuyết trình ngắn về một dự án/ý tưởng, nhận phản hồi từ người tham gia.',
   ),
+  Activity(
+    id: 'a9',
+    title: 'REST API Mini Project',
+    type: ActivityType.miniProject,
+    nicheId: 'web',
+    description:
+        'Thực hành xây dựng REST API cơ bản bằng Node.js, '
+        'xử lý dữ liệu và kết nối API với giao diện người dùng.',
+  ),
 ];

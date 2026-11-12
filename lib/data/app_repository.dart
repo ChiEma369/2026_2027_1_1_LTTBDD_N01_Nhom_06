@@ -88,6 +88,8 @@ class AppRepository {
     );
 
     _accounts.add(account);
+    // Tự động đăng ký hoạt động thử nghiệm cho tài khoản mới
+    registerActivity(id, 'a9');
 
     // Thêm số điện thoại làm thông tin đăng nhập thay thế
     if (normalizedPhone.isNotEmpty) {
