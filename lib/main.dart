@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'views/navigation/main_navigation_view.dart';
+import 'utils/app_colors.dart';
+import 'views/auth/login_view.dart';
 
 void main() {
   runApp(const TechTrailApp());
@@ -14,8 +15,8 @@ class TechTrailApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'TechTrail',
-      theme: ThemeData(useMaterial3: true, fontFamily: 'Roboto'),
-      home: const MainNavigationView(),
+      theme: AppTheme.lightTheme,
+      home: const LoginView(),
     );
   }
 }

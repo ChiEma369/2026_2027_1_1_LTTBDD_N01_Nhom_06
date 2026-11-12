@@ -17,9 +17,14 @@ class AuthException implements Exception {
 
 /// Repository mock: toàn bộ dữ liệu nằm trong biến, mất khi tắt app.
 class AppRepository {
+  static final AppRepository instance = AppRepository();
   final List<UserAccount> _accounts = [];
   final List<ActivityFeedback> _feedbacks = [];
   final Map<String, Set<String>> _registrations = {}; // userId -> {activityId}
+
+  // Tài khoản hiện đang đăng nhập
+  UserAccount? _currentUser;
+  UserAccount? get currentUser => _currentUser;
   int _idCounter = 0;
 
   AppRepository() {
@@ -56,27 +61,60 @@ class AppRepository {
     required String identifier,
     required String password,
     required String fullName,
+    String? phone,
   }) {
-    final id = _normalize(identifier);
-    if (_accounts.any((a) => a.identifier == id)) {
+    final email = _normalize(identifier);
+    final normalizedPhone = phone == null ? '' : _normalize(phone);
+
+    // Kiểm tra email đã tồn tại
+    if (_accounts.any((a) => a.identifier == email)) {
       throw const AuthException(AuthError.identifierExists);
     }
+
+    // Kiểm tra số điện thoại đã tồn tại
+    if (normalizedPhone.isNotEmpty &&
+        _accounts.any((a) => a.identifier == normalizedPhone)) {
+      throw const AuthException(AuthError.identifierExists);
+    }
+
+    final id = _nextId('u');
+    final passwordHash = hashPassword(password);
+
     final account = UserAccount(
-      id: _nextId('u'),
-      identifier: id,
-      passwordHash: hashPassword(password),
+      id: id,
+      identifier: email,
+      passwordHash: passwordHash,
       fullName: fullName.trim(),
     );
+
     _accounts.add(account);
+
+    // Thêm số điện thoại làm thông tin đăng nhập thay thế
+    if (normalizedPhone.isNotEmpty) {
+      _accounts.add(
+        UserAccount(
+          id: id,
+          identifier: normalizedPhone,
+          passwordHash: passwordHash,
+          fullName: fullName.trim(),
+        ),
+      );
+    }
+
     return account;
   }
 
   UserAccount login(String identifier, String password) {
     final id = _normalize(identifier);
     final hash = hashPassword(password);
-    for (final a in _accounts) {
-      if (a.identifier == id && a.passwordHash == hash) return a;
+
+    for (final account in _accounts) {
+      if (account.identifier == id && account.passwordHash == hash) {
+        _currentUser = account;
+        return account;
+      }
     }
+
     throw const AuthException(AuthError.invalidCredentials);
   }
 
@@ -119,4 +157,30 @@ class AppRepository {
 
   List<ActivityFeedback> feedbacksOf(String userId) =>
       _feedbacks.where((f) => f.userId == userId).toList();
+  // Cập nhật thông tin tài khoản hiện tại
+  void updateCurrentUser({String? fullName, String? className, String? major}) {
+    final current = _currentUser;
+
+    if (current == null) return;
+
+    final updated = current.copyWith(
+      fullName: fullName,
+      className: className,
+      major: major,
+    );
+
+    // Cập nhật tất cả bản ghi cùng tài khoản
+    for (var i = 0; i < _accounts.length; i++) {
+      if (_accounts[i].id == current.id) {
+        _accounts[i] = updated;
+      }
+    }
+
+    _currentUser = updated;
+  }
+
+  // Đăng xuất
+  void logout() {
+    _currentUser = null;
+  }
 }
