@@ -1,13 +1,14 @@
 enum Difficulty { easy, fit, hard }
 
-/// Phiếu Nhật ký thực chiến
+typedef Feedback = ActivityFeedback;
+
 class ActivityFeedback {
   final String id;
   final String userId;
   final String activityId;
-  final int interestRating; // 1–5, bắt buộc
-  final Difficulty difficulty; // bắt buộc
-  final String? note; // không bắt buộc, tối đa ~150 ký tự
+  final int interestRating;
+  final Difficulty difficulty;
+  final String? note;
   final DateTime createdAt;
 
   const ActivityFeedback({

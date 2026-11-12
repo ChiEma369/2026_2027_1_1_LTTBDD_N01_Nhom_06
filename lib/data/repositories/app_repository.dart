@@ -7,6 +7,7 @@ import 'package:tech_trail/models/activity.dart';
 import 'package:tech_trail/models/feedback.dart';
 import 'package:tech_trail/models/niche.dart';
 import 'package:tech_trail/models/user_acc.dart';
+import 'package:tech_trail/services/scoring_service.dart';
 
 import 'package:tech_trail/data/mock/mock_niche_details.dart';
 import 'package:tech_trail/models/niche_detail.dart';
@@ -125,4 +126,14 @@ class AppRepository {
 
   List<ActivityFeedback> feedbacksOf(String userId) =>
       _feedbacks.where((f) => f.userId == userId).toList();
+
+  // ---------- Điểm phù hợp ngách (Scoring) ----------
+  NicheScoreResult scoreOfNiche(String nicheId, {String? userId}) {
+    final fbs = userId != null ? feedbacksOf(userId) : _feedbacks;
+    return ScoringService.calculateForNiche(
+      nicheId: nicheId,
+      feedbacks: fbs,
+      activities: activities,
+    );
+  }
 }
