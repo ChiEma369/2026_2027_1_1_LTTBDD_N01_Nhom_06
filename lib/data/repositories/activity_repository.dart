@@ -1,9 +1,9 @@
-
 import 'package:tech_trail/data/mock/mock_activities.dart';
 import 'package:tech_trail/models/activity.dart';
 import 'package:tech_trail/models/feedback.dart';
+import 'package:flutter/foundation.dart';
 
-class ActivityRepository {
+class ActivityRepository extends ChangeNotifier {
   final List<ActivityFeedback> _feedbacks = [];
   final Map<String, Set<String>> _registrations = {};
 
@@ -19,8 +19,15 @@ class ActivityRepository {
       _registrations[userId]?.contains(activityId) ?? false;
 
   // Đăng ký hoạt động
-  bool registerActivity(String userId, String activityId) =>
-      _registrations.putIfAbsent(userId, () => <String>{}).add(activityId);
+  bool registerActivity(String userId, String activityId) {
+    final success = _registrations
+        .putIfAbsent(userId, () => <String>{})
+        .add(activityId);
+    if (success) {
+      notifyListeners();
+    }
+    return success;
+  }
 
   // Danh sách ID hoạt động đã đăng ký
   List<String> registeredActivityIds(String userId) =>
@@ -55,10 +62,12 @@ class ActivityRepository {
     );
 
     _feedbacks.add(feedback);
+    notifyListeners();
     return feedback;
   }
 
   // Lấy danh sách nhật ký của sinh viên
-  List<ActivityFeedback> feedbacksOf(String userId) =>
-      _feedbacks.where((feedback) => feedback.userId == userId).toList();
+  List<ActivityFeedback> feedbacksOf(String userId) => _feedbacks
+      .where((feedback) => feedback.userId == userId)
+      .toList();
 }

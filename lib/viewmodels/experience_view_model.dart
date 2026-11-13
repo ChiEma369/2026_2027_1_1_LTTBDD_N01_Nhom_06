@@ -10,8 +10,14 @@ class ExperienceViewModel extends ChangeNotifier {
 
   ActivityType? _selectedType;
   String _searchQuery = '';
+  String? _selectedNicheId;
   String get searchQuery => _searchQuery;
   ActivityType? get selectedType => _selectedType;
+  void setNicheFilter(String? nicheId) {
+    _selectedNicheId = nicheId;
+    notifyListeners();
+  }
+
   String _getCareerName(String? nicheId) {
     for (final niche in mockNiches) {
       if (niche.id == nicheId) {
@@ -29,6 +35,9 @@ class ExperienceViewModel extends ChangeNotifier {
       final matchesType =
           _selectedType == null || activity.type == _selectedType;
 
+      final matchesNiche =
+          _selectedNicheId == null ||
+          activity.nicheId == _selectedNicheId;
       final careerName = _getCareerName(activity.nicheId);
 
       final searchableContent = [
@@ -48,7 +57,7 @@ class ExperienceViewModel extends ChangeNotifier {
                     .split(RegExp(r'[\s/(),.-]+'))
                     .contains(query)
               : searchableContent.contains(query));
-      return matchesType && matchesQuery;
+      return matchesNiche && matchesType && matchesQuery;
     }).toList();
   }
 

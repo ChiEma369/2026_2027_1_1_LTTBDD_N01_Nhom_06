@@ -4,12 +4,18 @@ import 'package:tech_trail/utils/app_theme.dart';
 import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/models/niche_detail.dart';
 import 'package:tech_trail/data/repositories/career_map_repository.dart';
-import 'package:tech_trail/widgets/niche_card.dart' show nicheIcon;
+import 'package:tech_trail/widgets/career_map/niche_card.dart'
+    show nicheIcon;
 
 class NicheDetailScreen extends StatelessWidget {
-  const NicheDetailScreen({super.key, required this.nicheId});
-  final String nicheId;
+  const NicheDetailScreen({
+    super.key,
+    required this.nicheId,
+    required this.onOpenExperience,
+  });
 
+  final String nicheId;
+  final ValueChanged<String> onOpenExperience;
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -71,7 +77,9 @@ class NicheDetailScreen extends StatelessWidget {
               Expanded(
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(colors: [AppColors.teal700, AppColors.teal500]),
+                    gradient: const LinearGradient(
+                      colors: [AppColors.teal700, AppColors.teal500],
+                    ),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: FilledButton(
@@ -86,9 +94,10 @@ class NicheDetailScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ),
-                    onPressed: () =>
-                        Navigator.of(context)
-                            .popUntil((r) => r.isFirst),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      onOpenExperience(nicheId);
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -567,5 +576,3 @@ class _StageTile extends StatelessWidget {
     );
   }
 }
-
-

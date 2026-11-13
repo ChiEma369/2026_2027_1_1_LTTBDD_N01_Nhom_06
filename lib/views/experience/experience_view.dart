@@ -4,11 +4,14 @@ import 'package:tech_trail/data/repositories/activity_repository.dart';
 import 'package:tech_trail/viewmodels/experience_view_model.dart';
 import 'package:tech_trail/models/activity.dart';
 import 'package:tech_trail/widgets/experience/activity_card.dart';
+import 'package:provider/provider.dart';
 
 import 'activity_detail_screen.dart';
 
 class ExperienceView extends StatefulWidget {
-  const ExperienceView({super.key});
+  const ExperienceView({super.key, this.nicheId});
+
+  final String? nicheId;
 
   @override
   State<ExperienceView> createState() => _ExperienceViewState();
@@ -24,10 +27,20 @@ class _ExperienceViewState extends State<ExperienceView> {
   void initState() {
     super.initState();
 
-    _repository = ActivityRepository();
+    _repository = context.read<ActivityRepository>();
     _viewModel = ExperienceViewModel(_repository);
+    _viewModel.setNicheFilter(widget.nicheId);
     _searchController = TextEditingController();
     _searchFocusNode = FocusNode();
+  }
+
+  @override
+  void didUpdateWidget(covariant ExperienceView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.nicheId != widget.nicheId) {
+      _viewModel.setNicheFilter(widget.nicheId);
+    }
   }
 
   @override

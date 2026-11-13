@@ -4,12 +4,12 @@ import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/models/niche_detail.dart';
 
 IconData nicheIcon(String nicheId) => switch (nicheId) {
-  // PhÃ¡t triá»ƒn pháº§n má»m
+  // Phát triển phần mềm
   'web' => Icons.laptop_mac,
   'mobile' => Icons.smartphone_outlined,
   'backend' => Icons.dns_outlined,
   'desktop-game' => Icons.sports_esports_outlined,
-  // Dá»¯ liá»‡u & AI
+  // Dữ liệu & AI
   'ai-ml' => Icons.psychology_outlined,
   'data-analyst' => Icons.bar_chart_outlined,
   'data-engineer' => Icons.storage_outlined,

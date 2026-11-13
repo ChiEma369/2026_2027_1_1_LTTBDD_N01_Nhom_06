@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
@@ -13,9 +12,9 @@ class AuthException implements Exception {
 }
 
 class AuthRepository {
-  final List<UserAccount> _accounts = [];
+  static final AuthRepository instance = AuthRepository._internal();
 
-  AuthRepository() {
+  AuthRepository._internal() {
     _accounts.add(
       UserAccount(
         id: 'u0',
@@ -25,7 +24,10 @@ class AuthRepository {
       ),
     );
   }
-
+  final List<UserAccount> _accounts = [];
+  UserAccount? _currentUser;
+  UserAccount? get currentUser => _currentUser;
+  int _nextId = 1;
   static String hashPassword(String password) =>
       sha256.convert(utf8.encode(password)).toString();
 
@@ -34,24 +36,45 @@ class AuthRepository {
 
   UserAccount register({
     required String identifier,
+    required String phone,
     required String password,
     required String fullName,
   }) {
-    final id = _normalize(identifier);
+    final email = _normalize(identifier);
+    final normalizedPhone = _normalize(phone);
 
-    if (_accounts.any((a) => a.identifier == id)) {
+    final identifierExists = _accounts.any(
+      (account) =>
+          account.identifier == email ||
+          account.identifier == normalizedPhone,
+    );
+
+    if (identifierExists) {
       throw const AuthException(AuthError.identifierExists);
     }
 
-    final account = UserAccount(
-      id: 'u${_accounts.length}',
-      identifier: id,
-      passwordHash: hashPassword(password),
+    final userId = 'u$_nextId';
+    _nextId++;
+
+    final passwordHash = hashPassword(password);
+
+    final emailAccount = UserAccount(
+      id: userId,
+      identifier: email,
+      passwordHash: passwordHash,
       fullName: fullName.trim(),
     );
 
-    _accounts.add(account);
-    return account;
+    final phoneAccount = UserAccount(
+      id: userId,
+      identifier: normalizedPhone,
+      passwordHash: passwordHash,
+      fullName: fullName.trim(),
+    );
+
+    _accounts.addAll([emailAccount, phoneAccount]);
+
+    return emailAccount;
   }
 
   UserAccount login(String identifier, String password) {
@@ -60,10 +83,40 @@ class AuthRepository {
 
     for (final account in _accounts) {
       if (account.identifier == id && account.passwordHash == hash) {
+        _currentUser = account;
         return account;
       }
     }
 
     throw const AuthException(AuthError.invalidCredentials);
+  }
+
+  void logout() {
+    _currentUser = null;
+  }
+
+  void updateCurrentUser({
+    String? fullName,
+    String? className,
+    String? major,
+  }) {
+    if (_currentUser == null) return;
+
+    final userId = _currentUser!.id;
+
+    for (int i = 0; i < _accounts.length; i++) {
+      if (_accounts[i].id == userId) {
+        _accounts[i] = _accounts[i].copyWith(
+          fullName: fullName,
+          className: className,
+          major: major,
+        );
+      }
+    }
+    _currentUser = _currentUser!.copyWith(
+      fullName: fullName,
+      className: className,
+      major: major,
+    );
   }
 }

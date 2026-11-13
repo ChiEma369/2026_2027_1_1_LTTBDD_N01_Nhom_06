@@ -1,11 +1,31 @@
 import 'package:tech_trail/models/niche.dart';
 
 const List<CareerField> mockFields = [
-  CareerField(id: 'software', name: 'Phát triển phần mềm'),
-  CareerField(id: 'data-ai', name: 'Dữ liệu & Trí tuệ nhân tạo'),
-  CareerField(id: 'quality-security', name: 'Chất lượng & Bảo mật'),
-  CareerField(id: 'infra-ops', name: 'Hạ tầng & Vận hành'),
-  CareerField(id: 'management', name: 'Quản trị dự án & sản phẩm'),
+  CareerField(
+    id: 'software',
+    name: 'Phát triển phần mềm',
+    shortName: 'Software',
+  ),
+  CareerField(
+    id: 'data-ai',
+    name: 'Dữ liệu & Trí tuệ nhân tạo',
+    shortName: 'Data & AI',
+  ),
+  CareerField(
+    id: 'quality-security',
+    name: 'Chất lượng & Bảo mật',
+    shortName: 'Cybersecurity',
+  ),
+  CareerField(
+    id: 'infra-ops',
+    name: 'Hạ tầng & Vận hành',
+    shortName: 'Cloud & DevOps',
+  ),
+  CareerField(
+    id: 'management',
+    name: 'Quản trị dự án & sản phẩm',
+    shortName: 'Management',
+  ),
 ];
 
 const List<Niche> mockNiches = [
@@ -37,8 +57,7 @@ const List<Niche> mockNiches = [
     id: 'mobile',
     fieldId: 'software',
     name: 'Lập trình viên Mobile',
-    shortDescription:
-        'Phát triển ứng dụng cho điện thoại Android, iOS hoặc đa nền tảng.',
+    shortDescription: 'Phát triển ứng dụng cho điện thoại Android, iOS hoặc đa nền tảng.',
   ),
   Niche(
     id: 'backend',
@@ -59,22 +78,19 @@ const List<Niche> mockNiches = [
     id: 'data-analyst',
     fieldId: 'data-ai',
     name: 'Data Analyst',
-    shortDescription:
-        'Thu thập, làm sạch và phân tích dữ liệu để hỗ trợ ra quyết định.',
+    shortDescription: 'Thu thập, làm sạch và phân tích dữ liệu để hỗ trợ ra quyết định.',
   ),
   Niche(
     id: 'data-engineer',
     fieldId: 'data-ai',
     name: 'Data Engineer',
-    shortDescription:
-        'Xây dựng hệ thống thu thập, lưu trữ và xử lý dữ liệu quy mô lớn.',
+    shortDescription: 'Xây dựng hệ thống thu thập, lưu trữ và xử lý dữ liệu quy mô lớn.',
   ),
   Niche(
     id: 'ai-ml',
     fieldId: 'data-ai',
     name: 'Kỹ sư AI/Machine Learning',
-    shortDescription:
-        'Xây dựng và triển khai các mô hình học máy cho bài toán thực tế.',
+    shortDescription: 'Xây dựng và triển khai các mô hình học máy cho bài toán thực tế.',
     isPriority: true,
     jobDescription:
         'Nghiên cứu và xây dựng các mô hình học máy để giải quyết bài toán thực tế (phân '
@@ -97,15 +113,13 @@ const List<Niche> mockNiches = [
     id: 'qa-tester',
     fieldId: 'quality-security',
     name: 'QA/Tester',
-    shortDescription:
-        'Kiểm tra chất lượng phần mềm, tìm lỗi trước khi đến tay người dùng.',
+    shortDescription: 'Kiểm tra chất lượng phần mềm, tìm lỗi trước khi đến tay người dùng.',
   ),
   Niche(
     id: 'security',
     fieldId: 'quality-security',
     name: 'Chuyên viên An toàn thông tin',
-    shortDescription:
-        'Phát hiện lỗ hổng, kiểm thử xâm nhập và ứng phó sự cố an ninh mạng.',
+    shortDescription: 'Phát hiện lỗ hổng, kiểm thử xâm nhập và ứng phó sự cố an ninh mạng.',
     isPriority: true,
     jobDescription:
         'Đánh giá và phát hiện lỗ hổng bảo mật của hệ thống/ứng dụng, thực hiện kiểm thử '
@@ -128,14 +142,14 @@ const List<Niche> mockNiches = [
     id: 'sys-net-admin',
     fieldId: 'infra-ops',
     name: 'Quản trị hệ thống & mạng',
-    shortDescription: 'Vận hành, giám sát máy chủ và hạ tầng mạng của tổ chức.',
+    shortDescription:
+        'Vận hành, giám sát máy chủ và hạ tầng mạng của tổ chức.',
   ),
   Niche(
     id: 'cloud-devops',
     fieldId: 'infra-ops',
     name: 'Kỹ sư Cloud/DevOps',
-    shortDescription:
-        'Triển khai, tự động hoá và vận hành ứng dụng trên nền tảng đám mây.',
+    shortDescription: 'Triển khai, tự động hoá và vận hành ứng dụng trên nền tảng đám mây.',
     isPriority: true,
     jobDescription:
         'Triển khai và vận hành hạ tầng ứng dụng trên nền tảng điện toán đám mây (AWS, '
@@ -157,21 +171,18 @@ const List<Niche> mockNiches = [
     id: 'ba',
     fieldId: 'management',
     name: 'Business Analyst',
-    shortDescription:
-        'Cầu nối giữa nhu cầu kinh doanh và đội ngũ phát triển phần mềm.',
+    shortDescription: 'Cầu nối giữa nhu cầu kinh doanh và đội ngũ phát triển phần mềm.',
   ),
   Niche(
     id: 'pm',
     fieldId: 'management',
     name: 'Project Manager',
-    shortDescription:
-        'Lập kế hoạch, điều phối nguồn lực và theo dõi tiến độ dự án.',
+    shortDescription: 'Lập kế hoạch, điều phối nguồn lực và theo dõi tiến độ dự án.',
   ),
   Niche(
     id: 'po',
     fieldId: 'management',
     name: 'Product Owner',
-    shortDescription:
-        'Định hướng sản phẩm và ưu tiên tính năng theo giá trị người dùng.',
+    shortDescription: 'Định hướng sản phẩm và ưu tiên tính năng theo giá trị người dùng.',
   ),
 ];

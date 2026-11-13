@@ -6,6 +6,7 @@ import 'package:tech_trail/data/repositories/activity_repository.dart';
 import 'package:tech_trail/data/mock/mock_niches.dart';
 import 'package:tech_trail/widgets/career_map/niche_card.dart';
 import 'package:tech_trail/views/career_map/niche_detail_screen.dart';
+import 'package:tech_trail/data/repositories/auth_repository.dart';
 
 class ActivityDetailScreen extends StatefulWidget {
   final Activity activity;
@@ -22,11 +23,12 @@ class ActivityDetailScreen extends StatefulWidget {
 }
 
 class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
-  static const String _userId = 'demo_student';
+  String get _userId => AuthRepository.instance.currentUser?.id ?? '';
   bool _isBookmarked = false;
   bool get _isRegistered =>
       widget.repository.isRegistered(_userId, widget.activity.id);
   void _registerActivity() {
+    if (_userId.isEmpty) return;
     if (_isRegistered) return;
     final success = widget.repository.registerActivity(
       _userId,
@@ -344,7 +346,13 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
 
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (_) => NicheDetailScreen(nicheId: nicheId),
+                  builder: (_) => NicheDetailScreen(
+                    nicheId: nicheId,
+                    onOpenExperience: (_) {
+                      Navigator.of(context)
+                          .popUntil((route) => route.isFirst);
+                    },
+                  ),
                 ),
               );
             },
