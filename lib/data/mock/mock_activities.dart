@@ -11,6 +11,35 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Xây dựng một trang portfolio cá nhân bằng HTML, CSS và JavaScript, biết cách tổ chức bố cục, trình bày thông tin và thiết kế giao diện tương thích với nhiều kích thước màn hình.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Xây dựng cấu trúc trang bằng HTML',
+        duration: '45 phút',
+        description: 'Tạo các khu vực giới thiệu bản thân, kỹ năng, dự án cá nhân và thông tin liên hệ bằng các thẻ HTML semantic.',
+      ),
+      ActivityLesson(
+        title: 'Thiết kế giao diện bằng CSS',
+        duration: '75 phút',
+        description: 'Sử dụng Flexbox, Grid, màu sắc và typography để xây dựng giao diện portfolio có bố cục rõ ràng.',
+      ),
+      ActivityLesson(
+        title: 'Tạo tương tác và Responsive',
+        duration: '60 phút',
+        description: 'Sử dụng JavaScript để bổ sung tương tác cơ bản và Media Query để tối ưu giao diện trên điện thoại.',
+      ),
+    ],
+    tools: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'Visual Studio Code',
+      'Chrome DevTools',
+    ],
+    relatedCareer: 'Frontend Developer',
+    relatedCareerNicheId: 'web',
+    relatedCareerDescription: 'Phát triển giao diện người dùng cho website và ứng dụng web, tập trung vào trải nghiệm, khả năng tương tác và tính tương thích trên nhiều thiết bị.',
   ),
   Activity(
     id: 'a2',
@@ -21,6 +50,35 @@ const List<Activity> mockActivities = [
     duration: '4 giờ',
     rating: 4.7,
     participantCount: 98,
+    objective: 'Xây dựng REST API quản lý danh sách sản phẩm, hiểu cách thiết kế Endpoint, xử lý yêu cầu HTTP và trả dữ liệu JSON để giao diện web có thể sử dụng.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Khởi tạo dự án Node.js và Express.js',
+        duration: '45 phút',
+        description: 'Tạo dự án Node.js, cài đặt Express.js và xây dựng máy chủ HTTP đầu tiên.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng API quản lý sản phẩm',
+        duration: '90 phút',
+        description: 'Tạo các Endpoint GET, POST, PUT và DELETE để xem, thêm, cập nhật và xóa sản phẩm.',
+      ),
+      ActivityLesson(
+        title: 'Kiểm thử và kết nối API',
+        duration: '45 phút',
+        description: 'Sử dụng Postman kiểm tra các Endpoint và tìm hiểu cách giao diện web gửi yêu cầu đến API.',
+      ),
+    ],
+    tools: [
+      'Node.js',
+      'Express.js',
+      'Postman',
+      'JSON',
+      'Visual Studio Code',
+    ],
+    relatedCareer: 'Backend Developer',
+    relatedCareerNicheId: 'backend',
+    relatedCareerDescription: 'Phát triển logic xử lý phía máy chủ, thiết kế API và quản lý dữ liệu để cung cấp chức năng cho ứng dụng.',
   ),
 
   // AI & Machine Learning
@@ -33,6 +91,36 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.9,
     participantCount: 210,
+    objective: 'Làm quen với quy trình xây dựng mô hình phân loại ảnh, từ chuẩn bị dữ liệu, huấn luyện đến đánh giá kết quả dự đoán.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Chuẩn bị và khám phá dữ liệu ảnh',
+        duration: '45 phút',
+        description: 'Tìm hiểu cấu trúc bộ dữ liệu, phân chia tập huấn luyện và tập kiểm tra, quan sát các nhóm ảnh cần phân loại.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng và huấn luyện mô hình',
+        duration: '75 phút',
+        description: 'Sử dụng Python và thư viện Machine Learning để xây dựng, huấn luyện mô hình phân loại ảnh cơ bản.',
+      ),
+      ActivityLesson(
+        title: 'Đánh giá kết quả dự đoán',
+        duration: '60 phút',
+        description: 'Sử dụng Accuracy và Confusion Matrix để đánh giá kết quả, nhận diện những trường hợp mô hình dự đoán sai.',
+      ),
+    ],
+    tools: [
+      'Python',
+      'Jupyter Notebook',
+      'NumPy',
+      'Pandas',
+      'Scikit-learn',
+      'Matplotlib',
+    ],
+    relatedCareer: 'Machine Learning Engineer',
+    relatedCareerNicheId: 'ai-ml',
+    relatedCareerDescription: 'Xây dựng, huấn luyện và triển khai các mô hình Machine Learning nhằm giải quyết những bài toán thực tế bằng dữ liệu.',
   ),
   Activity(
     id: 'a4',
@@ -43,6 +131,34 @@ const List<Activity> mockActivities = [
     duration: '2 giờ',
     rating: 4.8,
     participantCount: 186,
+    objective: 'Hiểu khái niệm cơ bản, các nhóm bài toán phổ biến và quy trình ứng dụng Machine Learning trong thực tế, từ đó định hướng lộ trình học tập phù hợp.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Tìm hiểu Machine Learning',
+        duration: '35 phút',
+        description: 'Phân biệt AI, Machine Learning và Deep Learning; tìm hiểu cách máy tính học từ dữ liệu.',
+      ),
+      ActivityLesson(
+        title: 'Khám phá các bài toán thực tế',
+        duration: '45 phút',
+        description: 'Tìm hiểu các ví dụ về phân loại, dự đoán, phân nhóm và hệ thống gợi ý trong doanh nghiệp.',
+      ),
+      ActivityLesson(
+        title: 'Định hướng lộ trình học tập',
+        duration: '40 phút',
+        description: 'Tìm hiểu những kiến thức nền tảng về Python, toán học, dữ liệu và các thư viện thường dùng trong Machine Learning.',
+      ),
+    ],
+    tools: [
+      'Python',
+      'Jupyter Notebook',
+      'Scikit-learn',
+      'Google Colab',
+    ],
+    relatedCareer: 'Machine Learning Engineer',
+    relatedCareerNicheId: 'ai-ml',
+    relatedCareerDescription: 'Nghiên cứu và phát triển các mô hình học máy, xử lý dữ liệu và xây dựng giải pháp thông minh cho các bài toán thực tế.',
   ),
 
   // An toàn thông tin
@@ -55,6 +171,34 @@ const List<Activity> mockActivities = [
     duration: '2 giờ',
     rating: 4.9,
     participantCount: 315,
+    objective: 'Làm quen với môi trường CTF, nhận diện một số lỗ hổng bảo mật phổ biến và hiểu cách tiếp cận khi phân tích vấn đề an toàn thông tin.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Làm quen với CTF',
+        duration: '30 phút',
+        description: 'Tìm hiểu các dạng thử thách CTF và cách tiếp cận một bài toán bảo mật cơ bản.',
+      ),
+      ActivityLesson(
+        title: 'Thực hành tìm kiếm lỗ hổng',
+        duration: '60 phút',
+        description: 'Thực hiện các thử thách trong môi trường mô phỏng an toàn, nhận diện lỗi đầu vào và cấu hình bảo mật.',
+      ),
+      ActivityLesson(
+        title: 'Phân tích và ghi nhận kết quả',
+        duration: '30 phút',
+        description: 'Tổng hợp cách phát hiện vấn đề, nguyên nhân và biện pháp khắc phục.',
+      ),
+    ],
+    tools: [
+      'Kali Linux',
+      'Burp Suite Community',
+      'Web Browser',
+      'CTF Platform',
+    ],
+    relatedCareer: 'Penetration Tester',
+    relatedCareerNicheId: 'security',
+    relatedCareerDescription: 'Đánh giá khả năng bảo mật của hệ thống thông qua việc kiểm thử có kiểm soát, phát hiện và báo cáo các lỗ hổng bảo mật.',
   ),
   Activity(
     id: 'a6',
@@ -65,6 +209,29 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 138,
+    objective: 'Hiểu vai trò của chuyên gia an toàn thông tin, các vị trí công việc phổ biến và kiến thức cần thiết để theo đuổi lĩnh vực bảo mật.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Tổng quan về An toàn thông tin',
+        duration: '45 phút',
+        description: 'Tìm hiểu các nguyên tắc bảo mật, những nguy cơ thường gặp và vai trò của bảo mật trong hệ thống công nghệ.',
+      ),
+      ActivityLesson(
+        title: 'Khám phá các vị trí nghề nghiệp',
+        duration: '60 phút',
+        description: 'Tìm hiểu công việc của Penetration Tester, Security Analyst và chuyên viên SOC.',
+      ),
+      ActivityLesson(
+        title: 'Định hướng học tập và phát triển',
+        duration: '75 phút',
+        description: 'Tìm hiểu kiến thức mạng máy tính, hệ điều hành, lập trình và các chứng chỉ bảo mật phổ biến.',
+      ),
+    ],
+    tools: ['Linux', 'Wireshark', 'Kali Linux', 'MITRE ATT&CK'],
+    relatedCareer: 'Security Analyst',
+    relatedCareerNicheId: 'security',
+    relatedCareerDescription: 'Theo dõi, phân tích và xử lý các dấu hiệu bất thường nhằm phát hiện và ngăn chặn những nguy cơ tấn công hệ thống.',
   ),
 
   // Cloud & DevOps
@@ -77,6 +244,35 @@ const List<Activity> mockActivities = [
     duration: '2 giờ',
     rating: 4.8,
     participantCount: 160,
+    objective: 'Hiểu cách đóng gói ứng dụng bằng Docker và nắm được các bước cơ bản để triển khai ứng dụng trong môi trường Cloud.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Tìm hiểu Docker',
+        duration: '30 phút',
+        description: 'Làm quen với Container, Image và cách Docker hỗ trợ đóng gói ứng dụng.',
+      ),
+      ActivityLesson(
+        title: 'Đóng gói ứng dụng',
+        duration: '60 phút',
+        description: 'Viết Dockerfile, xây dựng Docker Image và chạy ứng dụng trong Container.',
+      ),
+      ActivityLesson(
+        title: 'Triển khai ứng dụng',
+        duration: '30 phút',
+        description: 'Tìm hiểu quy trình đưa ứng dụng lên môi trường Cloud và kiểm tra khả năng hoạt động.',
+      ),
+    ],
+    tools: [
+      'Docker',
+      'Docker Desktop',
+      'Linux',
+      'Cloud Platform',
+      'Visual Studio Code',
+    ],
+    relatedCareer: 'DevOps Engineer',
+    relatedCareerNicheId: 'cloud-devops',
+    relatedCareerDescription: 'Tự động hóa quy trình phát triển, kiểm thử và triển khai phần mềm, đồng thời hỗ trợ vận hành hệ thống ổn định.',
   ),
 
   // Kỹ năng mềm
@@ -89,6 +285,34 @@ const List<Activity> mockActivities = [
     duration: '2 giờ',
     rating: 4.8,
     participantCount: 170,
+    objective: 'Rèn luyện khả năng trình bày ý tưởng, truyền đạt nội dung kỹ thuật rõ ràng và phối hợp với các thành viên khi thuyết trình dự án.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Xây dựng nội dung thuyết trình',
+        duration: '30 phút',
+        description: 'Xác định mục tiêu, đối tượng nghe và sắp xếp nội dung theo bố cục mở đầu, nội dung chính và kết luận.',
+      ),
+      ActivityLesson(
+        title: 'Thực hành trình bày dự án',
+        duration: '60 phút',
+        description: 'Các thành viên phối hợp giới thiệu vấn đề, giải pháp, chức năng và kết quả của dự án nhóm.',
+      ),
+      ActivityLesson(
+        title: 'Nhận phản hồi và cải thiện',
+        duration: '30 phút',
+        description: 'Luyện tập trả lời câu hỏi, tiếp nhận góp ý và điều chỉnh phong cách trình bày.',
+      ),
+    ],
+    tools: [
+      'Microsoft PowerPoint',
+      'Canva',
+      'Google Slides',
+      'Project Presentation',
+    ],
+    relatedCareer: 'Project Manager',
+    relatedCareerNicheId: 'pm',
+    relatedCareerDescription: 'Lập kế hoạch, điều phối thành viên và truyền đạt thông tin để đảm bảo dự án đạt được mục tiêu đề ra.',
   ),
 
   // Mobile
@@ -101,6 +325,34 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Xây dựng ứng dụng ghi chú cơ bản bằng Flutter, hiểu cách tổ chức giao diện và quản lý trạng thái dữ liệu trong ứng dụng di động.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Thiết kế giao diện ứng dụng',
+        duration: '60 phút',
+        description: 'Sử dụng các Widget cơ bản để xây dựng màn hình danh sách ghi chú và màn hình nhập nội dung.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng chức năng quản lý ghi chú',
+        duration: '90 phút',
+        description: 'Thực hiện thêm, xem, chỉnh sửa và xóa ghi chú bằng các thao tác trên giao diện.',
+      ),
+      ActivityLesson(
+        title: 'Kiểm tra và hoàn thiện ứng dụng',
+        duration: '30 phút',
+        description: 'Kiểm tra các chức năng, xử lý trường hợp dữ liệu rỗng và hoàn thiện trải nghiệm sử dụng.',
+      ),
+    ],
+    tools: [
+      'Flutter',
+      'Dart',
+      'Visual Studio Code',
+      'Android Studio',
+    ],
+    relatedCareer: 'Mobile Developer',
+    relatedCareerNicheId: 'mobile',
+    relatedCareerDescription: 'Phát triển ứng dụng trên thiết bị di động, xây dựng giao diện và xử lý chức năng đáp ứng nhu cầu người dùng.',
   ),
   Activity(
     id: 'a10',
@@ -112,6 +364,35 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Nắm được cách thiết kế nhiều màn hình ứng dụng di động và xây dựng luồng điều hướng giữa các màn hình bằng Flutter.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Phân tích và thiết kế màn hình',
+        duration: '45 phút',
+        description: 'Xác định các màn hình cần thiết và phác thảo bố cục giao diện cho một ứng dụng di động.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng giao diện bằng Flutter',
+        duration: '75 phút',
+        description: 'Sử dụng Scaffold, Row, Column, ListView và các Widget để tạo giao diện ứng dụng.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng điều hướng',
+        duration: '60 phút',
+        description: 'Sử dụng Navigator và Route để chuyển màn hình, truyền dữ liệu và quay lại màn hình trước.',
+      ),
+    ],
+    tools: [
+      'Flutter',
+      'Dart',
+      'Material Design',
+      'Android Studio',
+      'Visual Studio Code',
+    ],
+    relatedCareer: 'Mobile Developer',
+    relatedCareerNicheId: 'mobile',
+    relatedCareerDescription: 'Thiết kế và phát triển ứng dụng di động, đảm bảo giao diện trực quan và luồng sử dụng thuận tiện.',
   ),
 
   // Backend
@@ -145,6 +426,7 @@ const List<Activity> mockActivities = [
     ],
     tools: ['Node.js', 'Express.js', 'Postman', 'Visual Studio Code'],
     relatedCareer: 'Backend Developer',
+    relatedCareerNicheId: 'backend',
     relatedCareerDescription: 'Phát triển và duy trì hệ thống phía máy chủ, xây dựng API và xử lý dữ liệu cho ứng dụng.',
   ),
   Activity(
@@ -156,6 +438,35 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Hiểu sự khác biệt giữa xác thực và phân quyền, thực hành bảo vệ API bằng token và kiểm soát quyền truy cập của người dùng.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Tìm hiểu xác thực và phân quyền',
+        duration: '45 phút',
+        description: 'Phân biệt Authentication và Authorization, tìm hiểu quy trình đăng nhập và quản lý phiên người dùng.',
+      ),
+      ActivityLesson(
+        title: 'Thực hành xác thực bằng JWT',
+        duration: '75 phút',
+        description: 'Tạo token sau khi đăng nhập và sử dụng Middleware để xác minh token trong các yêu cầu API.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng phân quyền truy cập',
+        duration: '60 phút',
+        description: 'Phân quyền theo vai trò người dùng và kiểm tra quyền truy cập vào các Endpoint được bảo vệ.',
+      ),
+    ],
+    tools: [
+      'Node.js',
+      'Express.js',
+      'JWT',
+      'Postman',
+      'Visual Studio Code',
+    ],
+    relatedCareer: 'Backend Developer',
+    relatedCareerNicheId: 'backend',
+    relatedCareerDescription: 'Xây dựng hệ thống phía máy chủ, triển khai cơ chế xác thực, phân quyền và bảo vệ dữ liệu của ứng dụng.',
   ),
 
   // Desktop & Game
@@ -168,6 +479,29 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Làm quen với quy trình phát triển trò chơi 2D, xây dựng nhân vật có thể điều khiển và thiết lập các quy tắc chơi cơ bản.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Làm quen với Unity và Scene',
+        duration: '45 phút',
+        description: 'Tìm hiểu giao diện Unity, tạo dự án 2D và thiết lập các đối tượng trong Scene.',
+      ),
+      ActivityLesson(
+        title: 'Tạo nhân vật và điều khiển',
+        duration: '75 phút',
+        description: 'Sử dụng Sprite và C# Script để xây dựng nhân vật có thể di chuyển trong trò chơi.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng luật chơi',
+        duration: '60 phút',
+        description: 'Thiết lập vật phẩm, điều kiện thắng thua và kiểm tra hoạt động của trò chơi.',
+      ),
+    ],
+    tools: ['Unity', 'C#', 'Visual Studio', 'Unity Asset Store'],
+    relatedCareer: 'Game Developer',
+    relatedCareerNicheId: 'desktop-game',
+    relatedCareerDescription: 'Phát triển trò chơi điện tử, xây dựng cơ chế gameplay, xử lý tương tác và tối ưu trải nghiệm người chơi.',
   ),
   Activity(
     id: 'a14',
@@ -178,6 +512,29 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Hiểu cách xử lý tương tác giữa các đối tượng trong trò chơi và thực hành xây dựng hệ thống tính điểm, cấp độ.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Tìm hiểu hệ thống va chạm',
+        duration: '45 phút',
+        description: 'Tìm hiểu Collider và Rigidbody, phân biệt va chạm vật lý với Trigger trong Unity.',
+      ),
+      ActivityLesson(
+        title: 'Xử lý tương tác trong Game',
+        duration: '75 phút',
+        description: 'Viết Script để phát hiện va chạm giữa nhân vật, vật phẩm và chướng ngại vật.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng hệ thống điểm và cấp độ',
+        duration: '60 phút',
+        description: 'Cập nhật điểm số khi người chơi thu thập vật phẩm và thiết lập điều kiện chuyển cấp độ.',
+      ),
+    ],
+    tools: ['Unity', 'C#', 'Visual Studio', 'Unity Physics'],
+    relatedCareer: 'Game Developer',
+    relatedCareerNicheId: 'desktop-game',
+    relatedCareerDescription: 'Lập trình cơ chế trò chơi, xử lý vật lý, tương tác và các hệ thống gameplay.',
   ),
   // Data Analyst
   Activity(
@@ -189,6 +546,35 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Thực hiện quy trình phân tích dữ liệu bán hàng từ bước làm sạch, khám phá đến trực quan hóa nhằm tìm ra xu hướng và hỗ trợ quyết định kinh doanh.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Khám phá và làm sạch dữ liệu',
+        duration: '45 phút',
+        description: 'Đọc dữ liệu CSV, kiểm tra dữ liệu thiếu, trùng lặp và chuẩn hóa các trường thông tin.',
+      ),
+      ActivityLesson(
+        title: 'Phân tích dữ liệu bán hàng',
+        duration: '75 phút',
+        description: 'Sử dụng Pandas để tính doanh thu, số lượng sản phẩm bán ra và so sánh kết quả theo thời gian.',
+      ),
+      ActivityLesson(
+        title: 'Trực quan hóa và rút ra nhận xét',
+        duration: '60 phút',
+        description: 'Xây dựng biểu đồ doanh thu, phân tích xu hướng và trình bày những phát hiện quan trọng.',
+      ),
+    ],
+    tools: [
+      'Python',
+      'Jupyter Notebook',
+      'Pandas',
+      'Matplotlib',
+      'Excel',
+    ],
+    relatedCareer: 'Data Analyst',
+    relatedCareerNicheId: 'data-analyst',
+    relatedCareerDescription: 'Thu thập, xử lý và phân tích dữ liệu để tìm ra thông tin có giá trị, hỗ trợ doanh nghiệp đưa ra quyết định.',
   ),
   Activity(
     id: 'a16',
@@ -199,6 +585,29 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Biết cách chuyển đổi dữ liệu thành báo cáo trực quan, xây dựng Dashboard và sử dụng các chỉ số để theo dõi hoạt động kinh doanh.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Kết nối và xử lý dữ liệu',
+        duration: '45 phút',
+        description: 'Nhập dữ liệu từ Excel hoặc CSV, kiểm tra và xử lý dữ liệu bằng Power Query.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng biểu đồ và chỉ số',
+        duration: '75 phút',
+        description: 'Tạo biểu đồ doanh thu, số lượng đơn hàng và các chỉ số KPI bằng Power BI.',
+      ),
+      ActivityLesson(
+        title: 'Thiết kế Dashboard',
+        duration: '60 phút',
+        description: 'Sắp xếp biểu đồ, thêm bộ lọc và hoàn thiện Dashboard phục vụ theo dõi kinh doanh.',
+      ),
+    ],
+    tools: ['Power BI', 'Power Query', 'Excel', 'DAX'],
+    relatedCareer: 'BI Analyst',
+    relatedCareerNicheId: 'data-analyst',
+    relatedCareerDescription: 'Xây dựng báo cáo và hệ thống Dashboard, chuyển dữ liệu thành thông tin trực quan phục vụ quản lý và ra quyết định.',
   ),
 
   // Data Engineer
@@ -211,6 +620,35 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Hiểu quy trình ETL và thực hành xây dựng luồng dữ liệu từ nguồn CSV, qua bước xử lý và cuối cùng lưu vào cơ sở dữ liệu.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Extract – Trích xuất dữ liệu',
+        duration: '45 phút',
+        description: 'Đọc dữ liệu từ file CSV bằng Python và kiểm tra cấu trúc dữ liệu đầu vào.',
+      ),
+      ActivityLesson(
+        title: 'Transform – Biến đổi dữ liệu',
+        duration: '75 phút',
+        description: 'Làm sạch, chuẩn hóa định dạng và xử lý các giá trị không hợp lệ bằng Pandas.',
+      ),
+      ActivityLesson(
+        title: 'Load – Lưu dữ liệu',
+        duration: '60 phút',
+        description: 'Đưa dữ liệu đã xử lý vào cơ sở dữ liệu và kiểm tra kết quả bằng câu lệnh SQL.',
+      ),
+    ],
+    tools: [
+      'Python',
+      'Pandas',
+      'SQL',
+      'PostgreSQL',
+      'Jupyter Notebook',
+    ],
+    relatedCareer: 'Data Engineer',
+    relatedCareerNicheId: 'data-engineer',
+    relatedCareerDescription: 'Thiết kế và xây dựng hệ thống thu thập, xử lý, lưu trữ và cung cấp dữ liệu phục vụ phân tích.',
   ),
   Activity(
     id: 'a18',
@@ -221,6 +659,29 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Biết cách nhận diện các vấn đề chất lượng dữ liệu và xây dựng quy trình kiểm tra nhằm đảm bảo dữ liệu chính xác, nhất quán và đáng tin cậy.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Nhận diện vấn đề dữ liệu',
+        duration: '45 phút',
+        description: 'Kiểm tra dữ liệu thiếu, trùng lặp, sai kiểu dữ liệu và các giá trị không hợp lệ.',
+      ),
+      ActivityLesson(
+        title: 'Thực hành làm sạch dữ liệu',
+        duration: '75 phút',
+        description: 'Sử dụng Pandas để xử lý giá trị thiếu, loại bỏ bản ghi trùng và chuẩn hóa dữ liệu.',
+      ),
+      ActivityLesson(
+        title: 'Kiểm tra chất lượng sau xử lý',
+        duration: '60 phút',
+        description: 'Thiết lập các quy tắc kiểm tra và so sánh dữ liệu trước, sau khi làm sạch.',
+      ),
+    ],
+    tools: ['Python', 'Pandas', 'Jupyter Notebook', 'SQL', 'Excel'],
+    relatedCareer: 'Data Engineer',
+    relatedCareerNicheId: 'data-engineer',
+    relatedCareerDescription: 'Đảm bảo dữ liệu được thu thập, xử lý và lưu trữ đúng quy chuẩn để phục vụ các hệ thống dữ liệu.',
   ),
   // QA / Tester
   Activity(
@@ -232,6 +693,29 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Biết cách phân tích yêu cầu phần mềm và thiết kế bộ Test Case có hệ thống để kiểm tra tính đúng đắn của các chức năng website.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Phân tích yêu cầu kiểm thử',
+        duration: '45 phút',
+        description: 'Đọc yêu cầu chức năng và xác định các luồng sử dụng cần kiểm tra.',
+      ),
+      ActivityLesson(
+        title: 'Thiết kế Test Case',
+        duration: '75 phút',
+        description: 'Viết Test Case gồm tiền điều kiện, dữ liệu đầu vào, các bước thực hiện và kết quả mong đợi.',
+      ),
+      ActivityLesson(
+        title: 'Rà soát bộ kiểm thử',
+        duration: '60 phút',
+        description: 'Kiểm tra tính đầy đủ của Test Case và bổ sung các trường hợp biên, dữ liệu không hợp lệ.',
+      ),
+    ],
+    tools: ['Test Case Template', 'Excel', 'Google Sheets', 'Jira'],
+    relatedCareer: 'QA Engineer',
+    relatedCareerNicheId: 'qa-tester',
+    relatedCareerDescription: 'Đảm bảo chất lượng phần mềm thông qua việc phân tích yêu cầu, thiết kế kiểm thử và đánh giá sản phẩm.',
   ),
   Activity(
     id: 'a20',
@@ -242,6 +726,29 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.8,
     participantCount: 156,
+    objective: 'Thực hành kiểm thử chức năng phần mềm, phát hiện lỗi và ghi nhận kết quả theo quy trình kiểm thử cơ bản.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Chuẩn bị môi trường kiểm thử',
+        duration: '30 phút',
+        description: 'Tìm hiểu chức năng cần kiểm tra và chuẩn bị dữ liệu phục vụ kiểm thử.',
+      ),
+      ActivityLesson(
+        title: 'Thực hiện kiểm thử chức năng',
+        duration: '90 phút',
+        description: 'Thực hiện các Test Case, so sánh kết quả thực tế với kết quả mong đợi và phát hiện lỗi.',
+      ),
+      ActivityLesson(
+        title: 'Ghi nhận và báo cáo lỗi',
+        duration: '60 phút',
+        description: 'Viết Bug Report với thông tin mô tả lỗi, mức độ nghiêm trọng và các bước tái hiện.',
+      ),
+    ],
+    tools: ['Jira', 'Postman', 'Chrome DevTools', 'Excel'],
+    relatedCareer: 'Software Tester',
+    relatedCareerNicheId: 'qa-tester',
+    relatedCareerDescription: 'Kiểm tra phần mềm, phát hiện lỗi và phối hợp với nhóm phát triển để cải thiện chất lượng sản phẩm.',
   ),
 
   // Quản trị hệ thống và mạng
@@ -254,6 +761,34 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.7,
     participantCount: 209,
+    objective: 'Hiểu nguyên lý kết nối mạng LAN và thực hành cấu hình địa chỉ IP, kiểm tra kết nối giữa các thiết bị trong mạng.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Tìm hiểu cấu trúc mạng LAN',
+        duration: '45 phút',
+        description: 'Tìm hiểu các thiết bị mạng cơ bản, mô hình kết nối và vai trò của địa chỉ IP.',
+      ),
+      ActivityLesson(
+        title: 'Cấu hình địa chỉ IP',
+        duration: '75 phút',
+        description: 'Thiết lập địa chỉ IP, Subnet Mask và Default Gateway cho các thiết bị trong mạng mô phỏng.',
+      ),
+      ActivityLesson(
+        title: 'Kiểm tra kết nối mạng',
+        duration: '60 phút',
+        description: 'Sử dụng Ping và các lệnh mạng cơ bản để kiểm tra, xác định lỗi kết nối.',
+      ),
+    ],
+    tools: [
+      'Cisco Packet Tracer',
+      'Windows CMD',
+      'Wireshark',
+      'Ethernet',
+    ],
+    relatedCareer: 'Network Administrator',
+    relatedCareerNicheId: 'sys-net-admin',
+    relatedCareerDescription: 'Quản lý, cấu hình và duy trì hệ thống mạng, đảm bảo các thiết bị và dịch vụ mạng hoạt động ổn định.',
   ),
   Activity(
     id: 'a22',
@@ -264,6 +799,29 @@ const List<Activity> mockActivities = [
     duration: '2 giờ',
     rating: 4.4,
     participantCount: 91,
+    objective: 'Biết cách theo dõi trạng thái mạng, nhận diện các dấu hiệu bất thường và thực hiện những bước xử lý sự cố kết nối phổ biến.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Tìm hiểu công cụ giám sát mạng',
+        duration: '30 phút',
+        description: 'Tìm hiểu các thông số cơ bản như độ trễ, lưu lượng và tình trạng kết nối.',
+      ),
+      ActivityLesson(
+        title: 'Phát hiện sự cố mạng',
+        duration: '60 phút',
+        description: 'Sử dụng Ping, Traceroute và Wireshark để kiểm tra và xác định nguyên nhân sự cố.',
+      ),
+      ActivityLesson(
+        title: 'Thực hành xử lý sự cố',
+        duration: '30 phút',
+        description: 'Phân tích các tình huống mất kết nối, cấu hình sai IP và đề xuất biện pháp khắc phục.',
+      ),
+    ],
+    tools: ['Wireshark', 'Cisco Packet Tracer', 'Ping', 'Traceroute'],
+    relatedCareer: 'Network Administrator',
+    relatedCareerNicheId: 'sys-net-admin',
+    relatedCareerDescription: 'Giám sát, vận hành và xử lý sự cố hạ tầng mạng để duy trì khả năng kết nối của hệ thống.',
   ),
   // Business Analyst
   Activity(
@@ -275,6 +833,29 @@ const List<Activity> mockActivities = [
     duration: '4 giờ',
     rating: 4.9,
     participantCount: 238,
+    objective: 'Thực hành quy trình thu thập, phân tích và mô tả yêu cầu để xác định hệ thống cần giải quyết vấn đề gì và đáp ứng nhu cầu nào của người dùng.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Thu thập yêu cầu',
+        duration: '60 phút',
+        description: 'Xác định các bên liên quan và thực hành thu thập thông tin thông qua phỏng vấn, quan sát và khảo sát.',
+      ),
+      ActivityLesson(
+        title: 'Phân tích yêu cầu',
+        duration: '90 phút',
+        description: 'Phân loại yêu cầu chức năng, phi chức năng và xác định phạm vi hệ thống.',
+      ),
+      ActivityLesson(
+        title: 'Mô tả yêu cầu hệ thống',
+        duration: '90 phút',
+        description: 'Viết tài liệu mô tả yêu cầu và rà soát tính rõ ràng, đầy đủ, nhất quán.',
+      ),
+    ],
+    tools: ['Microsoft Word', 'Draw.io', 'Google Docs', 'Jira'],
+    relatedCareer: 'Business Analyst',
+    relatedCareerNicheId: 'ba',
+    relatedCareerDescription: 'Phân tích nhu cầu nghiệp vụ, làm cầu nối giữa người dùng và đội ngũ phát triển để xác định yêu cầu hệ thống.',
   ),
   Activity(
     id: 'a24',
@@ -285,6 +866,29 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.6,
     participantCount: 104,
+    objective: 'Biết cách mô tả chức năng hệ thống dưới góc nhìn người dùng bằng Use Case và User Story.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Xác định Actor và Use Case',
+        duration: '45 phút',
+        description: 'Xác định các tác nhân, chức năng chính và mối quan hệ trong hệ thống.',
+      ),
+      ActivityLesson(
+        title: 'Vẽ Use Case Diagram',
+        duration: '75 phút',
+        description: 'Thực hành xây dựng sơ đồ Use Case và mô tả luồng tương tác giữa Actor với hệ thống.',
+      ),
+      ActivityLesson(
+        title: 'Viết User Story',
+        duration: '60 phút',
+        description: 'Viết User Story theo cấu trúc As a – I want – So that và xác định Acceptance Criteria.',
+      ),
+    ],
+    tools: ['Draw.io', 'Jira', 'Confluence', 'Microsoft Word'],
+    relatedCareer: 'Business Analyst',
+    relatedCareerNicheId: 'ba',
+    relatedCareerDescription: 'Phân tích và mô hình hóa yêu cầu, chuyển đổi nhu cầu người dùng thành tài liệu mà nhóm phát triển có thể triển khai.',
   ),
 
   // Project Manager
@@ -297,6 +901,29 @@ const List<Activity> mockActivities = [
     duration: '3 giờ',
     rating: 4.5,
     participantCount: 194,
+    objective: 'Biết cách xây dựng kế hoạch dự án phần mềm thông qua việc xác định phạm vi, phân chia công việc, ước lượng thời gian và phân bổ nguồn lực.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Xác định phạm vi dự án',
+        duration: '45 phút',
+        description: 'Xác định mục tiêu, sản phẩm bàn giao và các giới hạn của dự án.',
+      ),
+      ActivityLesson(
+        title: 'Phân chia công việc',
+        duration: '75 phút',
+        description: 'Sử dụng Work Breakdown Structure để chia dự án thành các nhiệm vụ nhỏ và xác định người phụ trách.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng tiến độ dự án',
+        duration: '60 phút',
+        description: 'Ước lượng thời gian, xác định mốc hoàn thành và lập lịch thực hiện các công việc.',
+      ),
+    ],
+    tools: ['Microsoft Project', 'Trello', 'Jira', 'Excel'],
+    relatedCareer: 'Project Manager',
+    relatedCareerNicheId: 'pm',
+    relatedCareerDescription: 'Lập kế hoạch, quản lý nguồn lực, điều phối nhóm và theo dõi tiến độ để đảm bảo dự án đạt mục tiêu.',
   ),
   Activity(
     id: 'a26',
@@ -307,6 +934,29 @@ const List<Activity> mockActivities = [
     duration: '2 giờ',
     rating: 4.8,
     participantCount: 132,
+    objective: 'Thực hành theo dõi tiến độ dự án, nhận diện rủi ro và xây dựng phương án ứng phó khi dự án phát sinh vấn đề.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Theo dõi tiến độ dự án',
+        duration: '40 phút',
+        description: 'Cập nhật trạng thái công việc, so sánh tiến độ thực tế với kế hoạch ban đầu.',
+      ),
+      ActivityLesson(
+        title: 'Nhận diện và đánh giá rủi ro',
+        duration: '40 phút',
+        description: 'Xác định các rủi ro về nhân lực, thời gian và kỹ thuật, đánh giá khả năng xảy ra và mức độ ảnh hưởng.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng phương án ứng phó',
+        duration: '40 phút',
+        description: 'Đề xuất biện pháp phòng ngừa, giảm thiểu và xử lý rủi ro trong quá trình thực hiện dự án.',
+      ),
+    ],
+    tools: ['Jira', 'Trello', 'Microsoft Project', 'Risk Register'],
+    relatedCareer: 'Project Manager',
+    relatedCareerNicheId: 'pm',
+    relatedCareerDescription: 'Kiểm soát tiến độ, quản lý rủi ro và điều phối nguồn lực nhằm đảm bảo dự án được thực hiện đúng kế hoạch.',
   ),
   // Product Owner
   Activity(
@@ -318,6 +968,29 @@ const List<Activity> mockActivities = [
     duration: '5 giờ',
     rating: 4.8,
     participantCount: 205,
+    objective: 'Hiểu vai trò của Product Backlog và thực hành phân rã nhu cầu sản phẩm thành các hạng mục công việc có thể phát triển.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Xác định nhu cầu sản phẩm',
+        duration: '60 phút',
+        description: 'Xác định đối tượng người dùng, vấn đề cần giải quyết và giá trị mà sản phẩm mang lại.',
+      ),
+      ActivityLesson(
+        title: 'Xây dựng Product Backlog Item',
+        duration: '90 phút',
+        description: 'Phân rã yêu cầu thành các Epic, Feature và User Story phù hợp.',
+      ),
+      ActivityLesson(
+        title: 'Sắp xếp thứ tự ưu tiên',
+        duration: '30 phút',
+        description: 'Đánh giá giá trị và mức độ quan trọng của từng hạng mục để sắp xếp Product Backlog.',
+      ),
+    ],
+    tools: ['Jira', 'Trello', 'Confluence', 'Miro'],
+    relatedCareer: 'Product Owner',
+    relatedCareerNicheId: 'po',
+    relatedCareerDescription: 'Định hướng giá trị sản phẩm, quản lý Product Backlog và làm rõ yêu cầu để nhóm phát triển tạo ra sản phẩm phù hợp.',
   ),
   Activity(
     id: 'a28',
@@ -328,6 +1001,29 @@ const List<Activity> mockActivities = [
     duration: '2 giờ',
     rating: 4.6,
     participantCount: 130,
+    objective: 'Biết cách phân loại và sắp xếp mức độ ưu tiên của yêu cầu để xác định phạm vi phát triển sản phẩm phù hợp với nguồn lực và thời gian.',
+    difficulty: ActivityDifficulty.beginner,
+    lessons: [
+      ActivityLesson(
+        title: 'Tìm hiểu phương pháp MoSCoW',
+        duration: '30 phút',
+        description: 'Phân biệt bốn nhóm Must have, Should have, Could have và Won’t have.',
+      ),
+      ActivityLesson(
+        title: 'Thực hành phân loại yêu cầu',
+        duration: '60 phút',
+        description: 'Phân tích danh sách yêu cầu của một sản phẩm giả định và xếp từng yêu cầu vào nhóm phù hợp.',
+      ),
+      ActivityLesson(
+        title: 'Rà soát và thống nhất ưu tiên',
+        duration: '30 phút',
+        description: 'Thảo luận về giá trị, mức độ cần thiết và nguồn lực để thống nhất thứ tự ưu tiên.',
+      ),
+    ],
+    tools: ['Jira', 'Trello', 'Miro', 'MoSCoW Prioritization'],
+    relatedCareer: 'Product Owner',
+    relatedCareerNicheId: 'po',
+    relatedCareerDescription: 'Quản lý và ưu tiên yêu cầu sản phẩm, đảm bảo nhóm phát triển tập trung vào những tính năng mang lại giá trị cao nhất.',
   ),
   // Cloud / DevOps
   Activity(
@@ -339,5 +1035,28 @@ const List<Activity> mockActivities = [
     duration: '4 giờ',
     rating: 4.7,
     participantCount: 175,
+    objective: 'Hiểu nguyên lý CI/CD và thực hành thiết lập quy trình tự động kiểm tra, xây dựng và triển khai ứng dụng khi mã nguồn được cập nhật.',
+    difficulty: ActivityDifficulty.intermediate,
+    lessons: [
+      ActivityLesson(
+        title: 'Tìm hiểu CI/CD',
+        duration: '45 phút',
+        description: 'Phân biệt Continuous Integration, Continuous Delivery và Continuous Deployment, tìm hiểu vai trò của từng giai đoạn.',
+      ),
+      ActivityLesson(
+        title: 'Thiết lập quy trình tự động',
+        duration: '90 phút',
+        description: 'Tạo Workflow bằng GitHub Actions để tự động chạy các bước kiểm tra khi có thay đổi mã nguồn.',
+      ),
+      ActivityLesson(
+        title: 'Kiểm tra và triển khai ứng dụng',
+        duration: '105 phút',
+        description: 'Theo dõi kết quả Workflow, xử lý lỗi và tìm hiểu cách tự động triển khai ứng dụng sau khi kiểm tra thành công.',
+      ),
+    ],
+    tools: ['Git', 'GitHub', 'GitHub Actions', 'Docker', 'YAML'],
+    relatedCareer: 'DevOps Engineer',
+    relatedCareerNicheId: 'cloud-devops',
+    relatedCareerDescription: 'Xây dựng và tự động hóa quy trình tích hợp, kiểm thử, triển khai và vận hành phần mềm.',
   ),
 ];

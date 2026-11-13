@@ -28,6 +28,7 @@ class Activity {
   final List<ActivityLesson> lessons;
   final List<String> tools;
   final String relatedCareer;
+  final String? relatedCareerNicheId;
   final String relatedCareerDescription;
 
   const Activity({
@@ -44,6 +45,7 @@ class Activity {
     this.lessons = const [],
     this.tools = const [],
     this.relatedCareer = '',
+    this.relatedCareerNicheId,
     this.relatedCareerDescription = '',
   });
 }

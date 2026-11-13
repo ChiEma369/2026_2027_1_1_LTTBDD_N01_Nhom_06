@@ -64,5 +64,9 @@
         "type": "String"
       }
     }
-  }
+  },
+  "activityDetailTitle": "Chi tiết hoạt động",
+  "activityHeroEyebrow": "HỌC TẬP QUA TRẢI NGHIỆM",
+  "activityHeroHeadline": "KHÁM PHÁ · THỰC HÀNH · PHÁT TRIỂN",
+  "activityHeroStatus": "SẴN SÀNG"
 }

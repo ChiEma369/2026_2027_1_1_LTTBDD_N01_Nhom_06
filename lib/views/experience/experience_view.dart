@@ -254,6 +254,7 @@ class _ExperienceViewState extends State<ExperienceView> {
                                       builder: (context) =>
                                           ActivityDetailScreen(
                                             activity: activity,
+                                            repository: _repository,
                                           ),
                                     ),
                                   );

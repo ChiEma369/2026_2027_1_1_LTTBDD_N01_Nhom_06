@@ -64,5 +64,9 @@
         "type": "String"
       }
     }
-  }
+  },
+  "activityDetailTitle": "Activity Details",
+  "activityHeroEyebrow": "LEARN THROUGH EXPERIENCE",
+  "activityHeroHeadline": "EXPLORE · PRACTICE · GROW",
+  "activityHeroStatus": "READY"
 }

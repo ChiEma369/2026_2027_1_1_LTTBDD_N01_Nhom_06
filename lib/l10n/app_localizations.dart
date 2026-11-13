@@ -271,6 +271,30 @@ abstract class AppLocalizations {
   /// In vi, this message translates to:
   /// **'Thời lượng: {value}'**
   String stageDuration(String value);
+
+  /// No description provided for @activityDetailTitle.
+  ///
+  /// In vi, this message translates to:
+  /// **'Chi tiết hoạt động'**
+  String get activityDetailTitle;
+
+  /// No description provided for @activityHeroEyebrow.
+  ///
+  /// In vi, this message translates to:
+  /// **'HỌC TẬP QUA TRẢI NGHIỆM'**
+  String get activityHeroEyebrow;
+
+  /// No description provided for @activityHeroHeadline.
+  ///
+  /// In vi, this message translates to:
+  /// **'KHÁM PHÁ · THỰC HÀNH · PHÁT TRIỂN'**
+  String get activityHeroHeadline;
+
+  /// No description provided for @activityHeroStatus.
+  ///
+  /// In vi, this message translates to:
+  /// **'SẴN SÀNG'**
+  String get activityHeroStatus;
 }
 
 class _AppLocalizationsDelegate

@@ -109,4 +109,16 @@ class AppLocalizationsVi extends AppLocalizations {
   String stageDuration(String value) {
     return 'Thời lượng: $value';
   }
+
+  @override
+  String get activityDetailTitle => 'Chi tiết hoạt động';
+
+  @override
+  String get activityHeroEyebrow => 'HỌC TẬP QUA TRẢI NGHIỆM';
+
+  @override
+  String get activityHeroHeadline => 'KHÁM PHÁ · THỰC HÀNH · PHÁT TRIỂN';
+
+  @override
+  String get activityHeroStatus => 'SẴN SÀNG';
 }

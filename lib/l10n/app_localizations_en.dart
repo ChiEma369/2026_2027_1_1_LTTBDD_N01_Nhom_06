@@ -109,4 +109,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String stageDuration(String value) {
     return 'Duration: $value';
   }
+
+  @override
+  String get activityDetailTitle => 'Activity Details';
+
+  @override
+  String get activityHeroEyebrow => 'LEARN THROUGH EXPERIENCE';
+
+  @override
+  String get activityHeroHeadline => 'EXPLORE · PRACTICE · GROW';
+
+  @override
+  String get activityHeroStatus => 'READY';
 }
