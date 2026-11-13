@@ -104,35 +104,101 @@ abstract class AppLocalizations {
   /// **'TechTrail'**
   String get appTitle;
 
-  /// No description provided for @tabCareerMap.
+  /// No description provided for @home.
   ///
   /// In vi, this message translates to:
-  /// **'Career Map'**
-  String get tabCareerMap;
+  /// **'Trang chủ'**
+  String get home;
 
-  /// No description provided for @tabActivities.
+  /// No description provided for @experience.
   ///
   /// In vi, this message translates to:
-  /// **'Trạm trải nghiệm'**
-  String get tabActivities;
+  /// **'Trải nghiệm'**
+  String get experience;
 
-  /// No description provided for @tabJournal.
+  /// No description provided for @journal.
   ///
   /// In vi, this message translates to:
-  /// **'Nhật ký'**
-  String get tabJournal;
+  /// **'Nhật ký thực chiến'**
+  String get journal;
 
-  /// No description provided for @tabProfile.
+  /// No description provided for @profile.
   ///
   /// In vi, this message translates to:
-  /// **'IT Profile'**
-  String get tabProfile;
+  /// **'Hồ sơ cá nhân'**
+  String get profile;
 
-  /// No description provided for @tabAccount.
+  /// No description provided for @accountInfo.
   ///
   /// In vi, this message translates to:
-  /// **'Cá nhân'**
-  String get tabAccount;
+  /// **'Thông tin tài khoản'**
+  String get accountInfo;
+
+  /// No description provided for @language.
+  ///
+  /// In vi, this message translates to:
+  /// **'Ngôn ngữ'**
+  String get language;
+
+  /// No description provided for @selectLanguage.
+  ///
+  /// In vi, this message translates to:
+  /// **'Chọn ngôn ngữ'**
+  String get selectLanguage;
+
+  /// No description provided for @vietnamese.
+  ///
+  /// In vi, this message translates to:
+  /// **'Tiếng Việt'**
+  String get vietnamese;
+
+  /// No description provided for @english.
+  ///
+  /// In vi, this message translates to:
+  /// **'Tiếng Anh'**
+  String get english;
+
+  /// No description provided for @cancel.
+  ///
+  /// In vi, this message translates to:
+  /// **'Hủy'**
+  String get cancel;
+
+  /// No description provided for @save.
+  ///
+  /// In vi, this message translates to:
+  /// **'Lưu'**
+  String get save;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In vi, this message translates to:
+  /// **'Chỉnh sửa hồ sơ'**
+  String get editProfile;
+
+  /// No description provided for @logout.
+  ///
+  /// In vi, this message translates to:
+  /// **'Đăng xuất'**
+  String get logout;
+
+  /// No description provided for @updateSuccess.
+  ///
+  /// In vi, this message translates to:
+  /// **'Cập nhật thông tin hồ sơ thành công.'**
+  String get updateSuccess;
+
+  /// No description provided for @notUpdated.
+  ///
+  /// In vi, this message translates to:
+  /// **'Chưa cập nhật'**
+  String get notUpdated;
+
+  /// No description provided for @accountNotFound.
+  ///
+  /// In vi, this message translates to:
+  /// **'Không tìm thấy thông tin tài khoản.\nVui lòng đăng nhập lại.'**
+  String get accountNotFound;
 }
 
 class _AppLocalizationsDelegate

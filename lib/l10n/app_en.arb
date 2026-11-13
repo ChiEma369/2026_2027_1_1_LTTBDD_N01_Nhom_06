@@ -1,9 +1,20 @@
 {
   "@@locale": "en",
   "appTitle": "TechTrail",
-  "tabCareerMap": "Career Map",
-  "tabActivities": "Experience Hub",
-  "tabJournal": "Journal",
-  "tabProfile": "IT Profile",
-  "tabAccount": "Account"
+  "home": "Home",
+  "experience": "Experience",
+  "journal": "Activity Journal",
+  "profile": "Personal Profile",
+  "accountInfo": "Account Information",
+  "language": "Language",
+  "selectLanguage": "Select Language",
+  "vietnamese": "Vietnamese",
+  "english": "English",
+  "cancel": "Cancel",
+  "save": "Save",
+  "editProfile": "Edit Profile",
+  "logout": "Log Out",
+  "updateSuccess": "Profile updated successfully.",
+  "notUpdated": "Not updated",
+  "accountNotFound": "Account information not found.\nPlease log in again."
 }

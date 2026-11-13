@@ -13,17 +13,51 @@ class AppLocalizationsVi extends AppLocalizations {
   String get appTitle => 'TechTrail';
 
   @override
-  String get tabCareerMap => 'Career Map';
+  String get home => 'Trang chủ';
 
   @override
-  String get tabActivities => 'Trạm trải nghiệm';
+  String get experience => 'Trải nghiệm';
 
   @override
-  String get tabJournal => 'Nhật ký';
+  String get journal => 'Nhật ký thực chiến';
 
   @override
-  String get tabProfile => 'IT Profile';
+  String get profile => 'Hồ sơ cá nhân';
 
   @override
-  String get tabAccount => 'Cá nhân';
+  String get accountInfo => 'Thông tin tài khoản';
+
+  @override
+  String get language => 'Ngôn ngữ';
+
+  @override
+  String get selectLanguage => 'Chọn ngôn ngữ';
+
+  @override
+  String get vietnamese => 'Tiếng Việt';
+
+  @override
+  String get english => 'Tiếng Anh';
+
+  @override
+  String get cancel => 'Hủy';
+
+  @override
+  String get save => 'Lưu';
+
+  @override
+  String get editProfile => 'Chỉnh sửa hồ sơ';
+
+  @override
+  String get logout => 'Đăng xuất';
+
+  @override
+  String get updateSuccess => 'Cập nhật thông tin hồ sơ thành công.';
+
+  @override
+  String get notUpdated => 'Chưa cập nhật';
+
+  @override
+  String get accountNotFound =>
+      'Không tìm thấy thông tin tài khoản.\nVui lòng đăng nhập lại.';
 }

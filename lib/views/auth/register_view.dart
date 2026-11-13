@@ -312,32 +312,6 @@ class _RegisterViewState extends State<RegisterView> {
                             ),
 
                             const SizedBox(height: 15),
-
-                            // Quay lại đăng nhập
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Text(
-                                  'Đã có tài khoản? ',
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    color: AppColors.muted,
-                                  ),
-                                ),
-
-                                GestureDetector(
-                                  onTap: _goToLogin,
-                                  child: const Text(
-                                    'Đăng nhập',
-                                    style: TextStyle(
-                                      fontSize: 11,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.teal700,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
                           ],
                         ),
                       ),

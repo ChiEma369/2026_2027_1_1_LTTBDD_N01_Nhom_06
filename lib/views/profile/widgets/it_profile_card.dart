@@ -8,111 +8,154 @@ class ItProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(15),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // Màn hình hẹp sẽ chuyển sang bố cục dọc.
+        final isNarrow = constraints.maxWidth < 280;
+
+        final arrow = Container(
+          width: 34,
+          height: 34,
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [AppColors.teal900, AppColors.teal700],
+            color: AppColors.white.withValues(alpha: 0.18),
+            shape: BoxShape.circle,
+          ),
+          child: const Icon(
+            Icons.chevron_right,
+            color: AppColors.white,
+            size: 22,
+          ),
+        );
+
+        final content = Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Tiêu đề và nhãn cấp độ.
+            Wrap(
+              spacing: 8,
+              runSpacing: 4,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                Text(
+                  'IT Profile',
+                  style: AppText.s(
+                    16,
+                    w: FontWeight.w700,
+                    color: AppColors.white,
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 3,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.teal500,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    'IT LEVEL 1',
+                    style: AppText.s(
+                      8,
+                      w: FontWeight.w700,
+                      color: AppColors.white,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: AppShadows.card,
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+
+            const SizedBox(height: 7),
+
+            // Mô tả.
+            Text(
+              'Hồ sơ năng lực và định hướng nghề nghiệp',
+              softWrap: true,
+              style: AppText.s(10, color: AppColors.white),
+            ),
+
+            const SizedBox(height: 12),
+
+            // Thanh tiến trình thích ứng theo chiều rộng.
+            LayoutBuilder(
+              builder: (context, progressConstraints) {
+                final progressBar = ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: const LinearProgressIndicator(
+                    value: 0,
+                    minHeight: 4,
+                    backgroundColor: AppColors.teal300,
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                  ),
+                );
+
+                final label = Text(
+                  'Khám phá',
+                  style: AppText.s(
+                    9,
+                    w: FontWeight.w600,
+                    color: AppColors.white,
+                  ),
+                );
+
+                if (progressConstraints.maxWidth < 150) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(width: double.infinity, child: progressBar),
+                      const SizedBox(height: 6),
+                      label,
+                    ],
+                  );
+                }
+
+                return Row(
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          'IT Profile',
-                          style: AppText.s(
-                            16,
-                            w: FontWeight.w700,
-                            color: AppColors.white,
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 3,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppColors.teal500,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Text(
-                            'IT LEVEL 1',
-                            style: AppText.s(
-                              8,
-                              w: FontWeight.w700,
-                              color: AppColors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 7),
-                    Text(
-                      'Hồ sơ năng lực và định hướng nghề nghiệp',
-                      style: AppText.s(10, color: AppColors.white),
-                    ),
-                    const SizedBox(height: 12),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: const LinearProgressIndicator(
-                              value: 0,
-                              minHeight: 4,
-                              backgroundColor: AppColors.teal300,
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Text(
-                          'Khám phá',
-                          style: AppText.s(
-                            9,
-                            w: FontWeight.w600,
-                            color: AppColors.white,
-                          ),
-                        ),
-                      ],
-                    ),
+                    Expanded(child: progressBar),
+                    const SizedBox(width: 8),
+                    label,
                   ],
+                );
+              },
+            ),
+          ],
+        );
+
+        return Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(16),
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [AppColors.teal900, AppColors.teal700],
                 ),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: AppShadows.card,
               ),
-              const SizedBox(width: 10),
-              Container(
-                width: 34,
-                height: 34,
-                decoration: BoxDecoration(
-                  color: AppColors.white.withValues(alpha: 0.18),
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(
-                  Icons.chevron_right,
-                  color: AppColors.white,
-                  size: 22,
-                ),
-              ),
-            ],
+              child: isNarrow
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        content,
+                        const SizedBox(height: 8),
+                        Align(alignment: Alignment.centerRight, child: arrow),
+                      ],
+                    )
+                  : Row(
+                      children: [
+                        Expanded(child: content),
+                        const SizedBox(width: 10),
+                        arrow,
+                      ],
+                    ),
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

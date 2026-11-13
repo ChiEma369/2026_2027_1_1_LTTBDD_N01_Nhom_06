@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'utils/app_colors.dart';
-import 'views/auth/login_view.dart';
+import 'locale_provider.dart';
+import 'app.dart';
 
 void main() {
-  runApp(const TechTrailApp());
-}
-
-class TechTrailApp extends StatelessWidget {
-  const TechTrailApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'TechTrail',
-      theme: AppTheme.lightTheme,
-      home: const LoginView(),
-    );
-  }
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => LocaleProvider(),
+      child: const TechTrailApp(),
+    ),
+  );
 }

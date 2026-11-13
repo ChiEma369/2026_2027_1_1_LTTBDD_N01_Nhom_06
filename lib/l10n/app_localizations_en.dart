@@ -13,17 +13,51 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'TechTrail';
 
   @override
-  String get tabCareerMap => 'Career Map';
+  String get home => 'Home';
 
   @override
-  String get tabActivities => 'Experience Hub';
+  String get experience => 'Experience';
 
   @override
-  String get tabJournal => 'Journal';
+  String get journal => 'Activity Journal';
 
   @override
-  String get tabProfile => 'IT Profile';
+  String get profile => 'Personal Profile';
 
   @override
-  String get tabAccount => 'Account';
+  String get accountInfo => 'Account Information';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get selectLanguage => 'Select Language';
+
+  @override
+  String get vietnamese => 'Vietnamese';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get logout => 'Log Out';
+
+  @override
+  String get updateSuccess => 'Profile updated successfully.';
+
+  @override
+  String get notUpdated => 'Not updated';
+
+  @override
+  String get accountNotFound =>
+      'Account information not found.\nPlease log in again.';
 }

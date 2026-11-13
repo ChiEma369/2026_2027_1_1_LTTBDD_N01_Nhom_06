@@ -1,9 +1,20 @@
 {
   "@@locale": "vi",
   "appTitle": "TechTrail",
-  "tabCareerMap": "Career Map",
-  "tabActivities": "Trạm trải nghiệm",
-  "tabJournal": "Nhật ký",
-  "tabProfile": "IT Profile",
-  "tabAccount": "Cá nhân"
+  "home": "Trang chủ",
+  "experience": "Trải nghiệm",
+  "journal": "Nhật ký thực chiến",
+  "profile": "Hồ sơ cá nhân",
+  "accountInfo": "Thông tin tài khoản",
+  "language": "Ngôn ngữ",
+  "selectLanguage": "Chọn ngôn ngữ",
+  "vietnamese": "Tiếng Việt",
+  "english": "Tiếng Anh",
+  "cancel": "Hủy",
+  "save": "Lưu",
+  "editProfile": "Chỉnh sửa hồ sơ",
+  "logout": "Đăng xuất",
+  "updateSuccess": "Cập nhật thông tin hồ sơ thành công.",
+  "notUpdated": "Chưa cập nhật",
+  "accountNotFound": "Không tìm thấy thông tin tài khoản.\nVui lòng đăng nhập lại."
 }
