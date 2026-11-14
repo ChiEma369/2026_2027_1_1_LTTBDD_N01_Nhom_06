@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/data/repositories/auth_repository.dart';
 import 'package:tech_trail/models/user_acc.dart';
 import 'package:tech_trail/utils/app_theme.dart';
@@ -45,7 +46,7 @@ class ItProfileView extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              'IT Profile',
+                              AppLocalizations.of(context).itProfileTitle,
                               textAlign: TextAlign.center,
                               style: AppText.s(
                                 18,
@@ -70,7 +71,8 @@ class ItProfileView extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      user?.fullName ?? 'Người dùng',
+                      user?.fullName ??
+                          AppLocalizations.of(context).itProfileDefaultName,
                       style: AppText.s(
                         16,
                         w: FontWeight.w700,
@@ -79,7 +81,7 @@ class ItProfileView extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      'Hồ sơ năng lực và định hướng nghề nghiệp',
+                      AppLocalizations.of(context).itProfileSubtitle,
                       textAlign: TextAlign.center,
                       style: AppText.s(10, color: AppColors.teal100),
                     ),
@@ -93,23 +95,32 @@ class ItProfileView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _sectionTitle(
-                      'Định hướng nghề nghiệp',
+                      AppLocalizations.of(context).itProfileCareerDirection,
                       Icons.explore_outlined,
                     ),
-                    _emptyCard('Chưa có kết quả định hướng nghề nghiệp.'),
-
-                    const SizedBox(height: 22),
-
-                    _sectionTitle('Kết quả đánh giá', Icons.analytics_outlined),
                     _emptyCard(
-                      'Hoàn thành bài đánh giá để xem mức độ phù hợp với các lĩnh vực IT.',
+                      AppLocalizations.of(context)
+                          .itProfileCareerDirectionEmpty,
                     ),
 
                     const SizedBox(height: 22),
 
-                    _sectionTitle('Điểm mạnh của bạn', Icons.stars_outlined),
+                    _sectionTitle(
+                      AppLocalizations.of(context).itProfileAssessmentResult,
+                      Icons.analytics_outlined,
+                    ),
                     _emptyCard(
-                      'Điểm mạnh cá nhân sẽ được hiển thị sau khi có dữ liệu đánh giá.',
+                      AppLocalizations.of(context).itProfileAssessmentEmpty,
+                    ),
+
+                    const SizedBox(height: 22),
+
+                    _sectionTitle(
+                      AppLocalizations.of(context).itProfileStrengths,
+                      Icons.stars_outlined,
+                    ),
+                    _emptyCard(
+                      AppLocalizations.of(context).itProfileStrengthsEmpty,
                     ),
                   ],
                 ),

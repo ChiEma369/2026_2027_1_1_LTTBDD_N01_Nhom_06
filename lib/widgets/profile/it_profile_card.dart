@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 
 class ItProfileCard extends StatelessWidget {
@@ -32,7 +33,7 @@ class ItProfileCard extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'IT Profile',
+                          AppLocalizations.of(context).itProfileTitle,
                           style: AppText.s(
                             16,
                             w: FontWeight.w700,
@@ -62,7 +63,7 @@ class ItProfileCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 7),
                     Text(
-                      'Hồ sơ năng lực và định hướng nghề nghiệp',
+                      AppLocalizations.of(context).itProfileSubtitle,
                       style: AppText.s(10, color: AppColors.white),
                     ),
                     const SizedBox(height: 12),

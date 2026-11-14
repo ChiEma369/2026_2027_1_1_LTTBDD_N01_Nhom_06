@@ -7,6 +7,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Mobile Developer',
     tagline: 'Phát triển ứng dụng Android, iOS & đa nền tảng',
     subtitle: 'LẬP TRÌNH VIÊN MOBILE',
+    taglineEn: 'Develop Android, iOS, and cross-platform applications',
+    subtitleEn: 'MOBILE DEVELOPER',
+    demandEn: 'Very High',
     skills: ['Flutter', 'React Native', 'Swift', 'Kotlin'],
     rating: 4.6,
     learnerCount: 2100,
@@ -17,24 +20,35 @@ const Map<String, NicheDetail> mockNicheDetails = {
       DailyTask(
         title: 'Phát triển tính năng ứng dụng',
         description: 'Xây dựng màn hình, luồng điều hướng và tích hợp API cho app mobile.',
+        titleEn: 'Develop Application Features',
+        descriptionEn: 'Build screens, navigation flows, and integrate APIs into mobile applications.',
       ),
       DailyTask(
         title: 'Kiểm thử trên thiết bị thực',
         description: 'Chạy thử trên nhiều dòng máy, phát hiện lỗi giao diện và hiệu năng.',
+        titleEn: 'Test on Real Devices',
+        descriptionEn: 'Test applications on different devices to identify UI and performance issues.',
       ),
       DailyTask(
         title: 'Tối ưu hoá hiệu năng',
-        description: 'Giảm thời gian khởi động, tối ưu bộ nhớ và mức tiêu thụ pin.',
+        description:
+            'Giảm thời gian khởi động, tối ưu bộ nhớ và mức tiêu thụ pin.',
+        titleEn: 'Optimize Application Performance',
+        descriptionEn: 'Reduce startup time, optimize memory usage, and minimize battery consumption.',
       ),
     ],
     stages: [
       RoadmapStage(
         order: 1,
         title: 'Lập trình cơ bản & OOP',
-        description: 'Java/Kotlin hoặc Swift căn bản, lập trình hướng đối tượng.',
+        description:
+            'Java/Kotlin hoặc Swift căn bản, lập trình hướng đối tượng.',
         tag: StageTag.foundation,
         duration: '~6 tuần',
         outcome: '3 bài tập lớn',
+        titleEn: 'Programming Fundamentals & OOP',
+        descriptionEn: 'Learn Java/Kotlin or Swift fundamentals and object-oriented programming.',
+        outcomeEn: '3 major assignments',
       ),
       RoadmapStage(
         order: 2,
@@ -43,14 +57,22 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.core,
         duration: '~8 tuần',
         outcome: '2 ứng dụng hoàn chỉnh',
+        titleEn: 'Native & Cross-Platform Development',
+        descriptionEn: 'Learn Android development with Jetpack Compose, iOS development with SwiftUI, or cross-platform development with Flutter/React Native.',
+        outcomeEn: '2 complete applications',
       ),
       RoadmapStage(
         order: 3,
         title: 'Tích hợp API & Backend',
-        description: 'Gọi REST API, xác thực người dùng, lưu trữ dữ liệu cục bộ.',
+        description:
+            'Gọi REST API, xác thực người dùng, lưu trữ dữ liệu cục bộ.',
         tag: StageTag.applied,
         duration: '~8 tuần',
         outcome: '1 app full-stack',
+        titleEn: 'API & Backend Integration',
+        descriptionEn:
+            'Work with REST APIs, user authentication, and local data storage.',
+        outcomeEn: '1 full-stack application',
       ),
       RoadmapStage(
         order: 4,
@@ -59,6 +81,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.advanced,
         duration: '~10 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Project Development & Release',
+        descriptionEn: 'Publish applications on the App Store or Google Play and implement CI/CD for mobile applications.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -67,6 +92,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Backend Developer',
     tagline: 'Xây dựng máy chủ, API & xử lý dữ liệu phía sau',
     subtitle: 'LẬP TRÌNH VIÊN BACKEND',
+    taglineEn: 'Build servers, APIs, and backend data processing systems',
+    subtitleEn: 'BACKEND DEVELOPER',
+    demandEn: 'Very High',
     skills: ['Java', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
     rating: 4.7,
     learnerCount: 2650,
@@ -77,32 +105,47 @@ const Map<String, NicheDetail> mockNicheDetails = {
       DailyTask(
         title: 'Thiết kế và xây dựng API',
         description: 'Thiết kế RESTful/GraphQL API, viết logic nghiệp vụ và xử lý dữ liệu.',
+        titleEn: 'Design and Build APIs',
+        descriptionEn: 'Design RESTful/GraphQL APIs, implement business logic, and process data.',
       ),
       DailyTask(
         title: 'Quản lý cơ sở dữ liệu',
         description: 'Viết truy vấn tối ưu, thiết kế schema, migrate dữ liệu.',
+        titleEn: 'Manage Databases',
+        descriptionEn: 'Write optimized queries, design database schemas, and migrate data.',
       ),
       DailyTask(
         title: 'Xử lý bảo mật & hiệu năng',
-        description: 'Xác thực người dùng (JWT/OAuth), caching, giám sát độ trễ API.',
+        description:
+            'Xác thực người dùng (JWT/OAuth), caching, giám sát độ trễ API.',
+        titleEn: 'Handle Security and Performance',
+        descriptionEn: 'Implement user authentication (JWT/OAuth), caching, and API latency monitoring.',
       ),
     ],
     stages: [
       RoadmapStage(
         order: 1,
         title: 'Lập trình & Cơ sở dữ liệu',
-        description: 'Java/Python/Node.js căn bản, SQL và thiết kế CSDL quan hệ.',
+        description:
+            'Java/Python/Node.js căn bản, SQL và thiết kế CSDL quan hệ.',
         tag: StageTag.foundation,
         duration: '~6 tuần',
         outcome: '4 bài tập lớn',
+        titleEn: 'Programming & Databases',
+        descriptionEn: 'Learn Java/Python/Node.js fundamentals, SQL, and relational database design.',
+        outcomeEn: '4 major assignments',
       ),
       RoadmapStage(
         order: 2,
         title: 'Xây dựng REST API',
-        description: 'Spring Boot / Express.js / FastAPI, kiến trúc MVC và xác thực.',
+        description:
+            'Spring Boot / Express.js / FastAPI, kiến trúc MVC và xác thực.',
         tag: StageTag.core,
         duration: '~8 tuần',
         outcome: '2 API hoàn chỉnh',
+        titleEn: 'Building REST APIs',
+        descriptionEn: 'Learn Spring Boot, Express.js, or FastAPI, MVC architecture, and authentication.',
+        outcomeEn: '2 complete APIs',
       ),
       RoadmapStage(
         order: 3,
@@ -111,6 +154,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.applied,
         duration: '~10 tuần',
         outcome: '1 hệ thống phân tán',
+        titleEn: 'Microservices & Message Queues',
+        descriptionEn: 'Learn microservices architecture, Kafka/RabbitMQ, and Redis caching.',
+        outcomeEn: '1 distributed system',
       ),
       RoadmapStage(
         order: 4,
@@ -119,6 +165,10 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.advanced,
         duration: '~12 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Practical Backend Project',
+        descriptionEn:
+            'Deploy a complete backend system to the cloud with monitoring.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -127,6 +177,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Desktop / Game Developer',
     tagline: 'Phát triển phần mềm máy tính và trò chơi',
     subtitle: 'LẬP TRÌNH DESKTOP & GAME',
+    taglineEn: 'Develop desktop software and video games',
+    subtitleEn: 'DESKTOP & GAME DEVELOPER',
+    demandEn: 'Medium',
     skills: ['C++', 'Unity', 'C#', 'Unreal Engine', 'OpenGL'],
     rating: 4.4,
     learnerCount: 980,
@@ -136,15 +189,23 @@ const Map<String, NicheDetail> mockNicheDetails = {
     dailyTasks: [
       DailyTask(
         title: 'Lập trình game logic',
-        description: 'Xây dựng cơ chế gameplay, vật lý, AI cho nhân vật trong game.',
+        description:
+            'Xây dựng cơ chế gameplay, vật lý, AI cho nhân vật trong game.',
+        titleEn: 'Implement Game Logic',
+        descriptionEn:
+            'Build gameplay mechanics, physics systems, and character AI.',
       ),
       DailyTask(
         title: 'Tối ưu hiệu năng đồ hoạ',
         description: 'Profiling, giảm draw call, tối ưu shader và bộ nhớ GPU.',
+        titleEn: 'Optimize Graphics Performance',
+        descriptionEn: 'Use profiling tools, reduce draw calls, and optimize shaders and GPU memory usage.',
       ),
       DailyTask(
         title: 'Phát triển công cụ nội bộ',
         description: 'Xây dựng editor plugin và tool hỗ trợ team design/art.',
+        titleEn: 'Develop Internal Tools',
+        descriptionEn: 'Build editor plugins and tools to support the design and art teams.',
       ),
     ],
     stages: [
@@ -155,6 +216,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.foundation,
         duration: '~8 tuần',
         outcome: '4 bài tập lớn',
+        titleEn: 'C++ & Object-Oriented Programming',
+        descriptionEn: 'Learn pointers, memory management, OOP, data structures, and algorithms.',
+        outcomeEn: '4 major assignments',
       ),
       RoadmapStage(
         order: 2,
@@ -163,6 +227,10 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.core,
         duration: '~8 tuần',
         outcome: '2 mini game',
+        titleEn: 'Game Engine Fundamentals (Unity/Unreal)',
+        descriptionEn:
+            'Learn the editor, C#/C++ scripting, physics, and audio systems.',
+        outcomeEn: '2 mini-games',
       ),
       RoadmapStage(
         order: 3,
@@ -171,14 +239,22 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.applied,
         duration: '~10 tuần',
         outcome: '1 game demo',
+        titleEn: 'Graphics & Basic AI',
+        descriptionEn: 'Learn shaders, particle systems, pathfinding, and basic AI techniques.',
+        outcomeEn: '1 game demo',
       ),
       RoadmapStage(
         order: 4,
         title: 'Dự án Game hoàn chỉnh',
-        description: 'Phát triển và phát hành game trên Steam hoặc nền tảng di động.',
+        description:
+            'Phát triển và phát hành game trên Steam hoặc nền tảng di động.',
         tag: StageTag.advanced,
         duration: '~14 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Complete Game Project',
+        descriptionEn:
+            'Develop and publish a game on Steam or a mobile platform.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -188,6 +264,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Data Analyst',
     tagline: 'Phân tích dữ liệu & hỗ trợ ra quyết định',
     subtitle: 'CHUYÊN VIÊN PHÂN TÍCH DỮ LIỆU',
+    taglineEn: 'Analyze data and support business decision-making',
+    subtitleEn: 'DATA ANALYST',
+    demandEn: 'High',
     skills: ['Python', 'SQL', 'Power BI', 'Excel', 'Tableau'],
     rating: 4.5,
     learnerCount: 1850,
@@ -198,32 +277,49 @@ const Map<String, NicheDetail> mockNicheDetails = {
       DailyTask(
         title: 'Thu thập & làm sạch dữ liệu',
         description: 'Truy vấn SQL, xử lý dữ liệu thiếu, chuẩn hoá định dạng.',
+        titleEn: 'Collect and Clean Data',
+        descriptionEn: 'Query data using SQL, handle missing values, and standardize data formats.',
       ),
       DailyTask(
         title: 'Phân tích & trực quan hoá',
-        description: 'Khám phá xu hướng, vẽ biểu đồ, xây dựng dashboard báo cáo.',
+        description:
+            'Khám phá xu hướng, vẽ biểu đồ, xây dựng dashboard báo cáo.',
+        titleEn: 'Analyze and Visualize Data',
+        descriptionEn:
+            'Explore trends, create charts, and build reporting dashboards.',
       ),
       DailyTask(
         title: 'Trình bày kết quả kinh doanh',
         description: 'Diễn giải insight từ dữ liệu và đề xuất giải pháp cho stakeholder.',
+        titleEn: 'Present Business Insights',
+        descriptionEn:
+            'Interpret data insights and recommend solutions to stakeholders.',
       ),
     ],
     stages: [
       RoadmapStage(
         order: 1,
         title: 'SQL & Excel nền tảng',
-        description: 'Truy vấn SQL, hàm Excel nâng cao, tư duy phân tích dữ liệu.',
+        description:
+            'Truy vấn SQL, hàm Excel nâng cao, tư duy phân tích dữ liệu.',
         tag: StageTag.foundation,
         duration: '~5 tuần',
         outcome: '3 bài phân tích',
+        titleEn: 'SQL & Excel Fundamentals',
+        descriptionEn: 'Learn SQL queries, advanced Excel functions, and analytical thinking.',
+        outcomeEn: '3 analysis reports',
       ),
       RoadmapStage(
         order: 2,
         title: 'Python cho Data Analysis',
-        description: 'Pandas, NumPy, Matplotlib/Seaborn để phân tích và vẽ biểu đồ.',
+        description:
+            'Pandas, NumPy, Matplotlib/Seaborn để phân tích và vẽ biểu đồ.',
         tag: StageTag.core,
         duration: '~7 tuần',
         outcome: '3 notebook hoàn chỉnh',
+        titleEn: 'Python for Data Analysis',
+        descriptionEn: 'Use Pandas, NumPy, and Matplotlib/Seaborn for data analysis and visualization.',
+        outcomeEn: '3 complete notebooks',
       ),
       RoadmapStage(
         order: 3,
@@ -232,14 +328,23 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.applied,
         duration: '~6 tuần',
         outcome: '2 dashboard thực tế',
+        titleEn: 'Dashboards & BI Tools',
+        descriptionEn:
+            'Build interactive dashboards using Power BI or Tableau.',
+        outcomeEn: '2 practical dashboards',
       ),
       RoadmapStage(
         order: 4,
         title: 'Dự án phân tích thực chiến',
-        description: 'Phân tích end-to-end từ dữ liệu thô đến báo cáo kinh doanh.',
+        description:
+            'Phân tích end-to-end từ dữ liệu thô đến báo cáo kinh doanh.',
         tag: StageTag.advanced,
         duration: '~10 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Real-World Data Analysis Project',
+        descriptionEn:
+            'Perform end-to-end analysis, from raw data to business reporting.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -248,6 +353,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Data Engineer',
     tagline: 'Xây dựng pipeline & hệ thống dữ liệu quy mô lớn',
     subtitle: 'KỸ SƯ DỮ LIỆU',
+    taglineEn: 'Build data pipelines and large-scale data systems',
+    subtitleEn: 'DATA ENGINEER',
+    demandEn: 'High',
     skills: ['Apache Spark', 'Kafka', 'Python', 'SQL', 'Airflow'],
     rating: 4.6,
     learnerCount: 1340,
@@ -257,15 +365,24 @@ const Map<String, NicheDetail> mockNicheDetails = {
     dailyTasks: [
       DailyTask(
         title: 'Xây dựng & vận hành pipeline',
-        description: 'Thiết kế luồng ETL/ELT, lên lịch và giám sát pipeline dữ liệu.',
+        description:
+            'Thiết kế luồng ETL/ELT, lên lịch và giám sát pipeline dữ liệu.',
+        titleEn: 'Build and Maintain Data Pipelines',
+        descriptionEn: 'Design ETL/ELT workflows, schedule jobs, and monitor data pipelines.',
       ),
       DailyTask(
         title: 'Quản lý Data Warehouse',
-        description: 'Tối ưu schema, phân vùng bảng và truy vấn trên kho dữ liệu lớn.',
+        description:
+            'Tối ưu schema, phân vùng bảng và truy vấn trên kho dữ liệu lớn.',
+        titleEn: 'Manage Data Warehouses',
+        descriptionEn: 'Optimize schemas, partition tables, and query large-scale data warehouses.',
       ),
       DailyTask(
         title: 'Đảm bảo chất lượng dữ liệu',
-        description: 'Kiểm tra tính nhất quán, xử lý dữ liệu trùng lặp và lỗi nguồn.',
+        description:
+            'Kiểm tra tính nhất quán, xử lý dữ liệu trùng lặp và lỗi nguồn.',
+        titleEn: 'Ensure Data Quality',
+        descriptionEn: 'Check data consistency and handle duplicate records and source errors.',
       ),
     ],
     stages: [
@@ -276,6 +393,10 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.foundation,
         duration: '~6 tuần',
         outcome: '4 bài tập lớn',
+        titleEn: 'Advanced Python & SQL',
+        descriptionEn:
+            'Learn Python, optimized SQL, database design, and data modeling.',
+        outcomeEn: '4 major assignments',
       ),
       RoadmapStage(
         order: 2,
@@ -284,6 +405,10 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.core,
         duration: '~8 tuần',
         outcome: '2 pipeline hoàn chỉnh',
+        titleEn: 'ETL & Data Pipelines',
+        descriptionEn:
+            'Learn Apache Airflow, basic Spark, and ETL pipeline development.',
+        outcomeEn: '2 complete pipelines',
       ),
       RoadmapStage(
         order: 3,
@@ -292,14 +417,23 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.applied,
         duration: '~10 tuần',
         outcome: '1 hệ thống streaming',
+        titleEn: 'Big Data & Streaming',
+        descriptionEn:
+            'Learn Kafka, Spark Streaming, and cloud-based Data Lakes.',
+        outcomeEn: '1 streaming system',
       ),
       RoadmapStage(
         order: 4,
         title: 'Đồ án Data Platform',
-        description: 'Xây dựng nền tảng dữ liệu end-to-end cho doanh nghiệp mẫu.',
+        description:
+            'Xây dựng nền tảng dữ liệu end-to-end cho doanh nghiệp mẫu.',
         tag: StageTag.advanced,
         duration: '~12 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Data Platform Project',
+        descriptionEn:
+            'Build an end-to-end data platform for a sample business.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -309,6 +443,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'QA / Tester',
     tagline: 'Đảm bảo chất lượng phần mềm trước khi tới tay người dùng',
     subtitle: 'CHUYÊN VIÊN KIỂM THỬ PHẦN MỀM',
+    taglineEn: 'Ensure software quality before it reaches users',
+    subtitleEn: 'SOFTWARE QA ENGINEER',
+    demandEn: 'High',
     skills: ['Selenium', 'Postman', 'JIRA', 'TestNG', 'SQL'],
     rating: 4.3,
     learnerCount: 1120,
@@ -318,33 +455,51 @@ const Map<String, NicheDetail> mockNicheDetails = {
     dailyTasks: [
       DailyTask(
         title: 'Viết & thực thi test case',
-        description: 'Thiết kế kịch bản kiểm thử, chạy manual test và ghi nhận kết quả.',
+        description:
+            'Thiết kế kịch bản kiểm thử, chạy manual test và ghi nhận kết quả.',
+        titleEn: 'Write and Execute Test Cases',
+        descriptionEn: 'Design test scenarios, perform manual testing, and record results.',
       ),
       DailyTask(
         title: 'Kiểm thử tự động (Automation)',
-        description: 'Viết script Selenium/Cypress để chạy regression test tự động.',
+        description:
+            'Viết script Selenium/Cypress để chạy regression test tự động.',
+        titleEn: 'Automation Testing',
+        descriptionEn:
+            'Write Selenium/Cypress scripts to run automated regression tests.',
       ),
       DailyTask(
         title: 'Báo cáo lỗi & theo dõi fix',
-        description: 'Ghi lỗi chi tiết trên JIRA, phối hợp dev xác nhận fix và retest.',
+        description:
+            'Ghi lỗi chi tiết trên JIRA, phối hợp dev xác nhận fix và retest.',
+        titleEn: 'Report Bugs and Track Fixes',
+        descriptionEn: 'Log detailed bugs in JIRA, coordinate with developers, and retest fixes.',
       ),
     ],
     stages: [
       RoadmapStage(
         order: 1,
         title: 'Kiến thức QA nền tảng',
-        description: 'SDLC, STLC, kỹ thuật thiết kế test case và phân loại lỗi.',
+        description:
+            'SDLC, STLC, kỹ thuật thiết kế test case và phân loại lỗi.',
         tag: StageTag.foundation,
         duration: '~5 tuần',
         outcome: '3 bộ test case',
+        titleEn: 'QA Fundamentals',
+        descriptionEn: 'Learn SDLC, STLC, test case design techniques, and defect classification.',
+        outcomeEn: '3 test case suites',
       ),
       RoadmapStage(
         order: 2,
         title: 'Manual Testing & API Testing',
-        description: 'Kiểm thử web/mobile thủ công, dùng Postman kiểm thử API REST.',
+        description:
+            'Kiểm thử web/mobile thủ công, dùng Postman kiểm thử API REST.',
         tag: StageTag.core,
         duration: '~6 tuần',
         outcome: '2 test report',
+        titleEn: 'Manual Testing & API Testing',
+        descriptionEn: 'Perform manual web/mobile testing and use Postman to test REST APIs.',
+        outcomeEn: '2 test reports',
       ),
       RoadmapStage(
         order: 3,
@@ -353,14 +508,22 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.applied,
         duration: '~8 tuần',
         outcome: '1 bộ automation hoàn chỉnh',
+        titleEn: 'Automation Testing',
+        descriptionEn: 'Learn Selenium WebDriver, TestNG, and CI/CD integration for automated testing.',
+        outcomeEn: '1 complete automation suite',
       ),
       RoadmapStage(
         order: 4,
         title: 'Dự án QA thực chiến',
-        description: 'Kiểm thử toàn bộ một ứng dụng thực, lập báo cáo chất lượng.',
+        description:
+            'Kiểm thử toàn bộ một ứng dụng thực, lập báo cáo chất lượng.',
         tag: StageTag.advanced,
         duration: '~10 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Practical QA Project',
+        descriptionEn:
+            'Test a complete application and prepare a quality report.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -370,6 +533,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Sys & Network Admin',
     tagline: 'Vận hành, giám sát máy chủ & hạ tầng mạng',
     subtitle: 'QUẢN TRỊ HỆ THỐNG & MẠNG',
+    taglineEn: 'Operate and monitor servers and network infrastructure',
+    subtitleEn: 'SYSTEM & NETWORK ADMINISTRATOR',
+    demandEn: 'Stable',
     skills: ['Linux', 'Cisco', 'Active Directory', 'VMware', 'Firewall'],
     rating: 4.3,
     learnerCount: 870,
@@ -380,32 +546,48 @@ const Map<String, NicheDetail> mockNicheDetails = {
       DailyTask(
         title: 'Vận hành & giám sát máy chủ',
         description: 'Theo dõi CPU/RAM/disk, xử lý cảnh báo và đảm bảo uptime.',
+        titleEn: 'Operate and Monitor Servers',
+        descriptionEn: 'Monitor CPU/RAM/disk usage, handle alerts, and ensure system uptime.',
       ),
       DailyTask(
         title: 'Quản lý tài khoản & chính sách',
-        description: 'Cấp phát tài khoản AD, cập nhật chính sách bảo mật Group Policy.',
+        description:
+            'Cấp phát tài khoản AD, cập nhật chính sách bảo mật Group Policy.',
+        titleEn: 'Manage Accounts and Policies',
+        descriptionEn: 'Provision Active Directory accounts and update Group Policy security settings.',
       ),
       DailyTask(
         title: 'Bảo trì & nâng cấp hạ tầng',
         description: 'Vá lỗi hệ điều hành, nâng cấp firmware thiết bị mạng.',
+        titleEn: 'Maintain and Upgrade Infrastructure',
+        descriptionEn:
+            'Patch operating systems and upgrade network device firmware.',
       ),
     ],
     stages: [
       RoadmapStage(
         order: 1,
         title: 'Mạng máy tính nền tảng',
-        description: 'Mô hình OSI, TCP/IP, subnetting, cấu hình switch/router Cisco.',
+        description:
+            'Mô hình OSI, TCP/IP, subnetting, cấu hình switch/router Cisco.',
         tag: StageTag.foundation,
         duration: '~6 tuần',
         outcome: '3 bài lab mạng',
+        titleEn: 'Computer Networking Fundamentals',
+        descriptionEn: 'Learn OSI, TCP/IP, subnetting, and Cisco switch/router configuration.',
+        outcomeEn: '3 networking labs',
       ),
       RoadmapStage(
         order: 2,
         title: 'Hệ điều hành & Ảo hoá',
-        description: 'Linux Server, Windows Server, VMware/Hyper-V ảo hoá máy chủ.',
+        description:
+            'Linux Server, Windows Server, VMware/Hyper-V ảo hoá máy chủ.',
         tag: StageTag.core,
         duration: '~7 tuần',
         outcome: '2 lab triển khai',
+        titleEn: 'Operating Systems & Virtualization',
+        descriptionEn: 'Learn Linux Server, Windows Server, and server virtualization with VMware/Hyper-V.',
+        outcomeEn: '2 deployment labs',
       ),
       RoadmapStage(
         order: 3,
@@ -414,6 +596,10 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.applied,
         duration: '~8 tuần',
         outcome: '1 hệ thống mạng hoàn chỉnh',
+        titleEn: 'Network Services & Basic Security',
+        descriptionEn:
+            'Learn DNS, DHCP, Active Directory, firewalls, and VPNs.',
+        outcomeEn: '1 complete network system',
       ),
       RoadmapStage(
         order: 4,
@@ -422,6 +608,10 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.advanced,
         duration: '~10 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Enterprise Infrastructure Project',
+        descriptionEn:
+            'Deploy a network and server infrastructure for a sample business.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -431,6 +621,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Business Analyst',
     tagline: 'Cầu nối giữa nhu cầu kinh doanh & đội phát triển',
     subtitle: 'CHUYÊN VIÊN PHÂN TÍCH NGHIỆP VỤ',
+    taglineEn: 'Bridge business needs and software development teams',
+    subtitleEn: 'BUSINESS ANALYST',
+    demandEn: 'High',
     skills: ['BPMN', 'SQL', 'UML', 'Agile', 'Wireframe'],
     rating: 4.4,
     learnerCount: 1230,
@@ -440,15 +633,23 @@ const Map<String, NicheDetail> mockNicheDetails = {
     dailyTasks: [
       DailyTask(
         title: 'Thu thập & phân tích yêu cầu',
-        description: 'Phỏng vấn stakeholder, ghi nhận và làm rõ yêu cầu nghiệp vụ.',
+        description:
+            'Phỏng vấn stakeholder, ghi nhận và làm rõ yêu cầu nghiệp vụ.',
+        titleEn: 'Gather and Analyze Requirements',
+        descriptionEn: 'Interview stakeholders, gather, and clarify business requirements.',
       ),
       DailyTask(
         title: 'Viết tài liệu đặc tả',
-        description: 'Soạn BRD/SRS, vẽ use case, activity diagram và wireframe.',
+        description:
+            'Soạn BRD/SRS, vẽ use case, activity diagram và wireframe.',
+        titleEn: 'Write Requirement Specifications',
+        descriptionEn: 'Prepare BRD/SRS documents, create use case and activity diagrams, and design wireframes.',
       ),
       DailyTask(
         title: 'Phối hợp dev & kiểm thử UAT',
         description: 'Giải thích yêu cầu cho dev, hỗ trợ kiểm thử nghiệm thu người dùng.',
+        titleEn: 'Collaborate with Developers and Support UAT',
+        descriptionEn: 'Explain requirements to developers and support user acceptance testing.',
       ),
     ],
     stages: [
@@ -459,6 +660,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.foundation,
         duration: '~5 tuần',
         outcome: '2 bài phân tích',
+        titleEn: 'Business Fundamentals & System Analysis',
+        descriptionEn: 'Learn SDLC, business processes, and requirement elicitation techniques.',
+        outcomeEn: '2 analysis assignments',
       ),
       RoadmapStage(
         order: 2,
@@ -467,14 +671,23 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.core,
         duration: '~6 tuần',
         outcome: '1 bộ tài liệu BRD hoàn chỉnh',
+        titleEn: 'Modeling & Documentation',
+        descriptionEn:
+            'Learn UML, BPMN, Use Cases, and wireframing with Figma/Balsamiq.',
+        outcomeEn: '1 complete BRD document',
       ),
       RoadmapStage(
         order: 3,
         title: 'Agile BA & Quản lý backlog',
-        description: 'User Story, Sprint Planning, làm việc với JIRA trong Scrum.',
+        description:
+            'User Story, Sprint Planning, làm việc với JIRA trong Scrum.',
         tag: StageTag.applied,
         duration: '~7 tuần',
         outcome: '1 backlog thực tế',
+        titleEn: 'Agile BA & Backlog Management',
+        descriptionEn:
+            'Learn User Stories, Sprint Planning, and JIRA in Scrum projects.',
+        outcomeEn: '1 practical backlog',
       ),
       RoadmapStage(
         order: 4,
@@ -483,6 +696,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.advanced,
         duration: '~10 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Practical BA Project',
+        descriptionEn: 'Analyze and fully specify a real-world system.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -491,7 +707,16 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Project Manager',
     tagline: 'Lập kế hoạch, điều phối & theo dõi tiến độ dự án',
     subtitle: 'QUẢN LÝ DỰ ÁN CÔNG NGHỆ',
-    skills: ['Agile/Scrum', 'JIRA', 'MS Project', 'Risk Management', 'Communication'],
+    taglineEn: 'Plan, coordinate, and track project progress',
+    subtitleEn: 'TECHNOLOGY PROJECT MANAGER',
+    demandEn: 'High',
+    skills: [
+      'Agile/Scrum',
+      'JIRA',
+      'MS Project',
+      'Risk Management',
+      'Communication',
+    ],
     rating: 4.5,
     learnerCount: 1050,
     salaryRange: r'$700 - $2.500',
@@ -500,49 +725,76 @@ const Map<String, NicheDetail> mockNicheDetails = {
     dailyTasks: [
       DailyTask(
         title: 'Lập kế hoạch & theo dõi tiến độ',
-        description: 'Phân rã công việc, lên lịch sprint, cập nhật Gantt chart.',
+        description:
+            'Phân rã công việc, lên lịch sprint, cập nhật Gantt chart.',
+        titleEn: 'Plan and Track Project Progress',
+        descriptionEn:
+            'Break down tasks, schedule sprints, and update Gantt charts.',
       ),
       DailyTask(
         title: 'Điều phối đội nhóm',
-        description: 'Chủ trì daily standup, giải quyết blockers và giao việc hợp lý.',
+        description:
+            'Chủ trì daily standup, giải quyết blockers và giao việc hợp lý.',
+        titleEn: 'Coordinate the Team',
+        descriptionEn: 'Lead daily stand-ups, resolve blockers, and assign tasks effectively.',
       ),
       DailyTask(
         title: 'Báo cáo cho stakeholder',
         description: 'Cập nhật tiến độ, rủi ro và tình trạng ngân sách dự án.',
+        titleEn: 'Report to Stakeholders',
+        descriptionEn:
+            'Provide updates on project progress, risks, and budget status.',
       ),
     ],
     stages: [
       RoadmapStage(
         order: 1,
         title: 'Nền tảng Quản lý dự án',
-        description: 'PMBOK, vòng đời dự án, quản lý phạm vi-thời gian-chi phí.',
+        description:
+            'PMBOK, vòng đời dự án, quản lý phạm vi-thời gian-chi phí.',
         tag: StageTag.foundation,
         duration: '~5 tuần',
         outcome: '2 kế hoạch mẫu',
+        titleEn: 'Project Management Fundamentals',
+        descriptionEn: 'Learn PMBOK, the project lifecycle, and scope, time, and cost management.',
+        outcomeEn: '2 sample project plans',
       ),
       RoadmapStage(
         order: 2,
         title: 'Agile & Scrum thực chiến',
-        description: 'Scrum framework, sprint planning, retrospective, dùng JIRA.',
+        description:
+            'Scrum framework, sprint planning, retrospective, dùng JIRA.',
         tag: StageTag.core,
         duration: '~6 tuần',
         outcome: '1 sprint simulation',
+        titleEn: 'Practical Agile & Scrum',
+        descriptionEn: 'Learn the Scrum framework, sprint planning, retrospectives, and JIRA.',
+        outcomeEn: '1 sprint simulation',
       ),
       RoadmapStage(
         order: 3,
         title: 'Quản lý rủi ro & Giao tiếp',
-        description: 'Nhận diện rủi ro, lập ma trận ưu tiên, kỹ năng thương lượng.',
+        description:
+            'Nhận diện rủi ro, lập ma trận ưu tiên, kỹ năng thương lượng.',
         tag: StageTag.applied,
         duration: '~6 tuần',
         outcome: '1 risk register',
+        titleEn: 'Risk Management & Communication',
+        descriptionEn: 'Identify risks, create prioritization matrices, and develop negotiation skills.',
+        outcomeEn: '1 risk register',
       ),
       RoadmapStage(
         order: 4,
         title: 'Dự án PM thực chiến',
-        description: 'Quản lý toàn bộ một dự án phần mềm từ khởi động đến kết thúc.',
+        description:
+            'Quản lý toàn bộ một dự án phần mềm từ khởi động đến kết thúc.',
         tag: StageTag.advanced,
         duration: '~12 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Practical Project Management',
+        descriptionEn:
+            'Manage a complete software project from initiation to closure.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -551,6 +803,10 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Product Owner',
     tagline: 'Định hướng sản phẩm & ưu tiên tính năng theo giá trị người dùng',
     subtitle: 'PRODUCT OWNER / PRODUCT MANAGER',
+    taglineEn:
+        'Define product direction and prioritize features based on user value',
+    subtitleEn: 'PRODUCT OWNER / PRODUCT MANAGER',
+    demandEn: 'High',
     skills: ['Product Strategy', 'User Research', 'OKR', 'Figma', 'Agile'],
     rating: 4.5,
     learnerCount: 920,
@@ -560,25 +816,38 @@ const Map<String, NicheDetail> mockNicheDetails = {
     dailyTasks: [
       DailyTask(
         title: 'Quản lý & ưu tiên Product Backlog',
-        description: 'Viết user story, chấm điểm ưu tiên, cập nhật backlog theo sprint.',
+        description:
+            'Viết user story, chấm điểm ưu tiên, cập nhật backlog theo sprint.',
+        titleEn: 'Manage and Prioritize the Product Backlog',
+        descriptionEn: 'Write user stories, assign priority scores, and update the backlog for each sprint.',
       ),
       DailyTask(
         title: 'Nghiên cứu người dùng & thị trường',
-        description: 'Phỏng vấn người dùng, phân tích competitor, xác định pain point.',
+        description:
+            'Phỏng vấn người dùng, phân tích competitor, xác định pain point.',
+        titleEn: 'Conduct User and Market Research',
+        descriptionEn: 'Interview users, analyze competitors, and identify user pain points.',
       ),
       DailyTask(
         title: 'Phối hợp design & development',
-        description: 'Làm rõ yêu cầu với team, review prototype và chạy demo sprint.',
+        description:
+            'Làm rõ yêu cầu với team, review prototype và chạy demo sprint.',
+        titleEn: 'Collaborate with Design and Development Teams',
+        descriptionEn: 'Clarify requirements with the team, review prototypes, and run sprint demos.',
       ),
     ],
     stages: [
       RoadmapStage(
         order: 1,
         title: 'Tư duy sản phẩm & thị trường',
-        description: 'Product thinking, Lean Startup, xác định thị trường mục tiêu.',
+        description:
+            'Product thinking, Lean Startup, xác định thị trường mục tiêu.',
         tag: StageTag.foundation,
         duration: '~5 tuần',
         outcome: '1 Product Canvas',
+        titleEn: 'Product Thinking & Market Fundamentals',
+        descriptionEn: 'Learn product thinking, Lean Startup, and how to identify target markets.',
+        outcomeEn: '1 Product Canvas',
       ),
       RoadmapStage(
         order: 2,
@@ -587,22 +856,34 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.core,
         duration: '~6 tuần',
         outcome: '1 bộ user research',
+        titleEn: 'User Research & Problem Definition',
+        descriptionEn: 'Conduct user interviews and create personas and user journey maps.',
+        outcomeEn: '1 user research report',
       ),
       RoadmapStage(
         order: 3,
         title: 'Roadmap & OKR',
-        description: 'Lập product roadmap, thiết lập OKR, quản lý backlog Agile.',
+        description:
+            'Lập product roadmap, thiết lập OKR, quản lý backlog Agile.',
         tag: StageTag.applied,
         duration: '~7 tuần',
         outcome: '1 roadmap hoàn chỉnh',
+        titleEn: 'Product Roadmap & OKRs',
+        descriptionEn: 'Create a product roadmap, define OKRs, and manage an Agile backlog.',
+        outcomeEn: '1 complete roadmap',
       ),
       RoadmapStage(
         order: 4,
         title: 'Dự án Product thực chiến',
-        description: 'Định nghĩa và dẫn dắt phát triển một sản phẩm từ idea đến MVP.',
+        description:
+            'Định nghĩa và dẫn dắt phát triển một sản phẩm từ idea đến MVP.',
         tag: StageTag.advanced,
         duration: '~12 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Practical Product Project',
+        descriptionEn:
+            'Define and lead the development of a product from idea to MVP.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -612,6 +893,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Software Developer',
     tagline: 'Phát triển ứng dụng Web & nền tảng web',
     subtitle: 'KỸ SƯ PHÁT TRIỂN PHẦN MỀM',
+    taglineEn: 'Develop web applications and software platforms',
+    subtitleEn: 'SOFTWARE DEVELOPER',
+    demandEn: 'Very High',
     skills: ['React', 'Node.js', 'Golang', 'Git', 'SQL'],
     rating: 4.8,
     learnerCount: 3420,
@@ -622,18 +906,26 @@ const Map<String, NicheDetail> mockNicheDetails = {
       DailyTask(
         title: 'Phát triển ứng dụng đa nền tảng',
         description: 'Xây dựng ứng dụng Web, Mobile và dịch vụ phần mềm theo yêu cầu người dùng.',
+        titleEn: 'Develop Cross-Platform Applications',
+        descriptionEn: 'Build web and mobile applications and software services based on user requirements.',
       ),
       DailyTask(
         title: 'Viết và kiểm thử mã nguồn',
         description: 'Thực hiện Unit Test, refactor code, đảm bảo tiêu chuẩn mã nguồn hiệu suất.',
+        titleEn: 'Write and Test Code',
+        descriptionEn: 'Perform unit testing, refactor code, and maintain code quality and performance standards.',
       ),
       DailyTask(
         title: 'Làm việc với Git & Hệ thống CI/CD',
         description: 'Quản lý branch, review Pull Request và triển khai mã nguồn lên môi trường test/live.',
+        titleEn: 'Work with Git and CI/CD',
+        descriptionEn: 'Manage branches, review pull requests, and deploy code to testing and production environments.',
       ),
       DailyTask(
         title: 'Phối hợp nhóm & Agile / Scrum',
         description: 'Tham gia Daily standup, meeting, thảo luận cùng Product Owner & Designer.',
+        titleEn: 'Collaborate in Agile/Scrum Teams',
+        descriptionEn: 'Participate in daily stand-ups and meetings, and discuss requirements with Product Owners and Designers.',
       ),
     ],
     stages: [
@@ -644,6 +936,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.foundation,
         duration: '~6 tuần',
         outcome: '4 bài tập lớn',
+        titleEn: 'Programming Fundamentals',
+        descriptionEn: 'Learn basic C/C++, Python, logical thinking, algorithms, and control structures.',
+        outcomeEn: '4 major assignments',
       ),
       RoadmapStage(
         order: 2,
@@ -652,6 +947,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.core,
         duration: '~8 tuần',
         outcome: 'LeetCode Easy/Med',
+        titleEn: 'Data Structures & Algorithms',
+        descriptionEn: 'Learn arrays, linked lists, trees, graphs, and optimized searching and sorting algorithms (Big O).',
+        outcomeEn: 'LeetCode Easy/Medium',
       ),
       RoadmapStage(
         order: 3,
@@ -660,6 +958,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.applied,
         duration: '~10 tuần',
         outcome: '2 Full-stack Web',
+        titleEn: 'Web Development & API Building',
+        descriptionEn: 'Learn modern HTML/CSS/JavaScript, frontend development with React/Vue, backend development with Node.js/Java, and RESTful APIs.',
+        outcomeEn: '2 full-stack web applications',
       ),
       RoadmapStage(
         order: 4,
@@ -668,14 +969,20 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.advanced,
         duration: '~12 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Practical Project & Deployment',
+        descriptionEn: 'Use Docker, automate Git workflows, and deploy applications to cloud platforms such as AWS/Vercel following DevOps practices.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
   'ai-ml': NicheDetail(
     nicheId: 'ai-ml',
-    displayName: 'Data & Trí tuệ nhân tạo',
+    displayName: 'AI & Machine Learning',
     tagline: 'Machine Learning, LLM & Big Data',
     subtitle: 'KỸ SƯ AI / MACHINE LEARNING',
+    taglineEn: 'Develop machine learning, LLM, and big data solutions',
+    subtitleEn: 'AI / MACHINE LEARNING ENGINEER',
+    demandEn: 'Very High',
     skills: ['Python', 'PyTorch', 'SQL', 'GenAI'],
     rating: 4.9,
     learnerCount: 2780,
@@ -686,15 +993,22 @@ const Map<String, NicheDetail> mockNicheDetails = {
       DailyTask(
         title: 'Thu thập và tiền xử lý dữ liệu',
         description: 'Làm sạch, gán nhãn và chuẩn hoá dữ liệu phục vụ huấn luyện mô hình.',
+        titleEn: 'Collect and Preprocess Data',
+        descriptionEn: 'Clean, label, and standardize data for model training.',
       ),
       DailyTask(
         title: 'Huấn luyện và đánh giá mô hình',
         description:
             'Thử nghiệm thuật toán, tinh chỉnh tham số và đo độ chính xác.',
+        titleEn: 'Train and Evaluate Models',
+        descriptionEn: 'Experiment with algorithms, tune hyperparameters, and measure model accuracy.',
       ),
       DailyTask(
         title: 'Triển khai mô hình vào sản phẩm',
         description: 'Đóng gói mô hình thành API/dịch vụ để ứng dụng gọi dùng.',
+        titleEn: 'Deploy Models into Products',
+        descriptionEn:
+            'Package models as APIs or services for applications to use.',
       ),
     ],
     stages: [
@@ -706,6 +1020,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.foundation,
         duration: '~8 tuần',
         outcome: '4 bài tập lớn',
+        titleEn: 'Mathematics & Python Programming',
+        descriptionEn: 'Learn probability and statistics, linear algebra, Python, and algorithms.',
+        outcomeEn: '4 major assignments',
       ),
       RoadmapStage(
         order: 2,
@@ -714,6 +1031,10 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.core,
         duration: '~8 tuần',
         outcome: '3 bài Kaggle',
+        titleEn: 'Data & Machine Learning Fundamentals',
+        descriptionEn:
+            'Learn SQL, Pandas, and classic machine learning algorithms.',
+        outcomeEn: '3 Kaggle projects',
       ),
       RoadmapStage(
         order: 3,
@@ -722,6 +1043,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.applied,
         duration: '~10 tuần',
         outcome: '2 mô hình hoàn chỉnh',
+        titleEn: 'Deep Learning & Applications',
+        descriptionEn: 'Learn neural networks, computer vision, and natural language processing.',
+        outcomeEn: '2 complete models',
       ),
       RoadmapStage(
         order: 4,
@@ -731,6 +1055,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.advanced,
         duration: '~12 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'AI Project & Deployment',
+        descriptionEn: 'Build, package, and deploy an AI-powered product.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -739,6 +1066,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Cybersecurity',
     tagline: 'Bảo mật hệ thống & An ninh mạng',
     subtitle: 'CHUYÊN VIÊN AN TOÀN THÔNG TIN',
+    taglineEn: 'Secure systems and protect network infrastructure',
+    subtitleEn: 'INFORMATION SECURITY SPECIALIST',
+    demandEn: 'High',
     skills: ['SOC', 'Penetration Test', 'Network'],
     rating: 4.7,
     learnerCount: 1560,
@@ -749,15 +1079,21 @@ const Map<String, NicheDetail> mockNicheDetails = {
       DailyTask(
         title: 'Đánh giá lỗ hổng bảo mật',
         description: 'Quét và phân tích điểm yếu của hệ thống, ứng dụng.',
+        titleEn: 'Assess Security Vulnerabilities',
+        descriptionEn: 'Scan systems and applications to identify and analyze security weaknesses.',
       ),
       DailyTask(
         title: 'Kiểm thử xâm nhập (Pentest)',
         description:
             'Mô phỏng tấn công trong môi trường được cho phép để tìm rủi ro.',
+        titleEn: 'Perform Penetration Testing',
+        descriptionEn: 'Simulate attacks in authorized environments to identify potential risks.',
       ),
       DailyTask(
         title: 'Giám sát & ứng phó sự cố',
         description: 'Theo dõi cảnh báo, điều tra và xử lý sự cố an ninh mạng.',
+        titleEn: 'Monitor and Respond to Incidents',
+        descriptionEn: 'Monitor security alerts, investigate threats, and respond to cybersecurity incidents.',
       ),
     ],
     stages: [
@@ -768,6 +1104,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.foundation,
         duration: '~6 tuần',
         outcome: '3 bài lab',
+        titleEn: 'Networking & Operating Systems',
+        descriptionEn: 'Learn network protocols, Linux, and fundamental system operations.',
+        outcomeEn: '3 lab exercises',
       ),
       RoadmapStage(
         order: 2,
@@ -777,6 +1116,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.core,
         duration: '~8 tuần',
         outcome: '4 bài tập lớn',
+        titleEn: 'Introduction to Information Security',
+        descriptionEn: 'Learn cryptography, common vulnerability categories, and security processes.',
+        outcomeEn: '4 major assignments',
       ),
       RoadmapStage(
         order: 3,
@@ -785,6 +1127,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.applied,
         duration: '~10 tuần',
         outcome: 'CTF nhập môn',
+        titleEn: 'Network Security & Penetration Testing',
+        descriptionEn: 'Learn network security and perform penetration testing in authorized lab/CTF environments.',
+        outcomeEn: 'Beginner CTF challenge',
       ),
       RoadmapStage(
         order: 4,
@@ -794,6 +1139,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.advanced,
         duration: '~12 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'Information Security Project',
+        descriptionEn: 'Assess the security of a sample system and prepare a report with recommendations.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),
@@ -802,6 +1150,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
     displayName: 'Cloud & DevOps',
     tagline: 'Hạ tầng đám mây & CI/CD',
     subtitle: 'KỸ SƯ CLOUD / DEVOPS',
+    taglineEn: 'Build and operate cloud infrastructure and CI/CD pipelines',
+    subtitleEn: 'CLOUD / DEVOPS ENGINEER',
+    demandEn: 'Very High',
     skills: ['AWS', 'Docker', 'Kubernetes'],
     rating: 4.8,
     learnerCount: 1890,
@@ -813,14 +1164,20 @@ const Map<String, NicheDetail> mockNicheDetails = {
         title: 'Triển khai hạ tầng trên Cloud',
         description:
             'Dựng và vận hành máy chủ, mạng, lưu trữ trên AWS/GCP/Azure.',
+        titleEn: 'Deploy Cloud Infrastructure',
+        descriptionEn: 'Provision and operate servers, networks, and storage on AWS/GCP/Azure.',
       ),
       DailyTask(
         title: 'Xây dựng pipeline CI/CD',
         description: 'Tự động hoá build, test và triển khai ứng dụng.',
+        titleEn: 'Build CI/CD Pipelines',
+        descriptionEn: 'Automate application builds, tests, and deployments.',
       ),
       DailyTask(
         title: 'Giám sát hệ thống',
         description: 'Theo dõi log, hiệu năng và xử lý sự cố vận hành.',
+        titleEn: 'Monitor Systems',
+        descriptionEn: 'Monitor logs and performance, and troubleshoot operational incidents.',
       ),
     ],
     stages: [
@@ -831,6 +1188,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.foundation,
         duration: '~6 tuần',
         outcome: '3 bài lab',
+        titleEn: 'Networking & Operating Systems',
+        descriptionEn: 'Learn Linux, computer networking, and system infrastructure fundamentals.',
+        outcomeEn: '3 lab exercises',
       ),
       RoadmapStage(
         order: 2,
@@ -839,6 +1199,9 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.core,
         duration: '~6 tuần',
         outcome: '4 script thực tế',
+        titleEn: 'Programming & Automation',
+        descriptionEn: 'Learn Python/Shell scripting, Git, and automation of operational tasks.',
+        outcomeEn: '4 practical scripts',
       ),
       RoadmapStage(
         order: 3,
@@ -847,6 +1210,10 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.applied,
         duration: '~10 tuần',
         outcome: '2 pipeline hoàn chỉnh',
+        titleEn: 'Cloud & Containers',
+        descriptionEn:
+            'Learn cloud computing, Docker, and basic CI/CD pipelines.',
+        outcomeEn: '2 complete pipelines',
       ),
       RoadmapStage(
         order: 4,
@@ -855,6 +1222,10 @@ const Map<String, NicheDetail> mockNicheDetails = {
         tag: StageTag.advanced,
         duration: '~12 tuần',
         outcome: 'Capstone Project',
+        titleEn: 'System Deployment Project',
+        descriptionEn:
+            'Deploy a complete application to the cloud with monitoring.',
+        outcomeEn: 'Capstone Project',
       ),
     ],
   ),

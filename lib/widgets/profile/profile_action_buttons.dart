@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 
 class ProfileActionButtons extends StatelessWidget {
@@ -22,7 +23,7 @@ class ProfileActionButtons extends StatelessWidget {
             onPressed: onEdit,
             icon: const Icon(Icons.edit_outlined, size: 18),
             label: Text(
-              'CHỈNH SỬA HỒ SƠ',
+              AppLocalizations.of(context).profileEditButton,
               style: AppText.s(12, w: FontWeight.w600, color: AppColors.white),
             ),
             style: ElevatedButton.styleFrom(
@@ -40,7 +41,7 @@ class ProfileActionButtons extends StatelessWidget {
           onPressed: onLogout,
           icon: const Icon(Icons.logout, size: 17, color: AppColors.muted),
           label: Text(
-            'Đăng xuất',
+            AppLocalizations.of(context).profileLogoutButton,
             style: AppText.s(12, color: AppColors.muted),
           ),
         ),

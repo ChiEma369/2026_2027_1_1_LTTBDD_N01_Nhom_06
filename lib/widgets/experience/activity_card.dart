@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/models/activity.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 
@@ -79,13 +80,11 @@ class ActivityCard extends StatelessWidget {
     }
   }
 
-  const ActivityCard({
-    super.key,
-    required this.activity,
-    required this.onTap,
-  });
+  const ActivityCard({super.key, required this.activity, required this.onTap});
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final languageCode = Localizations.localeOf(context).languageCode;
     return Material(
       color: Colors.transparent,
       child: InkWell(
@@ -107,9 +106,7 @@ class ActivityCard extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: bannerColor,
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(16),
-                  ),
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
                 ),
                 child: Stack(
                   alignment: Alignment.center,
@@ -134,11 +131,7 @@ class ActivityCard extends StatelessWidget {
                           width: 1,
                         ),
                       ),
-                      child: Icon(
-                        activityIcon,
-                        size: 46,
-                        color: Colors.white,
-                      ),
+                      child: Icon(activityIcon, size: 46, color: Colors.white),
                     ),
                   ],
                 ),
@@ -151,7 +144,7 @@ class ActivityCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      activity.title,
+                      activity.titleOf(languageCode),
                       style: AppText.s(
                         16,
                         w: FontWeight.bold,
@@ -160,12 +153,8 @@ class ActivityCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      activity.description,
-                      style: AppText.s(
-                        12,
-                        color: AppColors.muted,
-                        height: 1.5,
-                      ),
+                      activity.descriptionOf(languageCode),
+                      style: AppText.s(12, color: AppColors.muted, height: 1.5),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -180,27 +169,17 @@ class ActivityCard extends StatelessWidget {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          activity.duration,
-                          style: AppText.s(
-                            11,
-                            color: AppColors.muted,
-                          ),
+                          activity.durationOf(languageCode),
+                          style: AppText.s(11, color: AppColors.muted),
                         ),
 
                         const SizedBox(width: 16),
 
-                        const Icon(
-                          Icons.star,
-                          size: 14,
-                          color: AppColors.gold,
-                        ),
+                        const Icon(Icons.star, size: 14, color: AppColors.gold),
                         const SizedBox(width: 4),
                         Text(
                           activity.rating.toStringAsFixed(1),
-                          style: AppText.s(
-                            11,
-                            color: AppColors.muted,
-                          ),
+                          style: AppText.s(11, color: AppColors.muted),
                         ),
 
                         const SizedBox(width: 16),
@@ -212,11 +191,10 @@ class ActivityCard extends StatelessWidget {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          '${activity.participantCount} người',
-                          style: AppText.s(
-                            11,
-                            color: AppColors.muted,
+                          l10n.activityParticipantCount(
+                            activity.participantCount,
                           ),
+                          style: AppText.s(11, color: AppColors.muted),
                         ),
                       ],
                     ),
@@ -226,7 +204,7 @@ class ActivityCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
-                          'Xem hoạt động',
+                          l10n.activityViewDetails,
                           style: AppText.s(
                             12,
                             w: FontWeight.w600,

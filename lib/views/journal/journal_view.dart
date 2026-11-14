@@ -6,6 +6,7 @@ import 'package:tech_trail/models/activity.dart';
 import 'package:tech_trail/models/feedback.dart';
 import 'package:tech_trail/models/user_acc.dart';
 import 'package:tech_trail/utils/app_theme.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 
 import 'activity_journal_view.dart';
 import '../../widgets/journal/journal_header.dart';
@@ -19,22 +20,20 @@ class JournalView extends StatefulWidget {
 }
 
 class _JournalViewState extends State<JournalView> {
-  ActivityRepository get _repository =>
-      context.read<ActivityRepository>();
+  ActivityRepository get _repository => context.read<ActivityRepository>();
   UserAccount? get _user => AuthRepository.instance.currentUser;
   // Mở trang viết nhật ký cho hoạt động được chọn.
   Future<void> _openJournal(Activity activity) async {
+    final l10n = AppLocalizations.of(context);
     final user = _user;
 
     if (user == null) return;
 
     // Không cho viết lại nhật ký đã gửi.
     if (_repository.hasFeedback(user.id, activity.id)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Bạn đã viết nhật ký cho hoạt động này.'),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.journalAlreadyWrittenInList)));
 
       setState(() {});
       return;
@@ -58,6 +57,7 @@ class _JournalViewState extends State<JournalView> {
 
   // Giao diện khi chưa có hoạt động.
   Widget _buildEmptyState() {
+    final l10n = AppLocalizations.of(context);
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(25),
@@ -75,13 +75,13 @@ class _JournalViewState extends State<JournalView> {
           ),
           const SizedBox(height: 12),
           Text(
-            'Chưa có hoạt động nào',
+            l10n.journalEmptyTitle,
             style: AppText.s(14, w: FontWeight.w700),
           ),
           const SizedBox(height: 7),
           Text(
-            'Hãy đăng ký tham gia hoạt động tại Trạm trải nghiệm. '
-            'Sau đó bạn có thể viết nhật ký và ghi lại những điều đã học được.',
+            l10n.journalEmptyDescription,
+
             textAlign: TextAlign.center,
             style: AppText.s(11, color: AppColors.muted, height: 1.5),
           ),
@@ -92,6 +92,7 @@ class _JournalViewState extends State<JournalView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final repository = context.watch<ActivityRepository>();
     final user = _user;
     if (user == null) {
@@ -99,7 +100,7 @@ class _JournalViewState extends State<JournalView> {
         backgroundColor: AppColors.bg,
         body: Center(
           child: Text(
-            'Vui lòng đăng nhập để xem nhật ký.',
+            l10n.journalLoginRequired,
             style: AppText.s(13, color: AppColors.muted),
           ),
         ),
@@ -107,9 +108,7 @@ class _JournalViewState extends State<JournalView> {
     }
 
     // Chỉ lấy hoạt động đã đăng ký của tài khoản hiện tại.
-    final registeredIds = repository
-        .registeredActivityIds(user.id)
-        .toSet();
+    final registeredIds = repository.registeredActivityIds(user.id).toSet();
 
     final registeredActivities = repository.activities
         .where((activity) => registeredIds.contains(activity.id))
@@ -119,8 +118,7 @@ class _JournalViewState extends State<JournalView> {
 
     // Ghép nhật ký với hoạt động tương ứng.
     final feedbackByActivity = {
-      for (final feedback in userFeedbacks)
-        feedback.activityId: feedback,
+      for (final feedback in userFeedbacks) feedback.activityId: feedback,
     };
 
     return Scaffold(
@@ -140,12 +138,7 @@ class _JournalViewState extends State<JournalView> {
                       child: _buildEmptyState(),
                     )
                   : ListView(
-                      padding: const EdgeInsets.fromLTRB(
-                        16,
-                        20,
-                        16,
-                        20,
-                      ),
+                      padding: const EdgeInsets.fromLTRB(16, 20, 16, 20),
                       children: [
                         Row(
                           children: [
@@ -157,19 +150,15 @@ class _JournalViewState extends State<JournalView> {
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
-                                'Lịch sử của bạn',
-                                style: AppText.s(
-                                  15,
-                                  w: FontWeight.w700,
-                                ),
+                                l10n.journalHistory,
+                                style: AppText.s(15, w: FontWeight.w700),
                               ),
                             ),
                             Text(
-                              '${registeredActivities.length} hoạt động',
-                              style: AppText.s(
-                                10,
-                                color: AppColors.muted,
+                              l10n.journalActivityCount(
+                                registeredActivities.length,
                               ),
+                              style: AppText.s(10, color: AppColors.muted),
                             ),
                           ],
                         ),

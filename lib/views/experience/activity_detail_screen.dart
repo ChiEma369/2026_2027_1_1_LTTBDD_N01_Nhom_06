@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/models/activity.dart';
 import 'package:tech_trail/utils/app_theme.dart';
@@ -18,8 +18,7 @@ class ActivityDetailScreen extends StatefulWidget {
     required this.repository,
   });
   @override
-  State<ActivityDetailScreen> createState() =>
-      _ActivityDetailScreenState();
+  State<ActivityDetailScreen> createState() => _ActivityDetailScreenState();
 }
 
 class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
@@ -41,18 +40,23 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final languageCode = Localizations.localeOf(context).languageCode;
     return Scaffold(
       backgroundColor: AppColors.bg,
       body: SingleChildScrollView(
         child: Column(
-          children: [_buildHeroHeader(context), _buildMainContent()],
+          children: [
+            _buildHeroHeader(context),
+            _buildMainContent(l10n, languageCode),
+          ],
         ),
       ),
-      bottomNavigationBar: _buildBottomCTA(),
+      bottomNavigationBar: _buildBottomCTA(l10n),
     );
   }
 
-  Widget _buildMainContent() {
+  Widget _buildMainContent(AppLocalizations l10n, String languageCode) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(20, 24, 20, 110),
@@ -76,13 +80,13 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
             ),
           ),
           const SizedBox(height: 24),
-          _buildActivityOverview(),
+          _buildActivityOverview(l10n, languageCode),
         ],
       ),
     );
   }
 
-  Widget _buildActivityOverview() {
+  Widget _buildActivityOverview(AppLocalizations l10n, String languageCode) {
     final activity = widget.activity;
 
     return Column(
@@ -92,16 +96,13 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
         Row(
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 6,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
                 color: AppColors.teal100,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
-                _getActivityTypeLabel(activity.type),
+                _getActivityTypeLabel(activity.type, l10n),
                 style: AppText.s(
                   11,
                   w: FontWeight.w700,
@@ -110,22 +111,14 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
               ),
             ),
             const Spacer(),
-            const Icon(
-              Icons.star_rounded,
-              size: 17,
-              color: Color(0xFFF4B740),
-            ),
+            const Icon(Icons.star_rounded, size: 17, color: Color(0xFFF4B740)),
             const SizedBox(width: 3),
             Text(
               activity.rating.toStringAsFixed(1),
               style: AppText.s(12, w: FontWeight.w700),
             ),
             const SizedBox(width: 10),
-            const Icon(
-              Icons.people_outline,
-              size: 16,
-              color: AppColors.muted,
-            ),
+            const Icon(Icons.people_outline, size: 16, color: AppColors.muted),
             const SizedBox(width: 3),
             Text(
               '${activity.participantCount}',
@@ -135,12 +128,8 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
         ),
         // Tiêu đề hoạt động
         Text(
-          activity.title,
-          style: AppText.s(
-            24,
-            w: FontWeight.w800,
-            color: AppColors.text,
-          ),
+          activity.titleOf(languageCode),
+          style: AppText.s(24, w: FontWeight.w800, color: AppColors.text),
         ),
 
         const SizedBox(height: 20),
@@ -151,52 +140,52 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
             Expanded(
               child: _buildInfoCard(
                 icon: nicheIcon(activity.nicheId ?? ''),
-                label: 'LĨNH VỰC',
-                value: _getNicheLabel(activity.nicheId),
+                label: l10n.activityField,
+                value: _getNicheLabel(activity.nicheId, l10n),
               ),
             ),
             const SizedBox(width: 10),
             Expanded(
               child: _buildInfoCard(
                 icon: Icons.signal_cellular_alt_rounded,
-                label: 'ĐỘ KHÓ',
-                value: _getDifficultyLabel(activity.difficulty),
+                label: l10n.activityDifficulty,
+                value: _getDifficultyLabel(activity.difficulty, l10n),
               ),
             ),
             const SizedBox(width: 10),
             Expanded(
               child: _buildInfoCard(
                 icon: Icons.schedule_rounded,
-                label: 'THỜI LƯỢNG',
-                value: activity.duration,
+                label: l10n.activityDuration,
+                value: activity.durationOf(languageCode),
               ),
             ),
           ],
         ),
         // Mục tiêu hoạt động
-        if (activity.objective.trim().isNotEmpty) ...[
+        if (activity.objectiveOf(languageCode).trim().isNotEmpty) ...[
           const SizedBox(height: 28),
-          _buildObjectiveSection(),
+          _buildObjectiveSection(l10n, languageCode),
         ],
 
         // Nội dung thực hành
         if (activity.lessons.isNotEmpty) ...[
           const SizedBox(height: 28),
-          _buildLessonsSection(),
+          _buildLessonsSection(l10n, languageCode),
         ],
-        if (activity.tools.isNotEmpty) ...[
+        if (activity.toolsOf(languageCode).isNotEmpty) ...[
           const SizedBox(height: 28),
-          _buildToolsSection(),
+          _buildToolsSection(l10n, languageCode),
         ],
-        if (activity.relatedCareer.trim().isNotEmpty) ...[
+        if (activity.relatedCareerOf(languageCode).trim().isNotEmpty) ...[
           const SizedBox(height: 28),
-          _buildRelatedCareerSection(),
+          _buildRelatedCareerSection(l10n, languageCode),
         ],
       ],
     );
   }
 
-  Widget _buildLessonsSection() {
+  Widget _buildLessonsSection(AppLocalizations l10n, String languageCode) {
     final lessons = widget.activity.lessons;
 
     if (lessons.isEmpty) {
@@ -215,7 +204,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
             ),
             const SizedBox(width: 9),
             Text(
-              'Nội dung thực hành',
+              l10n.activityPracticalContent,
               style: AppText.s(
                 17,
                 w: FontWeight.w800,
@@ -224,12 +213,8 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
             ),
             const Spacer(),
             Text(
-              '${lessons.length} bước',
-              style: AppText.s(
-                11,
-                w: FontWeight.w600,
-                color: AppColors.muted,
-              ),
+              l10n.activityStepCount(lessons.length),
+              style: AppText.s(11, w: FontWeight.w600, color: AppColors.muted),
             ),
           ],
         ),
@@ -240,15 +225,15 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
           lessons.length,
           (index) => Padding(
             padding: const EdgeInsets.only(bottom: 10),
-            child: _buildLessonCard(lessons[index], index + 1),
+            child: _buildLessonCard(lessons[index], index + 1, languageCode),
           ),
         ),
       ],
     );
   }
 
-  Widget _buildToolsSection() {
-    final tools = widget.activity.tools;
+  Widget _buildToolsSection(AppLocalizations l10n, String languageCode) {
+    final tools = widget.activity.toolsOf(languageCode);
 
     if (tools.isEmpty) {
       return const SizedBox.shrink();
@@ -259,14 +244,10 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
       children: [
         Row(
           children: [
-            const Icon(
-              Icons.build_rounded,
-              size: 21,
-              color: AppColors.teal700,
-            ),
+            const Icon(Icons.build_rounded, size: 21, color: AppColors.teal700),
             const SizedBox(width: 9),
             Text(
-              'Công cụ & Môi trường',
+              l10n.activityToolsEnvironment,
               style: AppText.s(
                 17,
                 w: FontWeight.w800,
@@ -281,10 +262,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
           runSpacing: 9,
           children: tools.map((tool) {
             return Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 13,
-                vertical: 9,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 9),
               decoration: BoxDecoration(
                 color: AppColors.white,
                 borderRadius: BorderRadius.circular(12),
@@ -305,11 +283,16 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
     );
   }
 
-  Widget _buildRelatedCareerSection() {
+  Widget _buildRelatedCareerSection(
+    AppLocalizations l10n,
+    String languageCode,
+  ) {
     final activity = widget.activity;
-    final career = activity.relatedCareer.trim();
+    final career = activity.relatedCareerOf(languageCode).trim();
     final nicheId = activity.relatedCareerNicheId;
-    final description = activity.relatedCareerDescription.trim();
+    final description = activity
+        .relatedCareerDescriptionOf(languageCode)
+        .trim();
 
     if (career.isEmpty) {
       return const SizedBox.shrink();
@@ -327,7 +310,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
             ),
             const SizedBox(width: 9),
             Text(
-              'Nghề nghiệp liên quan',
+              l10n.activityRelatedCareers,
               style: AppText.s(
                 17,
                 w: FontWeight.w800,
@@ -349,8 +332,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
                   builder: (_) => NicheDetailScreen(
                     nicheId: nicheId,
                     onOpenExperience: (_) {
-                      Navigator.of(context)
-                          .popUntil((route) => route.isFirst);
+                      Navigator.of(context).popUntil((route) => route.isFirst);
                     },
                   ),
                 ),
@@ -396,10 +378,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
                           const SizedBox(height: 6),
                           Text(
                             description,
-                            style: AppText.s(
-                              12,
-                              color: AppColors.muted,
-                            ),
+                            style: AppText.s(12, color: AppColors.muted),
                           ),
                         ],
                       ],
@@ -419,7 +398,11 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
     );
   }
 
-  Widget _buildLessonCard(ActivityLesson lesson, int index) {
+  Widget _buildLessonCard(
+    ActivityLesson lesson,
+    int index,
+    String languageCode,
+  ) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(15),
@@ -454,7 +437,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
               const SizedBox(width: 11),
               Expanded(
                 child: Text(
-                  lesson.title,
+                  lesson.titleOf(languageCode),
                   style: AppText.s(
                     14,
                     w: FontWeight.w700,
@@ -463,14 +446,10 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
                 ),
               ),
               const SizedBox(width: 6),
-              Icon(
-                Icons.schedule_rounded,
-                size: 14,
-                color: AppColors.muted,
-              ),
+              Icon(Icons.schedule_rounded, size: 14, color: AppColors.muted),
               const SizedBox(width: 3),
               Text(
-                lesson.duration,
+                lesson.durationOf(languageCode),
                 style: AppText.s(
                   10,
                   w: FontWeight.w600,
@@ -485,7 +464,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
           Padding(
             padding: const EdgeInsets.only(left: 41),
             child: Text(
-              lesson.description,
+              lesson.descriptionOf(languageCode),
               style: AppText.s(12, color: AppColors.muted),
             ),
           ),
@@ -494,8 +473,8 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
     );
   }
 
-  Widget _buildObjectiveSection() {
-    final objective = widget.activity.objective.trim();
+  Widget _buildObjectiveSection(AppLocalizations l10n, String languageCode) {
+    final objective = widget.activity.objectiveOf(languageCode).trim();
 
     if (objective.isEmpty) {
       return const SizedBox.shrink();
@@ -513,7 +492,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
             ),
             const SizedBox(width: 9),
             Text(
-              'Mục tiêu hoạt động',
+              l10n.activityObjective,
               style: AppText.s(
                 17,
                 w: FontWeight.w800,
@@ -533,21 +512,18 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
             borderRadius: BorderRadius.circular(16),
             border: Border.all(color: AppColors.divider),
           ),
-          child: Text(
-            objective,
-            style: AppText.s(13, color: AppColors.muted),
-          ),
+          child: Text(objective, style: AppText.s(13, color: AppColors.muted)),
         ),
       ],
     );
   }
 
-  String _getActivityTypeLabel(ActivityType type) {
+  String _getActivityTypeLabel(ActivityType type, AppLocalizations l10n) {
     return switch (type) {
       ActivityType.miniProject => 'MINI PROJECT',
       ActivityType.workshop => 'WORKSHOP',
       ActivityType.seminar => 'SEMINAR',
-      ActivityType.softSkill => 'KỸ NĂNG MỀM',
+      ActivityType.softSkill => l10n.activityTypeSoftSkill,
     };
   }
 
@@ -558,10 +534,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
   }) {
     return Container(
       height: 112,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 6,
-        vertical: 12,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 12),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
@@ -582,11 +555,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
           Text(
             label,
             textAlign: TextAlign.center,
-            style: AppText.s(
-              8,
-              w: FontWeight.w700,
-              color: AppColors.muted,
-            ),
+            style: AppText.s(8, w: FontWeight.w700, color: AppColors.muted),
           ),
           const SizedBox(height: 4),
           Text(
@@ -594,23 +563,21 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
-            style: AppText.s(
-              11,
-              w: FontWeight.w700,
-              color: AppColors.teal900,
-            ),
+            style: AppText.s(11, w: FontWeight.w700, color: AppColors.teal900),
           ),
         ],
       ),
     );
   }
 
-  String _getNicheLabel(String? nicheId) {
-    if (nicheId == null) return 'Kỹ năng mềm';
+  String _getNicheLabel(String? nicheId, AppLocalizations l10n) {
+    if (nicheId == null) return l10n.activityNicheSoftSkill;
 
     final niches = mockNiches.where((item) => item.id == nicheId);
 
-    if (niches.isEmpty) return 'Công nghệ thông tin';
+    if (niches.isEmpty) {
+      return l10n.activityNicheInformationTechnology;
+    }
 
     return switch (nicheId) {
       'web' => 'Web',
@@ -620,10 +587,10 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
       'ai-ml' => 'AI / ML',
       'data-analyst' => 'Data Analyst',
       'data-engineer' => 'Data Engineer',
-      'security' => 'An toàn thông tin',
+      'security' => l10n.activityNicheCybersecurity,
       'qa-tester' => 'QA / Tester',
       'cloud-devops' => 'Cloud / DevOps',
-      'sys-net-admin' => 'Hệ thống & mạng',
+      'sys-net-admin' => l10n.activityNicheSystemsNetworks,
       'ba' => 'Business Analyst',
       'pm' => 'Project Manager',
       'po' => 'Product Owner',
@@ -631,27 +598,25 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
     };
   }
 
-  String _getDifficultyLabel(ActivityDifficulty difficulty) {
+  String _getDifficultyLabel(
+    ActivityDifficulty difficulty,
+    AppLocalizations l10n,
+  ) {
     return switch (difficulty) {
-      ActivityDifficulty.beginner => 'Cơ bản',
-      ActivityDifficulty.intermediate => 'Trung bình',
-      ActivityDifficulty.advanced => 'Nâng cao',
+      ActivityDifficulty.beginner => l10n.activityDifficultyBeginner,
+      ActivityDifficulty.intermediate => l10n.activityDifficultyIntermediate,
+      ActivityDifficulty.advanced => l10n.activityDifficultyAdvanced,
     };
   }
 
-  Widget _buildBottomCTA() {
+  Widget _buildBottomCTA(AppLocalizations l10n) {
     return SafeArea(
       top: false,
       child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 12,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         decoration: BoxDecoration(
           color: AppColors.white,
-          border: const Border(
-            top: BorderSide(color: AppColors.divider),
-          ),
+          border: const Border(top: BorderSide(color: AppColors.divider)),
           boxShadow: [
             BoxShadow(
               color: AppColors.teal900.withValues(alpha: 0.05),
@@ -664,7 +629,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
           children: [
             _buildBookmarkButton(),
             const SizedBox(width: 12),
-            Expanded(child: _buildRegisterButton()),
+            Expanded(child: _buildRegisterButton(l10n)),
           ],
         ),
       ),
@@ -700,17 +665,14 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
     );
   }
 
-  Widget _buildRegisterButton() {
+  Widget _buildRegisterButton(AppLocalizations l10n) {
     return SizedBox(
       height: 48,
       child: DecoratedBox(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: _isRegistered
-                ? [
-                    AppColors.green,
-                    AppColors.green.withValues(alpha: 0.8),
-                  ]
+                ? [AppColors.green, AppColors.green.withValues(alpha: 0.8)]
                 : [AppColors.teal900, AppColors.teal700],
           ),
           borderRadius: BorderRadius.circular(14),
@@ -724,7 +686,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
             size: 20,
           ),
           label: Text(
-            _isRegistered ? 'ĐÃ ĐĂNG KÝ' : 'ĐĂNG KÝ THAM GIA',
+            _isRegistered ? l10n.activityRegistered : l10n.activityRegister,
             style: AppText.s(
               14,
               w: FontWeight.w700,
@@ -771,15 +733,11 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
                     size: 20,
                   ),
                   style: IconButton.styleFrom(
-                    backgroundColor: AppColors.white.withValues(
-                      alpha: 0.1,
-                    ),
+                    backgroundColor: AppColors.white.withValues(alpha: 0.1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                       side: BorderSide(
-                        color: AppColors.white.withValues(
-                          alpha: 0.15,
-                        ),
+                        color: AppColors.white.withValues(alpha: 0.15),
                       ),
                     ),
                   ),
@@ -806,11 +764,7 @@ class _ActivityDetailScreenState extends State<ActivityDetailScreen> {
           Text(
             l10n.activityHeroHeadline,
             textAlign: TextAlign.center,
-            style: AppText.s(
-              11,
-              w: FontWeight.w600,
-              color: AppColors.bg,
-            ),
+            style: AppText.s(11, w: FontWeight.w600, color: AppColors.bg),
           ),
 
           const SizedBox(height: 12),

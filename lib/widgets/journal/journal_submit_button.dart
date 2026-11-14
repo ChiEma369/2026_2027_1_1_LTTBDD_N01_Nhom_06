@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 
 class JournalSubmitButton extends StatelessWidget {
@@ -13,6 +14,7 @@ class JournalSubmitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return SizedBox(
       width: double.infinity,
       height: 50,
@@ -28,7 +30,7 @@ class JournalSubmitButton extends StatelessWidget {
         child: isSubmitting
             ? const CircularProgressIndicator(color: Colors.white)
             : Text(
-                'GỬI PHẢN HỒI  →',
+                l10n.journalSubmitButton,
                 style: AppText.s(
                   13,
                   w: FontWeight.w700,

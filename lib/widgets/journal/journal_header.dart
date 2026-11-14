@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 
 import 'journal_statistics.dart';
@@ -15,6 +16,7 @@ class JournalHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(18, 16, 18, 28),
@@ -36,7 +38,7 @@ class JournalHeader extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  'Nhật ký thực chiến',
+                  l10n.journalTitle,
                   style: AppText.s(
                     19,
                     w: FontWeight.w700,
@@ -48,7 +50,7 @@ class JournalHeader extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Text(
-            'Ghi lại trải nghiệm – Kiến tạo định hướng',
+            l10n.journalSubtitle,
             style: AppText.s(11, color: AppColors.teal100),
           ),
           const SizedBox(height: 20),

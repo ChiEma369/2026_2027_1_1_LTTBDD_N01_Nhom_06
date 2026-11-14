@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tech_trail/utils/app_theme.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 
 class EditProfileDialog extends StatefulWidget {
   final String fullName;
@@ -68,7 +69,9 @@ class _EditProfileDialogState extends State<EditProfileDialog> {
   void _save() {
     if (_nameController.text.trim().isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Họ tên không được để trống.')),
+        SnackBar(
+          content: Text(AppLocalizations.of(context).profileFullNameRequired),
+        ),
       );
       return;
     }
@@ -85,23 +88,35 @@ class _EditProfileDialogState extends State<EditProfileDialog> {
     return AlertDialog(
       backgroundColor: AppColors.white,
       title: Text(
-        'Chỉnh sửa hồ sơ',
+        AppLocalizations.of(context).profileEditButton,
         style: AppText.s(17, w: FontWeight.w700, color: AppColors.teal900),
       ),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _buildField(label: 'Họ và tên', controller: _nameController),
-            _buildField(label: 'Lớp', controller: _classController),
-            _buildField(label: 'Ngành học', controller: _majorController),
+            _buildField(
+              label: AppLocalizations.of(context).profileFullName,
+              controller: _nameController,
+            ),
+            _buildField(
+              label: AppLocalizations.of(context).profileEditClassLabel,
+              controller: _classController,
+            ),
+            _buildField(
+              label: AppLocalizations.of(context).profileMajor,
+              controller: _majorController,
+            ),
           ],
         ),
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text('Hủy', style: AppText.s(12, color: AppColors.muted)),
+          child: Text(
+            AppLocalizations.of(context).profileCancel,
+            style: AppText.s(12, color: AppColors.muted),
+          ),
         ),
         ElevatedButton(
           onPressed: _save,
@@ -110,7 +125,7 @@ class _EditProfileDialogState extends State<EditProfileDialog> {
             foregroundColor: AppColors.white,
           ),
           child: Text(
-            'Lưu thay đổi',
+            AppLocalizations.of(context).profileSaveChanges,
             style: AppText.s(12, w: FontWeight.w600, color: AppColors.white),
           ),
         ),

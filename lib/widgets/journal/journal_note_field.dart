@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 
 class JournalNoteField extends StatelessWidget {
@@ -8,6 +9,7 @@ class JournalNoteField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
@@ -18,14 +20,14 @@ class JournalNoteField extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Cảm nhận của bạn', style: AppText.s(14, w: FontWeight.w700)),
+          Text(l10n.journalNoteTitle, style: AppText.s(14, w: FontWeight.w700)),
           const SizedBox(height: 10),
           TextField(
             controller: controller,
             maxLength: 150,
             maxLines: 4,
             decoration: InputDecoration(
-              hintText: 'Chia sẻ những điều bạn học được...',
+              hintText: l10n.journalNoteHint,
               hintStyle: AppText.s(11, color: AppColors.muted),
               filled: true,
               fillColor: AppColors.tealSoft,

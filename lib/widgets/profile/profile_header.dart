@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 
 class ProfileHeader extends StatelessWidget {
@@ -40,7 +41,7 @@ class ProfileHeader extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                    'Hồ sơ cá nhân',
+                    AppLocalizations.of(context).profileHeaderTitle,
                     textAlign: TextAlign.center,
                     style: AppText.s(
                       16,
@@ -82,7 +83,7 @@ class ProfileHeader extends StatelessWidget {
           const SizedBox(height: 6),
 
           Text(
-            'Khám phá · Trải nghiệm · Định hướng',
+            AppLocalizations.of(context).profileHeaderSubtitle,
             textAlign: TextAlign.center,
             style: AppText.s(11, color: AppColors.white),
           ),

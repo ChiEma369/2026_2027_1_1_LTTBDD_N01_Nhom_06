@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 
 class JournalRating extends StatelessWidget {
@@ -13,6 +14,7 @@ class JournalRating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
@@ -26,9 +28,14 @@ class JournalRating extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Mức độ hứng thú', style: AppText.s(12, w: FontWeight.w700)),
               Text(
-                rating == 0 ? 'Chưa đánh giá' : '$rating/5 sao',
+                l10n.journalRatingTitle,
+                style: AppText.s(12, w: FontWeight.w700),
+              ),
+              Text(
+                rating == 0
+                    ? l10n.journalRatingNotRated
+                    : l10n.journalRatingStars(rating),
                 style: AppText.s(
                   11,
                   color: AppColors.teal700,

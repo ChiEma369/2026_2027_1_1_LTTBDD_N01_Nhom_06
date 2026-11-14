@@ -100,14 +100,18 @@ class _RegisterViewState extends State<RegisterView> {
           builder: (context, constraints) {
             return SingleChildScrollView(
               child: ConstrainedBox(
-                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                constraints: BoxConstraints(
+                  minHeight: constraints.maxHeight,
+                ),
                 child: Column(
                   children: [
                     const AuthHeader(),
 
                     Container(
                       width: double.infinity,
-                      margin: const EdgeInsets.symmetric(horizontal: 16),
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                      ),
                       padding: const EdgeInsets.all(18),
                       decoration: BoxDecoration(
                         color: AppColors.white,
@@ -157,7 +161,8 @@ class _RegisterViewState extends State<RegisterView> {
                               hint: 'example@gmail.com',
                               prefixIcon: Icons.email_outlined,
                               controller: _emailController,
-                              keyboardType: TextInputType.emailAddress,
+                              keyboardType:
+                                  TextInputType.emailAddress,
                               validator: AuthValidators.email,
                             ),
 
@@ -185,7 +190,8 @@ class _RegisterViewState extends State<RegisterView> {
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    _obscurePassword = !_obscurePassword;
+                                    _obscurePassword =
+                                        !_obscurePassword;
                                   });
                                 },
                                 icon: Icon(
@@ -270,7 +276,8 @@ class _RegisterViewState extends State<RegisterView> {
                                   foregroundColor: Colors.white,
                                   elevation: 3,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(11),
+                                    borderRadius:
+                                        BorderRadius.circular(11),
                                   ),
                                 ),
                                 child: const Text(
@@ -288,7 +295,8 @@ class _RegisterViewState extends State<RegisterView> {
 
                             // Chuyển sang đăng nhập
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment:
+                                  MainAxisAlignment.center,
                               children: [
                                 const Text(
                                   'Đã có tài khoản? ',
@@ -312,32 +320,6 @@ class _RegisterViewState extends State<RegisterView> {
                             ),
 
                             const SizedBox(height: 15),
-
-                            // Quay lại đăng nhập
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Text(
-                                  'Đã có tài khoản? ',
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    color: AppColors.muted,
-                                  ),
-                                ),
-
-                                GestureDetector(
-                                  onTap: _goToLogin,
-                                  child: const Text(
-                                    'Đăng nhập',
-                                    style: TextStyle(
-                                      fontSize: 11,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.teal700,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
                           ],
                         ),
                       ),

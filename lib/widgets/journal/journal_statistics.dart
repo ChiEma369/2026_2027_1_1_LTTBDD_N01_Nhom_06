@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 
 class JournalStatistics extends StatelessWidget {
@@ -53,18 +54,19 @@ class JournalStatistics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Row(
       children: [
         _buildStatCard(
           icon: Icons.check_circle_outline,
-          title: '$activityCount hoạt động',
-          subtitle: 'Đã đăng ký',
+          title: l10n.journalActivityCount(activityCount),
+          subtitle: l10n.journalRegistered,
         ),
         const SizedBox(width: 10),
         _buildStatCard(
           icon: Icons.edit_note,
-          title: '$completedCount nhật ký',
-          subtitle: 'Đã hoàn thành',
+          title: l10n.journalCompletedCount(completedCount),
+          subtitle: l10n.journalCompleted,
         ),
       ],
     );

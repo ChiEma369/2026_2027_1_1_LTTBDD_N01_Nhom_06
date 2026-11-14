@@ -4,7 +4,7 @@
   "tabCareerMap": "Khám phá nghề nghiệp",
   "tabActivities": "Trạm trải nghiệm",
   "tabJournal": "Nhật ký",
-  "tabProfile": "Hồ sơ định hướng nghề nghiệp",
+  "tabProfile": "Hồ sơ",
   "tabAccount": "Cá nhân",
   "careerMapGreeting": "Xin chào, {name} 👋",
   "@careerMapGreeting": {
@@ -14,10 +14,55 @@
       }
     }
   },
+  "@activityStepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "groupInfoMemberCount": "{count} thành viên",
+  "@groupInfoMemberCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "groupInfoTitle": "Thông tin nhóm",
+  "groupInfoTagline": "Khám phá nghề nghiệp - Kiến tạo tương lai",
+  "groupInfoCopyright": "© 2026 TechTrail. Bản quyền thuộc về nhóm phát triển.",
+  "groupInfoCourseSection": "THÔNG TIN MÔN HỌC / ĐỒ ÁN",
+  "groupInfoCourseName": "Phát triển ứng dụng Di động",
+  "groupInfoLecturerLabel": "GIẢNG VIÊN HƯỚNG DẪN",
+  "groupInfoClassSemesterLabel": "LỚP HỌC PHẦN / KỲ",
+  "groupInfoMembersTitle": "THÀNH VIÊN NHÓM",
+  "groupInfoTechnologiesTitle": "CÔNG NGHỆ SỬ DỤNG",
+  "groupInfoLeaderRole": "Trưởng nhóm",
+  "groupInfoMemberRole": "Thành viên",
+  "groupInfoStudentIdLabel": "MSSV:",
+  "groupInfoTaskLabel": "♙ Phụ trách:",
+  "groupInfoTaskLeader": "Phân tích, quản lý và Backend",
+  "groupInfoTaskUiUx": "UI/UX và tính năng",
+  "groupInfoTaskIntegration": "Thực tế và tích hợp",
+  "groupInfoUiFramework": "Khung giao diện",
+  "groupInfoProgrammingLanguage": "Ngôn ngữ lập trình",
+  "groupInfoStateManagement": "Quản lý trạng thái",
+  "groupInfoArchitecture": "Kiến trúc",
+  
   "careerMapSubtitle": "Khám phá con đường nghề nghiệp IT phù hợp",
   "searchHint": "Tìm kiếm nghề nghiệp IT, kỹ năng...",
   "filterAll": "Tất cả",
   "viewDetail": "Xem chi tiết",
+  "activityParticipantCount": "{count} người",
+  "@activityParticipantCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activityViewDetails": "Xem hoạt động",
   "skillsMore": "+{count} kỹ năng",
   "@skillsMore": {
     "placeholders": {
@@ -65,8 +110,106 @@
       }
     }
   },
+
+  "experienceTitle": "Trạm trải nghiệm",
+  "experienceSubtitle": "Thử trước khi chọn định hướng IT",
+  "experienceSearchHint": "Tìm hoạt động, nghề nghiệp, kỹ năng...",
+  "experienceFilterSoftSkill": "Kỹ năng mềm",
+  "experienceNoResults": "Không tìm thấy hoạt động phù hợp",
+  "experienceNoResultsHint": "Thử thay đổi từ khóa hoặc bộ lọc nhé.",
+  
   "activityDetailTitle": "Chi tiết hoạt động",
   "activityHeroEyebrow": "HỌC TẬP QUA TRẢI NGHIỆM",
   "activityHeroHeadline": "KHÁM PHÁ · THỰC HÀNH · PHÁT TRIỂN",
-  "activityHeroStatus": "SẴN SÀNG"
+  "activityHeroStatus": "SẴN SÀNG",
+  "activityField": "LĨNH VỰC",
+  "activityDifficulty": "ĐỘ KHÓ",
+  "activityDuration": "THỜI LƯỢNG",
+  "activityPracticalContent": "Nội dung thực hành",
+  "activityStepCount": "{count} bước",
+  "activityToolsEnvironment": "Công cụ & Môi trường",
+  "activityRelatedCareers": "Nghề nghiệp liên quan",
+  "activityObjective": "Mục tiêu hoạt động",
+  "activityTypeSoftSkill": "KỸ NĂNG MỀM",
+  "activityNicheSoftSkill": "Kỹ năng mềm",
+  "activityNicheInformationTechnology": "Công nghệ thông tin",
+  "activityNicheCybersecurity": "An toàn thông tin",
+  "activityNicheSystemsNetworks": "Hệ thống & mạng",
+  "activityDifficultyBeginner": "Cơ bản",
+  "activityDifficultyIntermediate": "Trung bình",
+  "activityDifficultyAdvanced": "Nâng cao",
+  "activityRegistered": "ĐÃ ĐĂNG KÝ",
+  "activityRegister": "ĐĂNG KÝ THAM GIA",
+
+  "updateSuccess": "Cập nhật thông tin thành công",
+  "selectLanguage": "Chọn ngôn ngữ",
+  "vietnamese": "Tiếng Việt",
+  "english": "Tiếng Anh",
+  "accountNotFound": "Không tìm thấy tài khoản",
+  "profileMajorNotUpdated": "Chưa cập nhật",
+  "profileAccountInformation": "Thông tin tài khoản",
+  "profileHeaderTitle": "Hồ sơ cá nhân",
+  "profileHeaderSubtitle": "Khám phá · Trải nghiệm · Định hướng",
+  "profileFullName": "Họ và tên",
+  "profilePhoneNumber": "Số điện thoại",
+  "profileClassName": "Lớp / Khóa",
+  "profileMajor": "Ngành học",
+  "profileEditButton": "Chỉnh sửa hồ sơ",
+  "profileLogoutButton": "Đăng xuất",
+  "profileEditClassLabel": "Lớp",
+  "profileCancel": "Hủy",
+  "profileSaveChanges": "Lưu thay đổi",
+  "profileFullNameRequired": "Họ tên không được để trống.",
+  "itProfileDefaultName": "Người dùng",
+  "itProfileCareerDirection": "Định hướng nghề nghiệp",
+  "itProfileCareerDirectionEmpty": "Chưa có kết quả định hướng nghề nghiệp.",
+  "itProfileAssessmentResult": "Kết quả đánh giá",
+  "itProfileAssessmentEmpty": "Hoàn thành bài đánh giá để xem mức độ phù hợp với các lĩnh vực IT.",
+  "itProfileStrengths": "Điểm mạnh của bạn",
+  "itProfileStrengthsEmpty": "Điểm mạnh cá nhân sẽ được hiển thị sau khi có dữ liệu đánh giá.",
+  "itProfileTitle": "Hồ sơ định hướng nghề nghiệp",
+  "itProfileSubtitle": "Hồ sơ năng lực và định hướng nghề nghiệp",
+  "language": "Ngôn ngữ",
+
+  "journalAlreadyWrittenInList": "Bạn đã viết nhật ký cho hoạt động này.",
+  "journalEmptyTitle": "Chưa có hoạt động nào",
+  "journalEmptyDescription": "Hãy đăng ký tham gia hoạt động tại Trạm trải nghiệm. Sau đó bạn có thể viết nhật ký và ghi lại những điều đã học được.",
+  "journalLoginRequired": "Vui lòng đăng nhập để xem nhật ký.",
+  "journalHistory": "Lịch sử của bạn",
+  "journalActivityCount": "{count} hoạt động",
+  "@journalActivityCount": {"placeholders":{"count":{"type":"int"}}},
+  "journalTitle": "Nhật ký thực chiến",
+  "journalSubtitle": "Ghi lại trải nghiệm – Kiến tạo định hướng",
+  "journalRatingRequired": "Vui lòng đánh giá mức độ hứng thú và độ khó.",
+  "journalAlreadyWritten": "Bạn đã viết nhật ký cho hoạt động này rồi.",
+  "journalAlreadySubmitted": "Nhật ký này đã được gửi trước đó.",
+  "journalSubmitSuccess": "Gửi nhật ký thành công!",
+  "journalCurrentActivity": "HOẠT ĐỘNG ĐANG THAM GIA",
+  "journalActivityTypeSoftSkill": "Kỹ năng mềm",
+  "journalWrittenOn": "Đã viết nhật ký · {date}",
+  "@journalWrittenOn": {"placeholders":{"date":{"type":"String"}}},
+  "journalNotWritten": "Bạn chưa viết nhật ký cho hoạt động này",
+  "journalReviewed": "Đã đánh giá",
+  "journalWrite": "Viết nhật ký",
+  "journalDifficultyTitle": "Mức độ khó khăn",
+  "journalDifficultyEasy": "Dễ",
+  "journalDifficultyEasyDescription": "Có thể tự thực hiện",
+  "journalDifficultyFit": "Vừa sức",
+  "journalDifficultyFitDescription": "Phù hợp với năng lực hiện tại",
+  "journalDifficultyHard": "Khó",
+  "journalDifficultyHardDescription": "Cần thêm thời gian thực hành",
+  "journalNoteTitle": "Cảm nhận của bạn",
+  "journalNoteHint": "Chia sẻ những điều bạn học được...",
+  "journalRatingTitle": "Mức độ hứng thú",
+  "journalRatingNotRated": "Chưa đánh giá",
+  "journalRatingStars": "{count}/5 sao",
+  "@journalRatingStars": {"placeholders":{"count":{"type":"int"}}},
+  "journalRegistered": "Đã đăng ký",
+  "journalCompletedCount": "{count} nhật ký",
+  "@journalCompletedCount": {"placeholders":{"count":{"type":"int"}}},
+  "journalCompleted": "Đã hoàn thành",
+  "journalSubmitButton": "GỬI PHẢN HỒI  →",
+  "groupInfoCardSection": "THÔNG TIN NHÓM",
+  "groupInfoCardTitle": "Nhóm TechTrail",
+  "groupInfoCardSubtitle": "Xem thành viên và công nghệ sử dụng"
 }

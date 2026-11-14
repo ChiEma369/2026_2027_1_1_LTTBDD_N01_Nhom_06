@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 
 import 'package:tech_trail/models/activity.dart';
 import 'package:tech_trail/models/feedback.dart';
@@ -15,19 +16,6 @@ class ActivityJournalCard extends StatelessWidget {
     required this.feedback,
     required this.onTap,
   });
-
-  String _activityTypeName(ActivityType type) {
-    switch (type) {
-      case ActivityType.miniProject:
-        return 'Mini Project';
-      case ActivityType.workshop:
-        return 'Workshop';
-      case ActivityType.seminar:
-        return 'Seminar';
-      case ActivityType.softSkill:
-        return 'Kỹ năng mềm';
-    }
-  }
 
   IconData _activityIcon(ActivityType type) {
     switch (type) {
@@ -51,6 +39,7 @@ class ActivityJournalCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final reviewed = feedback != null;
 
     return Container(
@@ -90,7 +79,13 @@ class ActivityJournalCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        _activityTypeName(activity.type),
+                        switch (activity.type) {
+                          ActivityType.miniProject => 'Mini Project',
+                          ActivityType.workshop => 'Workshop',
+                          ActivityType.seminar => 'Seminar',
+                          ActivityType.softSkill =>
+                            l10n.journalActivityTypeSoftSkill,
+                        },
                         style: AppText.s(
                           9,
                           w: FontWeight.w600,
@@ -123,15 +118,16 @@ class ActivityJournalCard extends StatelessWidget {
                             ),
                             const SizedBox(width: 5),
                             Text(
-                              '${feedback!.interestRating}/5',
+                              l10n.journalRatingStars(feedback!.interestRating),
                               style: AppText.s(10, w: FontWeight.w600),
                             ),
                           ],
                         ),
                         const SizedBox(height: 5),
                         Text(
-                          'Đã viết nhật ký · '
-                          '${_formatDate(feedback!.createdAt)}',
+                          l10n.journalWrittenOn(
+                            _formatDate(feedback!.createdAt),
+                          ),
                           style: AppText.s(
                             9,
                             color: AppColors.green,
@@ -140,7 +136,7 @@ class ActivityJournalCard extends StatelessWidget {
                         ),
                       ] else
                         Text(
-                          'Bạn chưa viết nhật ký cho hoạt động này',
+                          l10n.journalNotWritten,
                           style: AppText.s(9, color: AppColors.muted),
                         ),
                     ],
@@ -158,7 +154,7 @@ class ActivityJournalCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      reviewed ? 'Đã đánh giá' : 'Viết nhật ký',
+                      reviewed ? l10n.journalReviewed : l10n.journalWrite,
                       textAlign: TextAlign.center,
                       style: AppText.s(
                         8,

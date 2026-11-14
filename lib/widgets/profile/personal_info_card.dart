@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 
 class PersonalInfoCard extends StatelessWidget {
@@ -22,29 +23,35 @@ class PersonalInfoCard extends StatelessWidget {
     return Column(
       children: [
         _infoItem(
+          context: context,
           icon: Icons.person_outline,
-          label: 'HỌ VÀ TÊN',
+          label: AppLocalizations.of(context).profileFullName,
           value: fullName,
         ),
         const SizedBox(height: 12),
 
         _infoItem(
+          context: context,
           icon: Icons.mail_outline,
-          label: isEmail ? 'EMAIL' : 'SỐ ĐIỆN THOẠI',
+          label: isEmail
+              ? 'EMAIL'
+              : AppLocalizations.of(context).profilePhoneNumber,
           value: identifier,
         ),
         const SizedBox(height: 12),
 
         _infoItem(
+          context: context,
           icon: Icons.school_outlined,
-          label: 'LỚP / KHÓA',
+          label: AppLocalizations.of(context).profileClassName,
           value: className,
         ),
         const SizedBox(height: 12),
 
         _infoItem(
+          context: context,
           icon: Icons.menu_book_outlined,
-          label: 'NGÀNH HỌC',
+          label: AppLocalizations.of(context).profileMajor,
           value: major,
         ),
       ],
@@ -52,6 +59,7 @@ class PersonalInfoCard extends StatelessWidget {
   }
 
   Widget _infoItem({
+    required BuildContext context,
     required IconData icon,
     required String label,
     required String value,
@@ -91,7 +99,9 @@ class PersonalInfoCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  value.isEmpty ? 'Chưa cập nhật' : value,
+                  value.isEmpty
+                      ? AppLocalizations.of(context).profileMajorNotUpdated
+                      : value,
                   style: AppText.s(
                     12,
                     w: FontWeight.w700,

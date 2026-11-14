@@ -1,4 +1,5 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 
 import '../../utils/app_theme.dart';
 
@@ -12,37 +13,13 @@ class AppBottomNavigation extends StatelessWidget {
     required this.onTap,
   });
 
-  static const List<BottomNavigationBarItem> items = [
-    BottomNavigationBarItem(
-      icon: Icon(Icons.map_outlined),
-      activeIcon: Icon(Icons.map_rounded),
-      label: 'Bản đồ nghề',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.play_circle_outline),
-      activeIcon: Icon(Icons.play_circle),
-      label: 'Trải nghiệm',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.bookmark_border),
-      activeIcon: Icon(Icons.bookmark),
-      label: 'Nhật ký',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.person_outline),
-      activeIcon: Icon(Icons.person),
-      label: 'Hồ sơ',
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border(
-          top: BorderSide(color: AppColors.divider, width: 1),
-        ),
+        border: Border(top: BorderSide(color: AppColors.divider, width: 1)),
         boxShadow: [
           BoxShadow(
             color: AppColors.teal900.withValues(alpha: 0.05),
@@ -56,7 +33,28 @@ class AppBottomNavigation extends StatelessWidget {
         child: BottomNavigationBar(
           currentIndex: currentIndex,
           onTap: onTap,
-          items: items,
+          items: [
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.map_outlined),
+              activeIcon: const Icon(Icons.map_rounded),
+              label: l10n.tabCareerMap,
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.play_circle_outline),
+              activeIcon: const Icon(Icons.play_circle),
+              label: l10n.tabActivities,
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.bookmark_border),
+              activeIcon: const Icon(Icons.bookmark),
+              label: l10n.tabJournal,
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.person_outline),
+              activeIcon: const Icon(Icons.person),
+              label: l10n.tabProfile,
+            ),
+          ],
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.white,
           elevation: 0,

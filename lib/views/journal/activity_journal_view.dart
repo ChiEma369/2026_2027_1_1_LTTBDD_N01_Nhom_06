@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:tech_trail/data/repositories/activity_repository.dart';
 import 'package:tech_trail/models/activity.dart';
@@ -21,15 +22,12 @@ class ActivityJournalView extends StatefulWidget {
   });
 
   @override
-  State<ActivityJournalView> createState() =>
-      _ActivityJournalViewState();
+  State<ActivityJournalView> createState() => _ActivityJournalViewState();
 }
 
 class _ActivityJournalViewState extends State<ActivityJournalView> {
-  ActivityRepository get _repository =>
-      context.read<ActivityRepository>();
-  final TextEditingController _noteController =
-      TextEditingController();
+  ActivityRepository get _repository => context.read<ActivityRepository>();
+  final TextEditingController _noteController = TextEditingController();
 
   int _interestRating = 0;
   Difficulty? _difficulty;
@@ -44,25 +42,18 @@ class _ActivityJournalViewState extends State<ActivityJournalView> {
 
   // Gửi nhật ký.
   Future<void> _submitFeedback() async {
+    final l10n = AppLocalizations.of(context);
     // Kiểm tra dữ liệu bắt buộc.
     if (_interestRating == 0 || _difficulty == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            'Vui lòng đánh giá mức độ hứng thú và độ khó.',
-          ),
-        ),
-      );
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(l10n.journalRatingRequired)));
       return;
     }
 
     // Kiểm tra nhật ký đã tồn tại hay chưa.
     if (_repository.hasFeedback(widget.userId, widget.activity.id)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Bạn đã viết nhật ký cho hoạt động này rồi.'),
-        ),
-      );
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(l10n.journalAlreadyWritten)));
 
       Navigator.pop(context, true);
       return;
@@ -89,19 +80,15 @@ class _ActivityJournalViewState extends State<ActivityJournalView> {
         _isSubmitting = false;
       });
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Nhật ký này đã được gửi trước đó.'),
-        ),
-      );
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(l10n.journalAlreadySubmitted)));
 
       Navigator.pop(context, true);
       return;
     }
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Gửi nhật ký thành công!')),
-    );
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(l10n.journalSubmitSuccess)));
 
     // Trả kết quả về trang danh sách.
     Navigator.pop(context, true);
@@ -109,6 +96,7 @@ class _ActivityJournalViewState extends State<ActivityJournalView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: AppColors.bg,
       body: SafeArea(
@@ -117,10 +105,7 @@ class _ActivityJournalViewState extends State<ActivityJournalView> {
             // Thanh tiêu đề.
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 14,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
               decoration: const BoxDecoration(
                 color: AppColors.teal900,
                 borderRadius: BorderRadius.only(
@@ -140,7 +125,7 @@ class _ActivityJournalViewState extends State<ActivityJournalView> {
                   ),
                   Expanded(
                     child: Text(
-                      'Nhật ký thực chiến',
+                      l10n.journalTitle,
                       textAlign: TextAlign.center,
                       style: AppText.s(
                         16,
@@ -174,7 +159,7 @@ class _ActivityJournalViewState extends State<ActivityJournalView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'HOẠT ĐỘNG ĐANG THAM GIA',
+                            l10n.journalCurrentActivity,
                             style: AppText.s(
                               9,
                               w: FontWeight.w700,

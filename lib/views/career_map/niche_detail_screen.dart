@@ -1,11 +1,10 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/models/niche_detail.dart';
 import 'package:tech_trail/data/repositories/career_map_repository.dart';
-import 'package:tech_trail/widgets/career_map/niche_card.dart'
-    show nicheIcon;
+import 'package:tech_trail/widgets/career_map/niche_card.dart' show nicheIcon;
 
 class NicheDetailScreen extends StatelessWidget {
   const NicheDetailScreen({
@@ -19,9 +18,7 @@ class NicheDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final detail = context.read<CareerMapRepository>().detailOf(
-      nicheId,
-    );
+    final detail = context.read<CareerMapRepository>().detailOf(nicheId);
 
     if (detail == null) {
       return Scaffold(
@@ -87,9 +84,7 @@ class NicheDetailScreen extends StatelessWidget {
                       backgroundColor: Colors.transparent,
                       shadowColor: Colors.transparent,
                       foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 16,
-                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
@@ -103,9 +98,7 @@ class NicheDetailScreen extends StatelessWidget {
                       children: [
                         Text(
                           l10n.tabActivities,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w700,
-                          ),
+                          style: const TextStyle(fontWeight: FontWeight.w700),
                         ),
                         const SizedBox(width: 8),
                         const Icon(Icons.arrow_forward, size: 18),
@@ -129,6 +122,7 @@ class _HeroCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final languageCode = Localizations.localeOf(context).languageCode;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -153,7 +147,7 @@ class _HeroCard extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            detail.displayName,
+            detail.displayNameOf(languageCode),
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w800,
@@ -162,7 +156,7 @@ class _HeroCard extends StatelessWidget {
           ),
           const SizedBox(height: 2),
           Text(
-            detail.subtitle,
+            detail.subtitleOf(languageCode),
             style: const TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w700,
@@ -172,31 +166,21 @@ class _HeroCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 4,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
               color: AppColors.teal100,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
-              'ðŸŽ¯ ${l10n.matchBadge}',
-              style: const TextStyle(
-                fontSize: 11,
-                color: AppColors.teal900,
-              ),
+              '🎯${l10n.matchBadge}',
+              style: const TextStyle(fontSize: 11, color: AppColors.teal900),
             ),
           ),
           const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
-                Icons.star_rounded,
-                color: AppColors.gold,
-                size: 20,
-              ),
+              const Icon(Icons.star_rounded, color: AppColors.gold, size: 20),
               const SizedBox(width: 4),
               Text(
                 detail.rating.toStringAsFixed(1),
@@ -205,10 +189,7 @@ class _HeroCard extends StatelessWidget {
                   fontWeight: FontWeight.w800,
                 ),
               ),
-              const Text(
-                ' / 5.0',
-                style: TextStyle(color: AppColors.muted),
-              ),
+              const Text(' / 5.0', style: TextStyle(color: AppColors.muted)),
               if (detail.rating >= 4.5) ...[
                 const SizedBox(width: 8),
                 Text(
@@ -235,10 +216,7 @@ class _HeroCard extends StatelessWidget {
               Flexible(
                 child: Text(
                   l10n.learnersFollowing(detail.learnerCount),
-                  style: const TextStyle(
-                    fontSize: 11,
-                    color: AppColors.muted,
-                  ),
+                  style: const TextStyle(fontSize: 11, color: AppColors.muted),
                 ),
               ),
             ],
@@ -256,7 +234,7 @@ class _HeroCard extends StatelessWidget {
               Expanded(
                 child: _StatBox(
                   label: l10n.statDemand,
-                  value: detail.demand,
+                  value: detail.demandOf(languageCode),
                 ),
               ),
               const SizedBox(width: 8),
@@ -290,10 +268,7 @@ class _StatBox extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(
-            fontSize: 10,
-            color: AppColors.muted,
-          ),
+          style: const TextStyle(fontSize: 10, color: AppColors.muted),
         ),
         const SizedBox(height: 4),
         Text(
@@ -343,20 +318,14 @@ class _SectionHeader extends StatelessWidget {
         ),
       ),
       Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 8,
-          vertical: 3,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
         decoration: BoxDecoration(
           color: AppColors.tealSoft,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Text(
           badge,
-          style: const TextStyle(
-            fontSize: 10,
-            color: AppColors.teal900,
-          ),
+          style: const TextStyle(fontSize: 10, color: AppColors.teal900),
         ),
       ),
     ],
@@ -368,54 +337,57 @@ class _DailyTasksCard extends StatelessWidget {
   final List<DailyTask> tasks;
 
   @override
-  Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.all(14),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      boxShadow: AppShadows.card,
-      borderRadius: BorderRadius.circular(16),
-    ),
-    child: Column(
-      children: [
-        for (var i = 0; i < tasks.length; i++) ...[
-          if (i > 0) const Divider(height: 20),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Icon(
-                Icons.check_circle,
-                size: 18,
-                color: AppColors.green,
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      tasks[i].title,
-                      style: const TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    const SizedBox(height: 2),
-                    Text(
-                      tasks[i].description,
-                      style: const TextStyle(
-                        fontSize: 11,
-                        color: AppColors.muted,
-                      ),
-                    ),
-                  ],
+  Widget build(BuildContext context) {
+    final languageCode = Localizations.localeOf(context).languageCode;
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: AppShadows.card,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        children: [
+          for (var i = 0; i < tasks.length; i++) ...[
+            if (i > 0) const Divider(height: 20),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Icon(
+                  Icons.check_circle,
+                  size: 18,
+                  color: AppColors.green,
                 ),
-              ),
-            ],
-          ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        tasks[i].titleOf(languageCode),
+                        style: const TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        tasks[i].descriptionOf(languageCode),
+                        style: const TextStyle(
+                          fontSize: 11,
+                          color: AppColors.muted,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
         ],
-      ],
-    ),
-  );
+      ),
+    );
+  }
 }
 
 class _StageTile extends StatelessWidget {
@@ -440,6 +412,7 @@ class _StageTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final languageCode = Localizations.localeOf(context).languageCode;
     return IntrinsicHeight(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -504,7 +477,7 @@ class _StageTile extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            stage.title,
+                            stage.titleOf(languageCode),
                             style: const TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.w800,
@@ -533,7 +506,7 @@ class _StageTile extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      stage.description,
+                      stage.descriptionOf(languageCode),
                       style: const TextStyle(
                         fontSize: 11,
                         color: AppColors.muted,
@@ -557,7 +530,7 @@ class _StageTile extends StatelessWidget {
                         ),
                         const Spacer(),
                         Text(
-                          stage.outcome,
+                          stage.outcomeOf(languageCode),
                           style: const TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.w700,

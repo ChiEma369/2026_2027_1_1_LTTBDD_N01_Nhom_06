@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 
 import 'package:tech_trail/models/feedback.dart';
 import 'package:tech_trail/utils/app_theme.dart';
@@ -13,14 +14,27 @@ class JournalDifficulty extends StatelessWidget {
     required this.onChanged,
   });
 
-  static const List<(Difficulty, String, String)> options = [
-    (Difficulty.easy, 'Dễ', 'Có thể tự thực hiện'),
-    (Difficulty.fit, 'Vừa sức', 'Phù hợp với năng lực hiện tại'),
-    (Difficulty.hard, 'Khó', 'Cần thêm thời gian thực hành'),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
+    final options = [
+      (
+        Difficulty.easy,
+        l10n.journalDifficultyEasy,
+        l10n.journalDifficultyEasyDescription,
+      ),
+      (
+        Difficulty.fit,
+        l10n.journalDifficultyFit,
+        l10n.journalDifficultyFitDescription,
+      ),
+      (
+        Difficulty.hard,
+        l10n.journalDifficultyHard,
+        l10n.journalDifficultyHardDescription,
+      ),
+    ];
     return Container(
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
@@ -31,7 +45,10 @@ class JournalDifficulty extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Mức độ khó khăn', style: AppText.s(14, w: FontWeight.w700)),
+          Text(
+            l10n.journalDifficultyTitle,
+            style: AppText.s(14, w: FontWeight.w700),
+          ),
           const SizedBox(height: 10),
 
           ...options.map((option) {

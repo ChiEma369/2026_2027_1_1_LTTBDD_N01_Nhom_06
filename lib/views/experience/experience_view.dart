@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 import 'package:tech_trail/data/repositories/activity_repository.dart';
 import 'package:tech_trail/viewmodels/experience_view_model.dart';
@@ -53,6 +54,7 @@ class _ExperienceViewState extends State<ExperienceView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: AppColors.bg,
       body: SafeArea(
@@ -77,16 +79,14 @@ class _ExperienceViewState extends State<ExperienceView> {
                     children: [
                       // Hàng tiêu đề và nút tìm kiếm
                       Row(
-                        mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Column(
-                            crossAxisAlignment:
-                                CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Trạm trải nghiệm',
+                                l10n.experienceTitle,
                                 style: AppText.s(
                                   24,
                                   w: FontWeight.bold,
@@ -95,7 +95,7 @@ class _ExperienceViewState extends State<ExperienceView> {
                               ),
                               const SizedBox(height: 2),
                               Text(
-                                'Thử trước khi chọn định hướng IT',
+                                l10n.experienceSubtitle,
                                 style: AppText.s(
                                   12,
                                   w: FontWeight.w500,
@@ -108,10 +108,10 @@ class _ExperienceViewState extends State<ExperienceView> {
                             width: 40,
                             height: 40,
                             decoration: BoxDecoration(
-                              color: AppColors.teal700,
-                              borderRadius: BorderRadius.circular(20),
+                              color: AppColors.white,
+                              borderRadius: BorderRadius.circular(12),
                               border: Border.all(
-                                color: AppColors.teal500,
+                                color: AppColors.teal700,
                                 width: 1,
                               ),
                             ),
@@ -123,7 +123,7 @@ class _ExperienceViewState extends State<ExperienceView> {
                               icon: const Icon(
                                 Icons.search,
                                 size: 20,
-                                color: AppColors.white,
+                                color: AppColors.teal300,
                               ),
                             ),
                           ),
@@ -135,14 +135,12 @@ class _ExperienceViewState extends State<ExperienceView> {
                       // Thanh tìm kiếm hoạt động và nghề nghiệp
                       Container(
                         height: 40,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
                         decoration: BoxDecoration(
-                          color: AppColors.teal700,
+                          color: AppColors.white,
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                            color: AppColors.teal500,
+                            color: Colors.grey.shade300,
                             width: 1,
                           ),
                         ),
@@ -151,27 +149,24 @@ class _ExperienceViewState extends State<ExperienceView> {
                             const Icon(
                               Icons.search,
                               size: 16,
-                              color: AppColors.teal300,
+                              color: AppColors.teal700,
                             ),
                             const SizedBox(width: 8),
                             Expanded(
                               child: TextField(
                                 controller: _searchController,
                                 focusNode: _searchFocusNode,
-                                cursorColor: AppColors.white,
+                                cursorColor: AppColors.teal700,
                                 cursorWidth: 2,
                                 onChanged: (value) {
                                   _viewModel.searchActivities(value);
                                 },
-                                style: AppText.s(
-                                  12,
-                                  color: AppColors.white,
-                                ),
+                                style: AppText.s(12, color: AppColors.text),
                                 decoration: InputDecoration(
-                                  hintText: 'Tìm hoạt động, nghề nghiệp, kỹ năng...',
+                                  hintText: l10n.experienceSearchHint,
                                   hintStyle: AppText.s(
                                     12,
-                                    color: AppColors.teal300,
+                                    color: AppColors.muted,
                                   ),
                                   border: InputBorder.none,
                                   isDense: true,
@@ -189,25 +184,19 @@ class _ExperienceViewState extends State<ExperienceView> {
                           scrollDirection: Axis.horizontal,
                           physics: const BouncingScrollPhysics(),
                           children: [
-                            _buildFilterChip('Tất cả', null),
+                            _buildFilterChip(l10n.filterAll, null),
                             const SizedBox(width: 8),
                             _buildFilterChip(
                               'Mini-project',
                               ActivityType.miniProject,
                             ),
                             const SizedBox(width: 8),
-                            _buildFilterChip(
-                              'Workshop',
-                              ActivityType.workshop,
-                            ),
+                            _buildFilterChip('Workshop', ActivityType.workshop),
+                            const SizedBox(width: 8),
+                            _buildFilterChip('Seminar', ActivityType.seminar),
                             const SizedBox(width: 8),
                             _buildFilterChip(
-                              'Seminar',
-                              ActivityType.seminar,
-                            ),
-                            const SizedBox(width: 8),
-                            _buildFilterChip(
-                              'Kỹ năng mềm',
+                              l10n.experienceFilterSoftSkill,
                               ActivityType.softSkill,
                             ),
                           ],
@@ -231,7 +220,7 @@ class _ExperienceViewState extends State<ExperienceView> {
                                 ),
                                 const SizedBox(height: 12),
                                 Text(
-                                  'Không tìm thấy hoạt động phù hợp',
+                                  l10n.experienceNoResults,
                                   style: AppText.s(
                                     15,
                                     w: FontWeight.w600,
@@ -240,20 +229,15 @@ class _ExperienceViewState extends State<ExperienceView> {
                                 ),
                                 const SizedBox(height: 6),
                                 Text(
-                                  'Thử thay đổi từ khóa hoặc bộ lọc nhé.',
-                                  style: AppText.s(
-                                    12,
-                                    color: AppColors.muted,
-                                  ),
+                                  l10n.experienceNoResultsHint,
+                                  style: AppText.s(12, color: AppColors.muted),
                                   textAlign: TextAlign.center,
                                 ),
                               ],
                             ),
                           )
                         : ListView.builder(
-                            padding: const EdgeInsets.only(
-                              bottom: 20,
-                            ),
+                            padding: const EdgeInsets.only(bottom: 20),
                             itemCount: activities.length,
                             itemBuilder: (context, index) {
                               final activity = activities[index];
@@ -293,10 +277,7 @@ class _ExperienceViewState extends State<ExperienceView> {
         _viewModel.selectType(type);
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 7,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 7),
         decoration: BoxDecoration(
           color: isSelected ? AppColors.teal300 : AppColors.teal700,
           borderRadius: BorderRadius.circular(30),

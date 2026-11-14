@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:tech_trail/utils/app_theme.dart';
 import 'package:tech_trail/l10n/app_localizations.dart';
 import 'package:tech_trail/models/niche_detail.dart';
@@ -27,11 +27,7 @@ IconData nicheIcon(String nicheId) => switch (nicheId) {
 };
 
 class NicheCard extends StatelessWidget {
-  const NicheCard({
-    super.key,
-    required this.detail,
-    required this.onTap,
-  });
+  const NicheCard({super.key, required this.detail, required this.onTap});
   final NicheDetail detail;
   final VoidCallback onTap;
 
@@ -78,7 +74,9 @@ class NicheCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          detail.displayName,
+                          detail.displayNameOf(
+                            Localizations.localeOf(context).languageCode,
+                          ),
                           style: const TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w800,
@@ -87,7 +85,9 @@ class NicheCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          detail.tagline,
+                          detail.taglineOf(
+                            Localizations.localeOf(context).languageCode,
+                          ),
                           style: const TextStyle(
                             fontSize: 12,
                             color: AppColors.muted,
@@ -160,11 +160,7 @@ class _Tag extends StatelessWidget {
     ),
     child: Text(
       text,
-      style: const TextStyle(
-        fontSize: 10,
-        color: AppColors.text,
-      ),
+      style: const TextStyle(fontSize: 10, color: AppColors.text),
     ),
   );
 }
-

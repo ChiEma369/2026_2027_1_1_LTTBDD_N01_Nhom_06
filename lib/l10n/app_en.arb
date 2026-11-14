@@ -4,20 +4,64 @@
   "tabCareerMap": "Career Map",
   "tabActivities": "Experience Hub",
   "tabJournal": "Journal",
-  "tabProfile": "IT Profile",
+  "tabProfile": "Profile",
   "tabAccount": "Account",
   "careerMapGreeting": "Hello, {name} 👋",
-  "@careerMapGreeting": {
+    "@careerMapGreeting": {
     "placeholders": {
       "name": {
         "type": "String"
       }
     }
   },
+    "@activityStepCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "groupInfoMemberCount": "{count} members",
+  "@groupInfoMemberCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "groupInfoTitle": "Group Information",
+  "groupInfoTagline": "Explore Careers - Build the Future",
+  "groupInfoCopyright": "© 2026 TechTrail. All rights reserved by the development team.",
+  "groupInfoCourseSection": "COURSE / PROJECT INFORMATION",
+  "groupInfoCourseName": "Mobile Application Development",
+  "groupInfoLecturerLabel": "INSTRUCTOR",
+  "groupInfoClassSemesterLabel": "CLASS / SEMESTER",
+  "groupInfoMembersTitle": "TEAM MEMBERS",
+  "groupInfoTechnologiesTitle": "TECHNOLOGIES USED",
+  "groupInfoLeaderRole": "Team Leader",
+  "groupInfoMemberRole": "Member",
+  "groupInfoStudentIdLabel": "Student ID:",
+  "groupInfoTaskLabel": "♙ Responsible for:",
+  "groupInfoTaskLeader": "Analysis, Management and Backend",
+  "groupInfoTaskUiUx": "UI/UX and Features",
+  "groupInfoTaskIntegration": "Practical Work and Integration",
+  "groupInfoUiFramework": "UI Framework",
+  "groupInfoProgrammingLanguage": "Programming Language",
+  "groupInfoStateManagement": "State Management",
+  "groupInfoArchitecture": "Architecture",
   "careerMapSubtitle": "Discover the right IT career path for you",
   "searchHint": "Search IT careers, skills...",
   "filterAll": "All",
   "viewDetail": "View details",
+  "activityParticipantCount": "{count} participants",
+  "@activityParticipantCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "activityViewDetails": "View activity",
   "skillsMore": "+{count} skills",
   "@skillsMore": {
     "placeholders": {
@@ -65,8 +109,106 @@
       }
     }
   },
+
+  "experienceTitle": "Experience Hub",
+  "experienceSubtitle": "Try before choosing your IT career path",
+  "experienceSearchHint": "Search activities, careers, skills...",
+  "experienceFilterSoftSkill": "Soft Skills",
+  "experienceNoResults": "No matching activities found",
+  "experienceNoResultsHint": "Try changing your keyword or filter.",
+  
   "activityDetailTitle": "Activity Details",
   "activityHeroEyebrow": "LEARN THROUGH EXPERIENCE",
   "activityHeroHeadline": "EXPLORE · PRACTICE · GROW",
-  "activityHeroStatus": "READY"
+  "activityHeroStatus": "READY",
+  "activityField": "FIELD",
+  "activityDifficulty": "DIFFICULTY",
+  "activityDuration": "DURATION",
+  "activityPracticalContent": "Practical Steps",
+  "activityStepCount": "{count} steps",
+  "activityToolsEnvironment": "Tools & Environment",
+  "activityRelatedCareers": "Related Careers",
+  "activityObjective": "Activity Objectives",
+  "activityTypeSoftSkill": "SOFT SKILLS",
+  "activityNicheSoftSkill": "Soft Skills",
+  "activityNicheInformationTechnology": "Information Technology",
+  "activityNicheCybersecurity": "Cybersecurity",
+  "activityNicheSystemsNetworks": "Systems & Networks",
+  "activityDifficultyBeginner": "Beginner",
+  "activityDifficultyIntermediate": "Intermediate",
+  "activityDifficultyAdvanced": "Advanced",
+  "activityRegistered": "REGISTERED",
+  "activityRegister": "REGISTER NOW",
+
+  "updateSuccess": "Information updated successfully",
+  "selectLanguage": "Select language",
+  "vietnamese": "Vietnamese",
+  "english": "English",
+  "accountNotFound": "Account not found",
+  "profileMajorNotUpdated": "Not updated yet",
+  "profileAccountInformation": "Account Information",
+  "profileHeaderTitle": "Personal Profile",
+  "profileHeaderSubtitle": "Explore · Experience · Orient",
+  "profileFullName": "Full name",
+  "profilePhoneNumber": "Phone number",
+  "profileClassName": "Class / Cohort",
+  "profileMajor": "Major",
+  "profileEditButton": "Edit Profile",
+  "profileLogoutButton": "Log out",
+  "profileEditClassLabel": "Class",
+  "profileCancel": "Cancel",
+  "profileSaveChanges": "Save Changes",
+  "profileFullNameRequired": "Full name cannot be empty.",
+  "itProfileDefaultName": "User",
+  "itProfileCareerDirection": "Career Direction",
+  "itProfileCareerDirectionEmpty": "No career direction results yet.",
+  "itProfileAssessmentResult": "Assessment Results",
+  "itProfileAssessmentEmpty": "Complete the assessment to see how well you match different IT fields.",
+  "itProfileStrengths": "Your Strengths",
+  "itProfileStrengthsEmpty": "Your personal strengths will appear once assessment data is available.",
+  "itProfileTitle": "IT Profile",
+  "itProfileSubtitle": "Competency Profile and Career Orientation",
+  "language": "Language",
+
+  "journalAlreadyWrittenInList": "You have already written a journal for this activity.",
+  "journalEmptyTitle": "No activities yet",
+  "journalEmptyDescription": "Register for an activity in the Experience Hub. Then you can write a journal to record what you have learned.",
+  "journalLoginRequired": "Please log in to view your journal.",
+  "journalHistory": "Your history",
+  "journalActivityCount": "{count} activities",
+  "@journalActivityCount": {"placeholders":{"count":{"type":"int"}}},
+  "journalTitle": "Activity Journal",
+  "journalSubtitle": "Record your experiences – Shape your career path",
+  "journalRatingRequired": "Please rate your interest and the difficulty level.",
+  "journalAlreadyWritten": "You have already written a journal for this activity.",
+  "journalAlreadySubmitted": "This journal has already been submitted.",
+  "journalSubmitSuccess": "Journal submitted successfully!",
+  "journalCurrentActivity": "CURRENT ACTIVITY",
+  "journalActivityTypeSoftSkill": "Soft Skills",
+  "journalWrittenOn": "Journal written · {date}",
+  "@journalWrittenOn": {"placeholders":{"date":{"type":"String"}}},
+  "journalNotWritten": "You have not written a journal for this activity",
+  "journalReviewed": "Reviewed",
+  "journalWrite": "Write journal",
+  "journalDifficultyTitle": "Difficulty level",
+  "journalDifficultyEasy": "Easy",
+  "journalDifficultyEasyDescription": "Can be completed independently",
+  "journalDifficultyFit": "Manageable",
+  "journalDifficultyFitDescription": "Suitable for your current abilities",
+  "journalDifficultyHard": "Difficult",
+  "journalDifficultyHardDescription": "Requires more practice time",
+  "journalNoteTitle": "Your thoughts",
+  "journalNoteHint": "Share what you have learned...",
+  "journalRatingTitle": "Interest level",
+  "journalRatingNotRated": "Not rated",
+  "journalRatingStars": "{count}/5 stars",
+  "@journalRatingStars": {"placeholders":{"count":{"type":"int"}}},
+  "journalRegistered": "Registered",
+  "journalCompletedCount": "{count} journals",
+  "@journalCompletedCount": {"placeholders":{"count":{"type":"int"}}},
+  "journalCompleted": "Completed",
+  "journalSubmitButton": "SUBMIT FEEDBACK  →",
+  "groupInfoCardSection": "GROUP INFORMATION",
+  "groupInfoCardTitle": "TechTrail Team",
+  "groupInfoCardSubtitle": "View team members and technologies used"
 }
