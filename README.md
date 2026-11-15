@@ -4,7 +4,7 @@
 
 - **Tên nhóm:** Nhóm 06
 - **Lớp học phần:** CSE702027-1-1-26(N01)
-- **Môn học:** Lập trình thiết bị di động
+- **Môn học:** Lập trình cho thiết bị di động
 - **Trường:** Công nghệ thông tin Phenikaa
 - **Năm học:** 2026–2027
 
@@ -19,7 +19,7 @@
 - **Tên dự án:** Ứng dụng Hướng nghiệp sinh viên Công nghệ thông tin (TechTrail)
 - **Giảng viên hướng dẫn:** ThS. Nguyễn Xuân Quế
 
-Trạm Trải Nghiệm (TechTrail) là ứng dụng di động hỗ trợ sinh viên tìm hiểu các lĩnh vực nghề nghiệp trong ngành Công nghệ thông tin, khám phá các vị trí nghề nghiệp và ghi lại quá trình trải nghiệm, định hướng nghề nghiệp.
+Ứng dụng Hướng nghiệp sinh viên Công nghệ thông tin (TechTrail) là ứng dụng di động hỗ trợ sinh viên tìm hiểu các lĩnh vực nghề nghiệp trong ngành Công nghệ thông tin, khám phá các vị trí nghề nghiệp và ghi lại quá trình trải nghiệm, định hướng nghề nghiệp.
 
 ## 4. Cấu trúc Repository
 
