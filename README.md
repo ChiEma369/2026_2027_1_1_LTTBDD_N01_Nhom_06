@@ -16,7 +16,7 @@
 
 ## 3. Thông tin dự án
 
-- **Tên dự án:** Trạm Trải Nghiệm (TechTrail)
+- **Tên dự án:** Ứng dụng Hướng nghiệp sinh viên Công nghệ thông tin (TechTrail)
 - **Giảng viên hướng dẫn:** ThS. Nguyễn Xuân Quế
 
 Trạm Trải Nghiệm (TechTrail) là ứng dụng di động hỗ trợ sinh viên tìm hiểu các lĩnh vực nghề nghiệp trong ngành Công nghệ thông tin, khám phá các vị trí nghề nghiệp và ghi lại quá trình trải nghiệm, định hướng nghề nghiệp.
